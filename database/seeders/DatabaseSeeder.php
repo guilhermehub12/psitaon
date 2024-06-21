@@ -18,7 +18,10 @@ class DatabaseSeeder extends Seeder
 
             $this->call([
                 UsuarioSeeder::class,
-                PerfilSeeder::class
+                PerfilSeeder::class,
+                UsuarioPerfilSeeder::class,
+                EstadoSeeder::class,
+                MunicipioSeeder::class
             ]);
 
             DB::commit();

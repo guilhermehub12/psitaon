@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
-class Perfil extends Model
+class Estado extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
@@ -17,7 +18,7 @@ class Perfil extends Model
      *
      * @var string
      */
-    protected $table = 'perfis';
+    protected $table = 'estados';
 
     /**
      * The primary key associated with the table.
@@ -46,9 +47,8 @@ class Perfil extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'codigo',
+        'sigla',
         'nome',
-        'descricao',
         'ativo',
         'created_by',
         'updated_by',
@@ -58,6 +58,7 @@ class Perfil extends Model
     public function __construct($attributes = [])
     {
         parent::__construct($attributes);
+        $this->sigla = Str::upper($this->sigla);
         $this->created_by = Auth::id();
         $this->updated_by = Auth::id();
     }
@@ -65,6 +66,7 @@ class Perfil extends Model
     public function fill(array $attributes)
     {
         parent::fill($attributes);
+        $this->sigla = Str::upper($this->sigla);
         $this->updated_by = Auth::id();
     }
 

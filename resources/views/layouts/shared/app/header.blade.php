@@ -14,7 +14,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <a
-                    class="btn btn-primary text-uppercase"
+                    class="btn btn-lila text-uppercase font-weight-bold"
                     href="route('logout')"
                     onclick="event.preventDefault(); this.closest('form').submit();"
                 >

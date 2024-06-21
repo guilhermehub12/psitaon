@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 
-class Perfil extends Model
+class UsuarioPerfil extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
@@ -17,7 +17,7 @@ class Perfil extends Model
      *
      * @var string
      */
-    protected $table = 'perfis';
+    protected $table = 'usuarios_perfis';
 
     /**
      * The primary key associated with the table.
@@ -46,9 +46,8 @@ class Perfil extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'codigo',
-        'nome',
-        'descricao',
+        'usuario_id',
+        'perfil_id',
         'ativo',
         'created_by',
         'updated_by',
