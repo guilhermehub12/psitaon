@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 
@@ -73,5 +74,15 @@ class UsuarioPerfil extends Model
         $this->save();
 
         parent::delete();
+    }
+
+    public function usuario(): BelongsTo
+    {
+        return $this->belongsTo(Usuario::class, 'usuario_id', 'id');
+    }
+
+    public function perfil(): BelongsTo
+    {
+        return $this->belongsTo(Perfil::class, 'perfil_id', 'id');
     }
 }

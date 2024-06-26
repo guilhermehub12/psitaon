@@ -15,7 +15,7 @@
                 @csrf
                 <a
                     class="btn btn-lila text-uppercase font-weight-bold"
-                    href="route('logout')"
+                    href="{{ route('logout') }}"
                     onclick="event.preventDefault(); this.closest('form').submit();"
                 >
                     <i class="fas fa-power-off"></i> Sair

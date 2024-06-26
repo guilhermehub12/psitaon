@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 require __DIR__.'/auth.php';
 
 Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], function() {
+
+    Route::get('/', 'Admin\HomeController@index')->name('home.index');
+
     Route::prefix('administracao')->name('admin.')->namespace('Admin')->group(function () {
         // HOME
         Route::get('/', 'HomeController@index')->name('home.index');
@@ -34,6 +37,17 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
             Route::get('/{orgao}/edicao', 'EstadoController@edit')->name('edit');
             Route::put('/{orgao}', 'EstadoController@update')->name('update');
             Route::delete('/{orgao}', 'EstadoController@destroy')->name('destroy');
+        });
+
+        // USUARIOS
+        Route::prefix('usuarios')->name('usuarios.')->group(function() {
+            Route::get('/', 'UsuarioController@index')->name('index');
+            Route::get('/cadastro', 'UsuarioController@create')->name('create');
+            Route::post('/', 'UsuarioController@store')->name('store');
+            Route::get('/{usuario}', 'UsuarioController@show')->name('show');
+            Route::get('/{usuario}/edicao', 'UsuarioController@edit')->name('edit');
+            Route::put('/{usuario}', 'UsuarioController@update')->name('update');
+            Route::delete('/{usuario}', 'UsuarioController@destroy')->name('destroy');
         });
     });
 });

@@ -4,11 +4,13 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Enums\PerfilEnum;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\Hash;
 
 class Usuario extends Authenticatable
@@ -92,5 +94,25 @@ class Usuario extends Authenticatable
         return Attribute::make(
             set: fn (string $value) => Hash::make($value)
         );
+    }
+
+    public function perfis(): BelongsToMany
+    {
+        return $this->belongsToMany(Perfil::class, 'usuarios_perfis', 'usuario_id', 'perfil_id');
+    }
+
+    public function isAdministrador(): bool
+    {
+        return $this->perfis->contains('codigo', PerfilEnum::ADMINISTRADOR->value);
+    }
+
+    public function isAtendimento(): bool
+    {
+        return $this->perfis->contains('codigo', PerfilEnum::ATENDIMENTO->value);
+    }
+
+    public function isCozinha(): bool
+    {
+        return $this->perfis->contains('codigo', PerfilEnum::COZINHA->value);
     }
 }

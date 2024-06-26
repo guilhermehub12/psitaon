@@ -17,7 +17,7 @@
                 >
             </div>
             <div class="card">
-                <div class="card-header text-center font-weight-bold" style="color: #000000; font-size: 28px;">
+                <div class="card-header text-center font-weight-bold text-white" style="font-size: 28px;">
                     Lila Baking Studio
                 </div>
                 <div class="card-body login-card-body">

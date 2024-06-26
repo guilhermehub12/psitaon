@@ -2,9 +2,9 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">
+                <h4 class="m-0 text-uppercase">
                     <i class="{{ $icon }}"></i> {{ $title }}
-                </h1>
+                </h4>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -15,7 +15,7 @@
                             </li>
                         @else
                             <li class="breadcrumb-item active">
-                                Dashboard v1
+                                {{ $link }}
                             </li>
                         @endif
                     @empty

@@ -324,9 +324,11 @@
 
 .main-sidebar {
     background-color: #F2A89D;
+    opacity: 0.7;
 }
 
 .main-footer {
+    /* background-color: #F2A89D; */
     background-color: #d1e7dd;
     color: #198754;
     font-size: 14px;
@@ -348,6 +350,33 @@
 
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
 .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
-  background-color: #ffc107;
+  background-color: #009074;
   color: #1f2d3d;
+}
+
+.card-header {
+    background-color: #F2A89D;
+    color: #ffffff;
+    border: none;
+    opacity: 0.7;
+}
+
+.modal-header {
+    background-color: #d1e7dd;
+    color: #009074;
+}
+
+.modal-footer {
+    background-color: #e9ecef;
+}
+
+.badge-lila {
+    background-color: #009074;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: rgb(255, 255, 255);
+    background-color: #F2A89D;
+    border-color: #F2A89D;
 }
