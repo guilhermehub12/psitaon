@@ -37,6 +37,7 @@ class StoreUsuarioRequest extends FormRequest
     {
         return [
             'nome' => 'Nome',
+            'email' => 'E-mail',
             'perfil_id' => 'Perfil',
         ];
     }

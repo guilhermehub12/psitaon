@@ -12,11 +12,14 @@
             @includeIf("layouts.shared.app.header")
             @includeIf("layouts.shared.app.menu")
             <div class="content-wrapper">
-                <div class="content">
+                {{ $breadcrumb ?? '' }}
+                <section class="content">
                     <div class="container-fluid">
+
+                        <x-admin.alert :type="session()" message="" />
                         {{ $slot }}
                     </div>
-                </div>
+                </section>
             </div>
             @includeIf("layouts.shared.app.footer")
         </div>

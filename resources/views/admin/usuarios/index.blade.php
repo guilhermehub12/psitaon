@@ -1,5 +1,7 @@
 <x-app-layout>
-    <x-admin.breadcrumb icon="fas fa-map" title="Usuários" />
+    <x-slot name="breadcrumb">
+        <x-admin.breadcrumb icon="fas fa-map" title="Usuários" />
+    </x-slot>
 
     <div class="row mb-3">
         <div class="col-md-2 offset-md-10">
