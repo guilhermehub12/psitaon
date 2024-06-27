@@ -1,12 +1,14 @@
 <x-app-layout>
-    <x-admin.breadcrumb
-        icon="fas fa-user"
-        title="Usuários"
-        :links="[
-            'Usuários',
-            'Novo Usuário'
-        ]"
-    />
+    <x-slot name="breadcrumb">
+        <x-admin.breadcrumb
+            icon="fas fa-user"
+            title="Usuários"
+            :links="[
+                'Usuários',
+                'Novo Usuário'
+            ]"
+        />
+    </x-slot>
 
     @includeIf('admin.usuarios.partials.form', [
         "title" => "Usuário",
@@ -15,6 +17,6 @@
         "method" => "POST",
         "routeBack" => route('admin.usuarios.index'),
         "buttonText" => "Salvar",
-        "model" => null
+        "usuario" => null
     ])
 </x-app-layout>

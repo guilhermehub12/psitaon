@@ -5,7 +5,7 @@
     :method="$method"
     :routeBack="$routeBack"
     :buttonText="$buttonText"
-    :model="$model"
+    :model="$usuario"
 >
     <div class="row">
         <div class="col-md-6">

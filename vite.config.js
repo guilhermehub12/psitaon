@@ -11,4 +11,11 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+            output: {
+                format: 'cjs', // Configura o formato de saída para CommonJS
+            },
+        },
+    },
 });

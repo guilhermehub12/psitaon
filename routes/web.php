@@ -43,6 +43,9 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         // ESTADOS
         Route::resource('estados', 'EstadoController')->parameters(['estados' => 'estado']);
 
+        // CLIENTES
+        Route::resource('clientes', 'ClienteController')->parameters(['clientes' => 'cliente']);
+
         // USUARIOS
         Route::resource('usuarios', 'UsuarioController')->parameters(['usuarios' => 'usuario']);
     });

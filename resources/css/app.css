@@ -324,7 +324,7 @@
 
 .main-sidebar {
     background-color: #F2A89D;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .main-footer {
@@ -358,7 +358,7 @@
     background-color: #F2A89D;
     color: #ffffff;
     border: none;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .modal-header {

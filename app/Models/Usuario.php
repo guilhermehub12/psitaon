@@ -96,6 +96,11 @@ class Usuario extends Authenticatable
         );
     }
 
+    public function perfil()
+    {
+        return $this->hasOne(UsuarioPerfil::class, 'usuario_id');
+    }
+
     public function perfis(): BelongsToMany
     {
         return $this->belongsToMany(Perfil::class, 'usuarios_perfis', 'usuario_id', 'perfil_id');

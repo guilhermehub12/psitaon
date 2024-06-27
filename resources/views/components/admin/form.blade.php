@@ -6,10 +6,12 @@
       </h3>
     </div>
     @if ($method == "GET" || $method == "POST")
-        {{ html()->form($method, $action)->open() }}
+        <form action="{{ $action }}" method="{{ $method }}">
     @elseif ($method == "PUT" || $method == "DELETE")
-        {{ html()->modelForm($model, $method, $action)->open() }}
+        <form action="{{ $action }}" method="POST">
+        @method($method)
     @endif
+        @csrf
       <div class="card-body">
         {{  $slot  }}
       </div>
@@ -27,9 +29,5 @@
           </div>
         </div>
       </div>
-    @if ($method == "GET" || $method == "POST")
-        {{ html()->form()->close() }}
-    @elseif ($method == "PUT" || $method == "DELETE")
-        {{ html()->closeModelForm() }}
-    @endif
+    </form>
 </div>

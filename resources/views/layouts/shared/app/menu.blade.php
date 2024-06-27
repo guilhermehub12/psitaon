@@ -32,13 +32,22 @@
                         <p class="text-white font-weight-bold">Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item text-uppercase">
+                {{-- <li class="nav-item text-uppercase">
                     <a
                         href="{{ route('admin.estados.index') }}"
                         class="nav-link {{ request()->is('administracao/estados*') ? 'active' : '' }}"
                     >
                         <i class="nav-icon fas fa-map text-white"></i>
                         <p class="text-white font-weight-bold">Estados</p>
+                    </a>
+                </li> --}}
+                <li class="nav-item text-uppercase">
+                    <a
+                        href="{{ route('admin.clientes.index') }}"
+                        class="nav-link {{ request()->is('administracao/clientes*') ? 'active' : '' }}"
+                    >
+                        <i class="nav-icon fas fa-restroom text-white"></i>
+                        <p class="text-white font-weight-bold">Clientes</p>
                     </a>
                 </li>
                 <li class="nav-item text-uppercase">

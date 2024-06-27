@@ -15,8 +15,13 @@
                 {{ $breadcrumb ?? '' }}
                 <section class="content">
                     <div class="container-fluid">
-
-                        <x-admin.alert :type="session()" message="" />
+                        @if (session('success'))
+                            <x-admin.alert type="success" :message="session('success')" icon="fas fa-check-circle" />
+                        @elseif (session('danger'))
+                            <x-admin.alert type="danger" :message="session('danger')" icon="fas fa-exclamation-circle" />
+                        @elseif (session('info'))
+                            <x-admin.alert type="info" :message="session('info')" icon="fas fa-info-circle" />
+                        @endif
                         {{ $slot }}
                     </div>
                 </section>

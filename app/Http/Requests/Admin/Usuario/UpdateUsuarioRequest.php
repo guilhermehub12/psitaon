@@ -2,6 +2,6 @@
 
 namespace App\Http\Requests\Admin\Usuario;
 
-class StoreUsuarioRequest extends BaseUsuarioRequest
+class UpdateUsuarioRequest extends BaseUsuarioRequest
 {
 }

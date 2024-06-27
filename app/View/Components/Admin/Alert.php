@@ -17,11 +17,12 @@ class Alert extends Component
      */
     public function __construct(
         $type,
-        $message
+        $message,
+        $icon = null
     ) {
         $this->type = $type;
         $this->message = $message;
-        $this->icon = null;
+        $this->icon = $icon;
     }
 
     /**
