@@ -7,7 +7,7 @@
                 </h4>
             </div>
             <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
+                <ol class="breadcrumb float-sm-right text-uppercase">
                     @forelse ($links as $link)
                         @if (!$loop->last)
                             <li class="breadcrumb-item">
