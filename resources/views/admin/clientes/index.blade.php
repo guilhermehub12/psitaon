@@ -14,13 +14,18 @@
     <x-admin.table
         title="Clientes"
         subtitle="Listagem"
-        :headers="['Nome', 'E-mail', 'Ações']"
+        :headers="['Nome', 'E-mail', 'Data Nascimento', 'Telefone', 'Celular', 'Instagram', 'Ações']"
         :records="$clientes"
     >
         @forelse ($clientes as $cliente)
             <tr class="text-center">
                 <td class="align-middle">{{ $cliente->nome }}</td>
-                <td class="align-middle">
+                <td class="align-middle">{{ $cliente->email }}</td>
+                <td class="align-middle">{{ $cliente->data_nascimento }}</td>
+                <td class="align-middle">{{ $cliente->telefone }}</td>
+                <td class="align-middle">{{ $cliente->celular }}</td>
+                <td class="align-middle">{{ $cliente->instagram }}</td>
+                <td class="align-middle text-uppercase">
                     <div class="dropdown dropright">
                         <button
                             id="dropdown-{{ $cliente->id }}"
@@ -34,6 +39,9 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown-{{ $cliente->id }}">
                             <a href="{{  route('admin.clientes.edit', $cliente) }}" class="dropdown-item">
                                 <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <a href="{{  route('admin.clientes.show', $cliente) }}" class="dropdown-item">
+                                <i class="fas fa-info-circle"></i> Detalhes
                             </a>
                         </div>
                     </div>

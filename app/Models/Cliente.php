@@ -85,22 +85,22 @@ class Cliente extends Model
     protected function dataNascimento(): Attribute
     {
         return Attribute::make(
-            get: fn (string $value) => Carbon::createFromFormat("Y-m-d", $value)->format("d/m/Y"),
-            set: fn (string $value) => Carbon::createFromFormat("d/m/Y", $value)->format("Y-m-d")
+            get: fn ($value) => $value ? Carbon::createFromFormat("Y-m-d H:i:s", $value)->format("d/m/Y") : null,
+            set: fn ($value) => $value ? Carbon::createFromFormat("d/m/Y", $value)->format("Y-m-d") : null
         );
     }
 
     protected function telefone(): Attribute
     {
         return Attribute::make(
-            set: fn (string $value) => preg_replace("/\D/", "", $value)
+            set: fn ($value) => $value ? preg_replace("/\D/", "", $value) : null
         );
     }
 
     protected function celular(): Attribute
     {
         return Attribute::make(
-            set: fn (string $value) => preg_replace("/\D/", "", $value)
+            set: fn ($value) => $value ? preg_replace("/\D/", "", $value) : null
         );
     }
 

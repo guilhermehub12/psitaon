@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Cliente\StoreClienteRequest;
+use App\Http\Requests\Admin\Cliente\UpdateClienteRequest;
+use App\Models\Cliente;
 use App\Repositories\ClienteRepository;
 use Illuminate\Http\Request;
 
@@ -52,25 +54,36 @@ class ClienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Cliente $cliente)
     {
-        //
+        return view('admin.clientes.show', [
+            'cliente' => $cliente
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Cliente $cliente)
     {
-        //
+        return view('admin.clientes.edit', [
+            'cliente' => $cliente
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateClienteRequest $request, Cliente $cliente)
     {
-        //
+        $result = $this->clienteRepository->update($cliente, $request->except(['_token']));
+
+        if ($result === true) {
+            $request->session()->flash('success', 'Cliente atualizado com sucesso!');
+            return redirect()->route('admin.clientes.index');
+        } else {
+            $request->session()->flash('danger', 'Erro ao cadastrar o cliente. '.$result);
+        }
     }
 
     /**

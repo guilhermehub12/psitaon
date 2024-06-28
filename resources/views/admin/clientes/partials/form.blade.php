@@ -84,7 +84,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label>* Instagram</label>
+                <label>Instagram</label>
                 <x-admin.form-input
                     type="text"
                     name="instagram"

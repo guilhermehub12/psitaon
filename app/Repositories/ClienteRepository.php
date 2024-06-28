@@ -39,5 +39,23 @@ class ClienteRepository extends BaseRepository
         }
     }
 
+    public function update(Cliente $cliente, $data)
+    {
+        try {
+            DB::beginTransaction();
+
+            $cliente->fill($data);
+            $cliente->save();
+
+            DB::commit();
+
+            return true;
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return $e->getMessage();
+        }
+    }
+
 }
 

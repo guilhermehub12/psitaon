@@ -46,6 +46,12 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         // CLIENTES
         Route::resource('clientes', 'ClienteController')->parameters(['clientes' => 'cliente']);
 
+        // CLIENTES DATAS
+        Route::resource('clientes.datas', 'ClienteDataController')->parameters([
+            'clientes' => 'cliente',
+            'clientesDatas' => 'clienteData'
+        ]);
+
         // USUARIOS
         Route::resource('usuarios', 'UsuarioController')->parameters(['usuarios' => 'usuario']);
     });

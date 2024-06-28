@@ -5,7 +5,7 @@
             title="Clientes"
             :links="[
                 'Clientes',
-                'Novo Cliente'
+                'Cliente Novo'
             ]"
         />
     </x-slot>
