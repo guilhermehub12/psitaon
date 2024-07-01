@@ -1,0 +1,30 @@
+<?php
+
+namespace App\View\Components\Admin;
+
+use Closure;
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
+
+class ModalCreate extends Component
+{
+    /**
+     * Create a new component instance.
+     */
+    public function __construct(
+        public string $title,
+        public string $subtitle,
+        public string $target,
+        public string $action,
+        public string $method = 'post',
+        public string $size = 'xl'
+    ) {}
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View|Closure|string
+    {
+        return view('components.admin.modal-create');
+    }
+}

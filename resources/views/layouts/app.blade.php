@@ -29,5 +29,7 @@
             </div>
             @includeIf("layouts.shared.app.footer")
         </div>
+        @stack('scripts')
+        @stack('modals')
     </body>
 </html>

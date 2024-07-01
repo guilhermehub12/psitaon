@@ -25,12 +25,18 @@
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col-md-2 offset-md-10">
-                            <a
-                                href="{{  route('admin.clientes.datas.create', $cliente) }}"
+                            <button
+                                type="button"
                                 class="btn btn-lila btn-block text-uppercase font-weight-bold"
+                                data-toggle="modal"
+                                data-target="#cliente-data-modal-{{ $cliente->id }}-create"
                             >
                                 <i class="fas fa-plus-circle"></i> Data
-                            </a>
+                            </button>
+
+                            @push('modals')
+                                @includeIf('admin.clientes.datas.cliente_data_modal_create', $cliente)
+                            @endpush
                         </div>
                     </div>
                 </div>
