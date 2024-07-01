@@ -3,10 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cliente;
+use App\Repositories\ClienteDataRepository;
 use Illuminate\Http\Request;
 
 class ClienteDataController extends Controller
 {
+    public function __construct(
+        private ClienteDataRepository $clienteDataRepository
+    ) {}
+
     /**
      * Display a listing of the resource.
      */
@@ -18,17 +24,27 @@ class ClienteDataController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Cliente $cliente)
     {
-        //
+        return view('admin.clientes.datas.create', [
+            'cliente' => $cliente
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreClienteDataRequest $request, Cliente $cliente)
     {
-        //
+        $result = $this->clienteDataRepository->store($cliente, $request->except(['_token']));
+
+        if ($result === true) {
+            $request->session()->flash('success', 'Data cadastrada com sucesso!');
+        } else {
+            $request->session()->flash('danger', 'Erro ao cadastrar a data. '.$result);
+        }
+
+        return redirect()->route('admin.clientes.show', $cliente);
     }
 
     /**

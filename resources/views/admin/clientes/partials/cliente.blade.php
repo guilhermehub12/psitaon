@@ -39,8 +39,13 @@
     <div class="card-footer bg-transparent border-top">
         <div class="row justify-content-end">
             <div class="col-6 col-sm-6 col-md-2">
-                <a href="{{ route('admin.clientes.index') }}" class="btn btn-dark btn-block text-uppercase font-weight-bold">
+                <a href="{{ isset($route) ? $route : route('admin.clientes.index') }}" class="btn btn-dark btn-block text-uppercase font-weight-bold">
                     <i class="fas fa-backward"></i> Voltar
+                </a>
+            </div>
+            <div class="col-6 col-sm-6 col-md-2">
+                <a href="{{  route('admin.clientes.edit', $cliente) }}" class="btn btn-primary btn-block text-uppercase font-weight-bold">
+                    <i class="fas fa-edit"></i> Editar
                 </a>
             </div>
         </div>
