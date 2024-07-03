@@ -52,6 +52,15 @@
                 </li>
                 <li class="nav-item text-uppercase">
                     <a
+                        href="{{ route('admin.produtos.index') }}"
+                        class="nav-link {{ request()->is('administracao/produtos*') ? 'active' : '' }}"
+                    >
+                        <i class="nav-icon fas fa-box text-white"></i>
+                        <p class="text-white font-weight-bold">Produtos</p>
+                    </a>
+                </li>
+                <li class="nav-item text-uppercase">
+                    <a
                         href="{{ route('admin.usuarios.index') }}"
                         class="nav-link {{ request()->is('administracao/usuarios*') ? 'active' : '' }}"
                     >

@@ -5,6 +5,4 @@
     rows="{{ $rows }}"
     cols="{{ $cols }}"
     placeholder="{{ $placeholder }}"
->
-    {{ $value }}
-</textarea>
+>{{ $value }}</textarea>
