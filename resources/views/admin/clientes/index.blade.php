@@ -37,6 +37,19 @@
                             <i class="fas fa-cog"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdown-{{ $cliente->id }}">
+                            <a
+                                href="#"
+                                class="dropdown-item"
+                                data-toggle="modal"
+                                data-target="#cliente-modal-{{ $cliente->id }}-show"
+                            >
+                                <i class="fas fa-window-restore"></i> Visualizar
+                            </a>
+
+                            @push('modals')
+                                @includeIf('admin.clientes.partials.cliente-modal-show', $cliente)
+                            @endpush
+
                             <a href="{{  route('admin.clientes.edit', $cliente) }}" class="dropdown-item">
                                 <i class="fas fa-edit"></i> Editar
                             </a>

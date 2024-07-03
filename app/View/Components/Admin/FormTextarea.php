@@ -6,18 +6,19 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ModalCreate extends Component
+class FormTextarea extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $title,
-        public string $subtitle,
-        public string $target,
-        public string $action,
-        public string $method = 'post',
-        public string $size = 'xl'
+        public string $name,
+        public string $id,
+        public string $class = "",
+        public int $rows = 3,
+        public int $cols = 5,
+        public string $placeholder = "",
+        public string $value = ""
     ) {}
 
     /**
@@ -25,6 +26,6 @@ class ModalCreate extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.admin.modal-create');
+        return view('components.admin.form-textarea');
     }
 }

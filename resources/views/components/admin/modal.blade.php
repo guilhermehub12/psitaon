@@ -2,7 +2,7 @@
     class="modal fade"
     id="{{ $target }}"
 >
-    <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-dialog modal-{{ $size }} modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header text-uppercase font-weight-bold">
                 <h5 class="modal-title">

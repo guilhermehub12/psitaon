@@ -44,7 +44,7 @@
                 </a>
             </div>
             <div class="col-6 col-sm-6 col-md-2">
-                <a href="{{  route('admin.clientes.edit', $cliente) }}" class="btn btn-primary btn-block text-uppercase font-weight-bold">
+                <a href="{{  route('admin.clientes.edit', $cliente) }}" class="btn btn-lila btn-block text-uppercase font-weight-bold">
                     <i class="fas fa-edit"></i> Editar
                 </a>
             </div>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('telefone')->nullable();
             $table->string('celular')->nullable();
             $table->string('instagram')->nullable();
+            $table->string('observacao', 510)->nullable();
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');

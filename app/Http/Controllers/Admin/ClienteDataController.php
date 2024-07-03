@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ClienteData\StoreClienteDataRequest;
 use App\Models\Cliente;
+use App\Models\ClienteData;
 use App\Repositories\ClienteDataRepository;
 use Illuminate\Http\Request;
 
@@ -74,8 +76,16 @@ class ClienteDataController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, Cliente $cliente, ClienteData $clienteData)
     {
-        //
+        $result = $this->clienteDataRepository->destroy($clienteData);
+
+        if ($result === true) {
+            $request->session()->flash('success', 'Data deletada com sucesso!');
+        } else {
+            $request->session()->flash('danger', 'Erro ao deletar a data. '.$result);
+        }
+
+        return redirect()->route('admin.clientes.show', $cliente);
     }
 }

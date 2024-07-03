@@ -21,7 +21,7 @@
                         </thead>
                     @endif
                     <tbody>
-                        @if (isset($records) && is_object($records) && method_exists($records, 'total') && $records->total() > 0)
+                        @if ($records && $records->count() > 0)
                             {{ $slot }}
                         @else
                             <tr class="text-center">
@@ -33,23 +33,35 @@
                     </tbody>
                 </table>
             </div>
-            <div class="card-footer clearfix border-top bg-transparent">
-                <div class="row align-items-center">
-                    <div class="col-6 text-start font-weight-bold">
-                        @if (isset($records) && is_object($records) && method_exists($records, 'total') && $records->total() > 0)
-                            Exibindo de {{ $records->firstItem() }} até {{ $records->lastItem() }} de {{ $records->total() }} registro(s)
-                        @else
-                            0 registro(s)
-                        @endif
-                    </div>
+            @if (isset($records) && is_object($records) && method_exists($records, 'total'))
+                <div class="card-footer clearfix border-top bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col-6 text-start font-weight-bold">
+                            @if ($records->total() > 0)
+                                Exibindo de {{ $records->firstItem() }} até {{ $records->lastItem() }} de {{ $records->total() }} registro(s)
+                            @else
+                                0 registro(s)
+                            @endif
+                        </div>
 
-                    <div class="col-6 d-flex justify-content-end font-weight-bold">
-                        @if ($records && method_exists($records, 'links'))
-                            {!! $records->appends(request()->query())->links()!!}
-                        @endif
+                        <div class="col-6 d-flex justify-content-end font-weight-bold">
+                            @if ($records && method_exists($records, 'links'))
+                                {!! $records->appends(request()->query())->links()!!}
+                            @endif
+                        </div>
                     </div>
                 </div>
-            </div>
+            @else
+                <div class="card-footer clearfix border-top bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col-6 text-start font-weight-bold">
+                            Exibindo {{ $records->count() }} registro(s)
+                        </div>
+                        <div class="col-6 d-flex justify-content-end font-weight-bold">
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </div>

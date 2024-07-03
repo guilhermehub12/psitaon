@@ -11,6 +11,24 @@ class ClienteRepository extends BaseRepository
 {
     protected $model = Cliente::class;
 
+    public function dashboard()
+    {
+        try {
+            $query = $this->model->query();
+            $query->select(
+                DB::raw('COUNT(*) as total'),
+                DB::raw('SUM(CASE WHEN clientes.ativo = true THEN 1 ELSE 0 END) AS ativo'),
+                DB::raw('SUM(CASE WHEN clientes.ativo = false THEN 1 ELSE 0 END) AS inativo')
+            );
+
+            return $query->get()->first();
+
+            return true;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
         try {

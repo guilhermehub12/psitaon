@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Modal extends Component
+class ModalStore extends Component
 {
     /**
      * Create a new component instance.
@@ -15,6 +15,8 @@ class Modal extends Component
         public string $title,
         public string $subtitle,
         public string $target,
+        public string $action,
+        public string $method = 'post',
         public string $size = 'xl'
     ) {}
 
@@ -23,6 +25,6 @@ class Modal extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.admin.modal');
+        return view('components.admin.modal-store');
     }
 }

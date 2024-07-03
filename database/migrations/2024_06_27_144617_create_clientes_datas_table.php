@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignUuid('cliente_id')->references('id')->on('clientes')->onUpdate('cascade');
             $table->string('nome');
             $table->dateTime('data');
+            $table->string('observacao', 510)->nullable();
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');

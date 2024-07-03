@@ -2,10 +2,11 @@
     class="modal fade"
     id="{{ $target }}"
 >
-    <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-dialog modal-{{ $size }} modal-dialog-centered">
         <div class="modal-content">
-            <form action="{{ $action }}" method="{{ $method }}">
+            <form action="{{ $action }}" method="post">
                 @csrf
+                @method($method)
                 <div class="modal-header text-uppercase font-weight-bold">
                     <h5 class="modal-title">
                         {{ $title }}
@@ -24,8 +25,8 @@
                     <button type="button" class="btn btn-dark text-uppercase font-weight-bold" data-dismiss="modal">
                         <i class="fas fa-times-circle"></i> Fechar
                     </button>
-                    <button type="submit" class="btn btn-lila text-uppercase font-weight-bold ml-auto">
-                        <i class="fas fa-save"></i> Salvar
+                    <button type="submit" class="btn btn-danger text-uppercase font-weight-bold ml-auto">
+                        <i class="fas fa-trash"></i> Deletar
                     </button>
                 </div>
             </form>

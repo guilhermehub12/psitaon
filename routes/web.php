@@ -49,7 +49,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         // CLIENTES DATAS
         Route::resource('clientes.datas', 'ClienteDataController')->parameters([
             'clientes' => 'cliente',
-            'clientesDatas' => 'clienteData'
+            'datas' => 'clienteData'
         ]);
 
         // USUARIOS

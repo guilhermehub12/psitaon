@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Cliente;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use App\Models\ClienteData;
@@ -26,11 +27,23 @@ class ClienteDataRepository extends BaseRepository
         }
     }
 
-    public function store($data)
+    public function store(Cliente $cliente, $data)
     {
         try {
-            $cliente = new $this->model($data);
-            $cliente->save();
+            $cliente->datas()->saveMany([
+                new $this->model($data)
+            ]);
+
+            return true;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function destroy(ClienteData $clienteData)
+    {
+        try {
+            $clienteData->delete();
 
             return true;
         } catch (Exception $e) {
