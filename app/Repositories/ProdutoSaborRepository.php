@@ -4,13 +4,11 @@ namespace App\Repositories;
 
 use App\Models\Produto;
 use Exception;
-use Illuminate\Support\Facades\DB;
+use App\Models\ProdutoSabor;
 
-use App\Models\ProdutoTamanho;
-
-class ProdutoTamanhoRepository extends BaseRepository
+class ProdutoSaborRepository extends BaseRepository
 {
-    protected $model = ProdutoTamanho::class;
+    protected $model = ProdutoSabor::class;
 
     public function store(Produto $produto, $data)
     {
@@ -25,10 +23,10 @@ class ProdutoTamanhoRepository extends BaseRepository
         }
     }
 
-    public function destroy(ProdutoTamanho $produtoTamanho)
+    public function destroy(ProdutoSabor $produtoSabor)
     {
         try {
-            $produtoTamanho->delete();
+            $produtoSabor->delete();
 
             return true;
         } catch (Exception $e) {

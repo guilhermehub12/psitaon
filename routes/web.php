@@ -50,6 +50,12 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
             'tamanhos' => 'produtoTamanho'
         ]);
 
+        // PRODUTOS SABORES
+        Route::resource('produtos.sabores', 'ProdutoSaborController')->parameters([
+            'produtos' => 'produto',
+            'sabores' => 'produtoSabor'
+        ]);
+
         // USUARIOS
         Route::resource('usuarios', 'UsuarioController')->parameters(['usuarios' => 'usuario']);
     });

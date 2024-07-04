@@ -46,7 +46,7 @@
                     </button>
 
                     @push('modals')
-                        @includeIf('admin.clientes.partials.produto-tamanho-modal-destroy', [
+                        @includeIf('admin.produtos_tamanhos.partials.produto-tamanho-modal-destroy', [
                             $produto,
                             $produtoTamanho
                         ])

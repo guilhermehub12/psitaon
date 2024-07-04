@@ -11,6 +11,12 @@
                 {{ $produto->nome }}
             </div>
         </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <p class="font-weight-bold">Descrição</p>
+                {{ $produto->descricao }}
+            </div>
+        </div>
     </div>
     <div class="card-footer bg-transparent border-top">
         <div class="row justify-content-end">

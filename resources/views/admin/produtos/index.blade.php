@@ -47,7 +47,7 @@
                             @endpush
 
                             <a href="{{  route('admin.produtos.tamanhos.create', $produto) }}" class="dropdown-item">
-                                <i class="fas fa-plus-circle"></i> Tamanho
+                                <i class="fas fa-plus-circle"></i> Tamanhos
                             </a>
 
                             <a href="{{  route('admin.produtos.edit', $produto) }}" class="dropdown-item">

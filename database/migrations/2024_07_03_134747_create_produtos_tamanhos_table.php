@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('produto_id')->references('id')->on('produtos')->onUpdate('cascade');
             $table->string('nome');
-            $table->string('descricao');
+            $table->string('descricao', 510);
             $table->string('observacao', 510)->nullable();
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
