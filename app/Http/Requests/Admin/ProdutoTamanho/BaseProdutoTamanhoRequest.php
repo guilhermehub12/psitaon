@@ -24,6 +24,7 @@ class BaseProdutoTamanhoRequest extends FormRequest
         return [
             'nome' => 'Nome',
             'descricao' => 'Descrição',
+            'preco' => 'Preço',
             'observacao' => 'Observação'
         ];
     }

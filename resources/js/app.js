@@ -14,37 +14,53 @@ import '/public/adminlte-3.2.0/plugins/inputmask/jquery.inputmask.min';
 import '/public/adminlte-3.2.0/dist/js/adminlte.js';
 
 import.meta.glob([
-    '../images/**',
-    '../fonts/**',
+  '../images/**',
+  '../fonts/**',
 ]);
 
 $(document).ready(function() {
-    $(".mask_cpf").inputmask({
-      mask: "999.999.999-99",
-      clearIncomplete: true,
-      showMaskOnHover: false,
-      showMaskOnFocus: false
-    });
+  $(".mask_cpf").inputmask({
+    mask: "999.999.999-99",
+    clearIncomplete: true,
+    showMaskOnHover: false,
+    showMaskOnFocus: false
+  });
 
-    $(".mask_date").inputmask({
-      mask: "99/99/9999",
-      placeholder: "dd/mm/yyyy",
-      clearIncomplete: true,
-      showMaskOnHover: true,
-      showMaskOnFocus: true
-    });
+  $(".mask_date").inputmask({
+    mask: "99/99/9999",
+    placeholder: "dd/mm/yyyy",
+    clearIncomplete: true,
+    showMaskOnHover: true,
+    showMaskOnFocus: true
+  });
 
-    $(".mask_time").inputmask({
-      mask: "99:99:99",
-      placeholder: "hh:mm:ss",
-      clearIncomplete: true,
-      showMaskOnHover: false,
-      showMaskOnFocus: false
-    });
+  $(".mask_time").inputmask({
+    mask: "99:99:99",
+    placeholder: "hh:mm:ss",
+    clearIncomplete: true,
+    showMaskOnHover: false,
+    showMaskOnFocus: false
+  });
 
-    $(".mask_phone_with_ddd").inputmask({
-      mask: "(99) 9999[9]-9999"
-    });
+  $(".mask_phone_with_ddd").inputmask({
+    mask: "(99) 9999[9]-9999"
+  });
+
+  $(".mask_decimal").inputmask({
+    alias: 'numeric',
+    prefix: 'R$ ',
+    groupSeparator: '.',
+    radixPoint: ',',
+    autoGroup: true,
+    digits: 2,
+    digitsOptional: false,
+    rightAlign: false,
+    unmaskAsNumber: true,
+    clearIncomplete: true,
+    showMaskOnHover: true,
+    showMaskOnFocus: true,
+    placeholder: '0'
+  });
 
     // $('.select2').select2();
 });

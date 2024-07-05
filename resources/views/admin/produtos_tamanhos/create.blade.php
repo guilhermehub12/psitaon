@@ -11,7 +11,8 @@
     </x-slot>
 
     @includeIf('admin.produtos_tamanhos.partials.produto', [
-        "produto" => $produto
+        "produto" => $produto,
+        "route" => route('admin.produtos.show', $produto)
     ])
 
     @includeIf('admin.produtos_tamanhos.partials.form', [
@@ -27,13 +28,14 @@
     <x-admin.table
         title="Produto"
         subtitle="Tamanhos"
-        :headers="['Nome', 'Descrição', 'Observação', 'Ações']"
+        :headers="['Nome', 'Descrição', 'Preço', 'Observação', 'Ações']"
         :records="$produto->tamanhos"
     >
         @forelse ($produto->tamanhos as $produtoTamanho)
             <tr class="text-center">
                 <td class="align-middle">{{ $produtoTamanho->nome }}</td>
                 <td class="align-middle">{{ $produtoTamanho->descricao }}</td>
+                <td class="align-middle">R$ {{ $produtoTamanho->preco }}</td>
                 <td class="align-middle">{{ $produtoTamanho->observacao }}</td>
                 <td class="align-middle text-uppercase">
                     <button

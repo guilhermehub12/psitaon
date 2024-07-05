@@ -15,8 +15,9 @@ class StoreProdutoTamanhoRequest extends BaseProdutoTamanhoRequest
     {
         return [
             'nome' => 'required|max:255',
-            'descricao' => 'required|max:510',
-            'observacao' => 'nullable|max:510'
+            'descricao' => 'required|max:1000',
+            'preco' => 'required',
+            'observacao' => 'nullable|max:1000'
         ];
     }
 }

@@ -22,6 +22,12 @@
             {{ $produtoTamanho->descricao }}
         </div>
     </div>
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <p class="font-weight-bold">Preço</p>
+            R$ {{ $produtoTamanho->preco }}
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <p class="font-weight-bold">Observação</p>

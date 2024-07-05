@@ -22,6 +22,20 @@
                 <span class="text-danger">{{ $errors->first("nome") }}</span>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>* Preço</label>
+                <x-admin.form-input
+                    type="text"
+                    name="preco"
+                    id="preco"
+                    class="form-control mask_decimal {{ $errors->has('preco') ? 'is-invalid' : '' }}"
+                    placeholder="Digite o preço para o tamanho"
+                    value="{{ old('preco', $produtoTamanho->preco ?? null) }}"
+                />
+                <span class="text-danger">{{ $errors->first("preco") }}</span>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">
