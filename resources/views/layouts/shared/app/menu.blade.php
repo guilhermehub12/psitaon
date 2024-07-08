@@ -1,12 +1,12 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="index3.html" class="brand-link">
+    <a href="{{ route('admin.home.index') }}" class="brand-link">
         <img
             src="{{ Vite::asset('resources/images/preloader.png') }}"
             alt="Lila Baking Studio Logo"
             class="brand-image img-circle elevation-3 text-center"
             style="opacity: .8"
         >
-        <span class="brand-text text-white font-weight-bold">Lila Baking Studio</span>
+        <span class="brand-text text-white font-weight-bold">Lila Baking</span>
     </a>
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
