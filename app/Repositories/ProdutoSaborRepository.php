@@ -13,7 +13,7 @@ class ProdutoSaborRepository extends BaseRepository
     public function store(Produto $produto, $data)
     {
         try {
-            $produto->tamanhos()->saveMany([
+            $produto->sabores()->saveMany([
                 new $this->model($data)
             ]);
 
