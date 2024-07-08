@@ -22,8 +22,16 @@ class ProdutoSeeder extends Seeder
                 'descricao' => 'Bolo'
             ],
             [
-                'nome' => 'Docinho',
-                'descricao' => 'Docinho'
+                'nome' => 'Docinho Tradicional',
+                'descricao' => 'Docinho Tradicional'
+            ],
+            [
+                'nome' => 'Docinho Especial',
+                'descricao' => 'Docinho Especial'
+            ],
+            [
+                'nome' => 'Docinho Premium',
+                'descricao' => 'Docinho Premium'
             ],
         ];
 
