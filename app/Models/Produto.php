@@ -83,4 +83,9 @@ class Produto extends Model
     {
         return $this->hasMany(ProdutoTamanho::class, "produto_id", "id");
     }
+
+    public function sabores(): HasMany
+    {
+        return $this->hasMany(ProdutoSabor::class, "produto_id", "id");
+    }
 }

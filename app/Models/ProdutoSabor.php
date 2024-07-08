@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class ProdutoSabor extends Model
 {
@@ -49,6 +50,7 @@ class ProdutoSabor extends Model
     protected $fillable = [
         "nome",
         "descricao",
+        "preco",
         "observacao",
         "ativo",
         "created_by",
@@ -75,6 +77,14 @@ class ProdutoSabor extends Model
         $this->save();
 
         parent::delete();
+    }
+
+    protected function preco(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $value != null ? number_format($value, 2, ',', '.') : '',
+            set: fn ($value) => $value != null ? str_replace(['R$', '.', ','], ['', '', '.'], $value) : null
+        );
     }
 
     public function produto(): BelongsTo
