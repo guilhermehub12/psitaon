@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Admin\ProdutoTamanho;
+namespace App\Http\Requests\Admin\ProdutoModelo;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class StoreProdutoTamanhoRequest extends BaseProdutoTamanhoRequest
+class StoreProdutoModeloRequest extends BaseProdutoModeloRequest
 {
     /**
      * Get the validation rules that apply to the request.

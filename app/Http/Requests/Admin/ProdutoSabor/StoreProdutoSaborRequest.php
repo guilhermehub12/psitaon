@@ -15,7 +15,8 @@ class StoreProdutoSaborRequest extends BaseProdutoSaborRequest
     {
         return [
             'nome' => 'required|max:255',
-            'descricao' => 'required|max:1000',
+            'descricao_resumida' => 'required|max:255',
+            'descricao_completa' => 'required|max:1000',
             'preco' => 'required',
             'observacao' => 'nullable|max:1000'
         ];

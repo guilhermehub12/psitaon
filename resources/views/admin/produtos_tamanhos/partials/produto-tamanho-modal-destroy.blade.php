@@ -18,8 +18,14 @@
     </div>
     <div class="row mb-3">
         <div class="col-md-12">
-            <p class="font-weight-bold">Descrição</p>
-            {{ $produtoTamanho->descricao }}
+            <p class="font-weight-bold">Descrição Resumida</p>
+            {{ $produtoTamanho->descricao_resumida }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <p class="font-weight-bold">Descrição Completa</p>
+            {{ $produtoTamanho->descricao_completa }}
         </div>
     </div>
     <div class="row mb-3">

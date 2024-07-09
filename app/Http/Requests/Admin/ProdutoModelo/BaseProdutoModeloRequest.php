@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\ProdutoTamanho;
+namespace App\Http\Requests\Admin\ProdutoModelo;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BaseProdutoTamanhoRequest extends FormRequest
+class BaseProdutoModeloRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

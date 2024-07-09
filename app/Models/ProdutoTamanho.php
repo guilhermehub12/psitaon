@@ -49,7 +49,8 @@ class ProdutoTamanho extends Model
      */
     protected $fillable = [
         "nome",
-        "descricao",
+        "descricao_resumida",
+        "descricao_completa",
         "preco",
         "observacao",
         "ativo",

@@ -5,7 +5,7 @@
     :method="$method"
     :routeBack="$routeBack"
     :buttonText="$buttonText"
-    :model="$produtoSabor"
+    :model="$produtoModelo"
 >
     <div class="row">
         <div class="col-md-6">
@@ -16,8 +16,8 @@
                     name="nome"
                     id="nome"
                     class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }}"
-                    placeholder="Digite o tamanho"
-                    value="{{ old('nome', $produtoSabor->nome ?? null) }}"
+                    placeholder="Digite o modelo"
+                    value="{{ old('nome') }}"
                 />
                 <span class="text-danger">{{ $errors->first("nome") }}</span>
             </div>
@@ -30,8 +30,8 @@
                     name="preco"
                     id="preco"
                     class="form-control mask_decimal {{ $errors->has('preco') ? 'is-invalid' : '' }}"
-                    placeholder="Digite o preço para o tamanho"
-                    value="{{ old('preco', $produtoSabor->preco ?? null) }}"
+                    placeholder="Digite o preço para o modelo"
+                    value="{{ old('preco') }}"
                 />
                 <span class="text-danger">{{ $errors->first("preco") }}</span>
             </div>

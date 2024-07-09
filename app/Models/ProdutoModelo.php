@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Produto extends Model
+class ProdutoModelo extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
@@ -20,7 +19,7 @@ class Produto extends Model
      *
      * @var string
      */
-    protected $table = "produtos";
+    protected $table = "produtos_modelos";
 
     /**
      * The primary key associated with the table.
@@ -50,7 +49,9 @@ class Produto extends Model
      */
     protected $fillable = [
         "nome",
-        "descricao",
+        "descricao_resumida",
+        "descricao_completa",
+        "preco",
         "observacao",
         "ativo",
         "created_by",
@@ -79,18 +80,17 @@ class Produto extends Model
         parent::delete();
     }
 
-    public function modelos(): HasMany
+    protected function preco(): Attribute
     {
-        return $this->hasMany(ProdutoModelo::class, "produto_id", "id");
+        return Attribute::make(
+            get: fn ($value) => $value != null ? number_format($value, 2, ',', '.') : '',
+            set: fn ($value) => $value != null ? str_replace(['R$', '.', ','], ['', '', '.'], $value) : null
+        );
     }
 
-    public function sabores(): HasMany
-    {
-        return $this->hasMany(ProdutoSabor::class, "produto_id", "id");
-    }
 
-    public function tamanhos(): HasMany
+    public function produto(): BelongsTo
     {
-        return $this->hasMany(ProdutoTamanho::class, "produto_id", "id");
+        return $this->belongsTo(Produto::class);
     }
 }

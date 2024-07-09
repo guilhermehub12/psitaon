@@ -23,7 +23,8 @@ class BaseProdutoSaborRequest extends FormRequest
     {
         return [
             'nome' => 'Nome',
-            'descricao' => 'Descrição',
+            'descricao_resumida' => 'Descrição Resumida',
+            'descricao_completa' => 'Descrição Completa',
             'preco' => 'Preço',
             'observacao' => 'Observação'
         ];

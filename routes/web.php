@@ -41,19 +41,34 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
             'datas' => 'clienteData'
         ]);
 
+        // PEDIDOS
+        Route::resource('pedidos', 'PedidoController')->parameters(['pedidos' => 'pedido']);
+
         // PRODUTOS
         Route::resource('produtos', 'ProdutoController')->parameters(['produtos' => 'produto']);
 
-        // PRODUTOS TAMANHOS
-        Route::resource('produtos.tamanhos', 'ProdutoTamanhoController')->parameters([
+        // PRODUTOS ADICIONAIS
+        Route::resource('produtos.adicionais', 'ProdutoAdicionalController')->parameters([
             'produtos' => 'produto',
-            'tamanhos' => 'produtoTamanho'
+            'adicionais' => 'produtoAdicional'
+        ]);
+
+        // PRODUTOS MODELOS
+        Route::resource('produtos.modelos', 'ProdutoModeloController')->parameters([
+            'produtos' => 'produto',
+            'modelos' => 'produtoModelo'
         ]);
 
         // PRODUTOS SABORES
         Route::resource('produtos.sabores', 'ProdutoSaborController')->parameters([
             'produtos' => 'produto',
             'sabores' => 'produtoSabor'
+        ]);
+
+        // PRODUTOS TAMANHOS
+        Route::resource('produtos.tamanhos', 'ProdutoTamanhoController')->parameters([
+            'produtos' => 'produto',
+            'tamanhos' => 'produtoTamanho'
         ]);
 
         // USUARIOS

@@ -40,15 +40,30 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label>* Descrição</label>
+                <label>* Descrição Resumida</label>
                 <x-admin.form-textarea
-                    name="descricao"
-                    id="descricao"
-                    class="form-control {{ $errors->has('descricao') ? 'is-invalid' : '' }}"
-                    placeholder="Digite a descrição"
-                    value="{{ old('descricao') }}"
+                    name="descricao_resumida"
+                    id="descricao_resumida"
+                    class="form-control {{ $errors->has('descricao_resumida') ? 'is-invalid' : '' }}"
+                    placeholder="Digite a descrição resumida"
+                    value="{{ old('descricao_resumida') }}"
                 />
-                <span class="text-danger">{{ $errors->first("descricao") }}</span>
+                <span class="text-danger">{{ $errors->first("descricao_resumida") }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>* Descrição Completa</label>
+                <x-admin.form-textarea
+                    name="descricao_completa"
+                    id="descricao_completa"
+                    class="form-control {{ $errors->has('descricao_completa') ? 'is-invalid' : '' }}"
+                    placeholder="Digite a descrição completa"
+                    value="{{ old('descricao_completa') }}"
+                />
+                <span class="text-danger">{{ $errors->first("descricao_completa") }}</span>
             </div>
         </div>
     </div>
