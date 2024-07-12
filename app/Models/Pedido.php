@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Produto extends Model
+class Pedido extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
@@ -20,7 +20,7 @@ class Produto extends Model
      *
      * @var string
      */
-    protected $table = "produtos";
+    protected $table = "pedidos";
 
     /**
      * The primary key associated with the table.
@@ -51,6 +51,7 @@ class Produto extends Model
     protected $fillable = [
         "nome",
         "descricao",
+        "preco",
         "observacao",
         "ativo",
         "created_by",
@@ -79,9 +80,14 @@ class Produto extends Model
         parent::delete();
     }
 
-    public function modelos(): HasMany
+    public function pedidos(): HasMany
     {
-        return $this->hasMany(ProdutoModelo::class, "produto_id", "id");
+        return $this->hasMany(Pedido::class, "produto_id", "id");
+    }
+
+    public function tamanhos(): HasMany
+    {
+        return $this->hasMany(ProdutoTamanho::class, "produto_id", "id");
     }
 
     public function sabores(): HasMany
@@ -89,9 +95,9 @@ class Produto extends Model
         return $this->hasMany(ProdutoSabor::class, "produto_id", "id");
     }
 
-    public function tamanhos(): HasMany
+    public function modelos(): HasMany
     {
-        return $this->hasMany(ProdutoTamanho::class, "produto_id", "id");
+        return $this->hasMany(ProdutoModelo::class, "produto_id", "id");
     }
 
     public function adicionais(): HasMany

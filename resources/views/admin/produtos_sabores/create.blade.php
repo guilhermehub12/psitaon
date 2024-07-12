@@ -28,13 +28,13 @@
     <x-admin.table
         title="Produto"
         subtitle="Sabores"
-        :headers="['Nome', 'Descrição', 'Preço', 'Observação', 'Ações']"
+        :headers="['Nome', 'Descrição Resumida', 'Preço', 'Observação', 'Ações']"
         :records="$produto->sabores"
     >
         @forelse ($produto->sabores as $produtoSabor)
             <tr class="text-center">
                 <td class="align-middle">{{ $produtoSabor->nome }}</td>
-                <td class="align-middle">{{ $produtoSabor->descricao }}</td>
+                <td class="align-middle">{{ $produtoSabor->descricao_resumida }}</td>
                 <td class="align-middle">R$ {{ $produtoSabor->preco }}</td>
                 <td class="align-middle">{{ $produtoSabor->observacao }}</td>
                 <td class="align-middle text-uppercase">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Produto\StoreProdutoRequest;
+use App\Http\Requests\Admin\Produto\UpdateProdutoRequest;
 use App\Models\Produto;
 use App\Repositories\ProdutoRepository;
 use Illuminate\Http\Request;
@@ -63,17 +64,27 @@ class ProdutoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Produto $produto)
     {
-        //
+        return view('admin.produtos.edit', [
+            'produto' => $produto
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProdutoRequest $request, Produto $produto)
     {
-        //
+        $result = $this->produtoRepository->update($produto, $request->except(['_token']));
+
+        if ($result === true) {
+            $request->session()->flash('success', 'Produto atualizado com sucesso!');
+            return redirect()->route('admin.usuarios.index');
+        } else {
+            $request->session()->flash('danger', 'Erro ao atualizar o produto. '.$result);
+            return redirect()->route('admin.produtos.edit', $produto);
+        }
     }
 
     /**

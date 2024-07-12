@@ -1,43 +1,43 @@
 <x-admin.modal-destroy
     title="Tamanho"
     subtitle="Deletar"
-    target="produto-modelo-modal-{{ $produtoModelo->id }}-destroy"
-    :action="route('admin.produtos.modelos.destroy', ['produto' => $produto, 'produtoModelo' => $produtoModelo])"
+    target="produto-adicional-modal-{{ $produtoAdicional->id }}-destroy"
+    :action="route('admin.produtos.adicionais.destroy', ['produto' => $produto, 'produtoAdicional' => $produtoAdicional])"
     size="lg"
 >
     <div class="row">
         <div class="col-md-12 text-center text-danger">
-            <h5>Deseja apagar o modelo abaixo?</h5>
+            <h5>Deseja apagar o tamanho abaixo?</h5>
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-md-12">
             <p class="font-weight-bold">Nome</p>
-            {{ $produtoModelo->nome }}
+            {{ $produtoAdicional->nome }}
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-md-12">
             <p class="font-weight-bold">Descrição Resumida</p>
-            {{ $produtoModelo->descricao_resumida }}
+            {{ $produtoAdicional->descricao_resumida }}
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-md-12">
             <p class="font-weight-bold">Descrição Completa</p>
-            {{ $produtoModelo->descricao_completa }}
+            {{ $produtoAdicional->descricao_completa }}
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-md-12">
             <p class="font-weight-bold">Preço</p>
-            R$ {{ $produtoModelo->preco }}
+            R$ {{ $produtoAdicional->preco }}
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <p class="font-weight-bold">Observação</p>
-            {{ $produtoModelo->observacao ?? 'Nenhuma observação' }}
+            {{ $produtoAdicional->observacao ?? 'Nenhuma observação' }}
         </div>
     </div>
 </x-admin.modal-destroy>
