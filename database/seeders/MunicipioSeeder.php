@@ -14,7 +14,7 @@ class MunicipioSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = DB::table('usuarios')->where('email', 'leandroalvesmachado@gmail.com')->get()->first();
+        $admin = DB::table('usuarios')->where('email', 'guilhermedelmiro11@gmail.com')->get()->first();
         $estado = DB::table('estados')->where('sigla', 'CE')->get()->first();
 
         $municipios = [

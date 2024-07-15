@@ -2,7 +2,7 @@
     <a href="{{ route('admin.home.index') }}" class="brand-link">
         <img
             src="{{ Vite::asset('resources/images/preloader.png') }}"
-            alt="Lila Baking Studio Logo"
+            alt="PsiTáOn Logo"
             class="brand-image img-circle elevation-3 text-center"
             style="opacity: .8"
         >

@@ -21,8 +21,7 @@ class DatabaseSeeder extends Seeder
                 PerfilSeeder::class,
                 UsuarioPerfilSeeder::class,
                 EstadoSeeder::class,
-                MunicipioSeeder::class,
-                ProdutoSeeder::class
+                MunicipioSeeder::class
             ]);
 
             DB::commit();

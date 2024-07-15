@@ -32,43 +32,16 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         // ESTADOS
         Route::resource('estados', 'EstadoController')->parameters(['estados' => 'estado']);
 
-        // CLIENTES
-        Route::resource('clientes', 'ClienteController')->parameters(['clientes' => 'cliente']);
+        // PSICOLOGAS
+        Route::resource('psicologas', 'PsicologaController')->parameters(['psicologas' => 'psicologa']);
 
-        // CLIENTES DATAS
-        Route::resource('clientes.datas', 'ClienteDataController')->parameters([
-            'clientes' => 'cliente',
-            'datas' => 'clienteData'
-        ]);
+        // PACIENTES
+        Route::resource('pacientes', 'ProdutoController')->parameters(['pacientes' => 'psicologa']);
 
-        // PEDIDOS
-        Route::resource('pedidos', 'PedidoController')->parameters(['pedidos' => 'pedido']);
-
-        // PRODUTOS
-        Route::resource('produtos', 'ProdutoController')->parameters(['produtos' => 'produto']);
-
-        // PRODUTOS ADICIONAIS
-        Route::resource('produtos.adicionais', 'ProdutoAdicionalController')->parameters([
-            'produtos' => 'produto',
-            'adicionais' => 'produtoAdicional'
-        ]);
-
-        // PRODUTOS MODELOS
-        Route::resource('produtos.modelos', 'ProdutoModeloController')->parameters([
-            'produtos' => 'produto',
-            'modelos' => 'produtoModelo'
-        ]);
-
-        // PRODUTOS SABORES
-        Route::resource('produtos.sabores', 'ProdutoSaborController')->parameters([
-            'produtos' => 'produto',
-            'sabores' => 'produtoSabor'
-        ]);
-
-        // PRODUTOS TAMANHOS
-        Route::resource('produtos.tamanhos', 'ProdutoTamanhoController')->parameters([
-            'produtos' => 'produto',
-            'tamanhos' => 'produtoTamanho'
+        // PACIENTES RESPONSAVEIS
+        Route::resource('pacientes.responsaveis', 'PsicologaResponsavelController')->parameters([
+            'pacientes' => 'psicologa',
+            'responsaveis' => 'psicologaResponsavel'
         ]);
 
         // USUARIOS

@@ -13,13 +13,13 @@
             <div class="login-logo">
                 <img
                     src="{{ Vite::asset('resources/images/preloader.png') }}"
-                    alt="Lila Baking Studio Logo"
+                    alt="PsiTáOn Logo"
                     class="brand-image img-circle elevation-3"
                 >
             </div>
             <div class="card">
                 <div class="card-header text-center font-weight-bold text-white" style="font-size: 28px;">
-                    Lila Baking Studio
+                    PsiTáOn
                 </div>
                 <div class="card-body login-card-body">
                     {{ $slot }}

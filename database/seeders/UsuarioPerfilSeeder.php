@@ -15,7 +15,7 @@ class UsuarioPerfilSeeder extends Seeder
      */
     public function run(): void
     {
-        $usuario = DB::table('usuarios')->where('email', 'leandroalvesmachado@gmail.com')->get()->first();
+        $usuario = DB::table('usuarios')->where('email', 'guilhermedelmiro11@gmail.com')->get()->first();
         $perfil = DB::table('perfis')->where('codigo', PerfilEnum::ADMINISTRADOR->value)->get()->first();
 
         $usuarioPerfilSeeder = new UsuarioPerfil();
