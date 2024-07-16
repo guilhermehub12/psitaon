@@ -11,7 +11,7 @@
         <div class="wrapper">
             @includeIf("layouts.shared.app.preloader")
             @includeIf("layouts.shared.app.header")
-            @includeIf("layouts.shared.app.menu")
+            {{-- @includeIf("layouts.shared.app.menu") --}}
             <div class="content-wrapper">
                 {{ $breadcrumb ?? '' }}
                 <section class="content">

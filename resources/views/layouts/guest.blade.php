@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
                 <img
                     src="{{ Vite::asset('resources/images/preloader.png') }}"
                     alt="PsiTáOn Logo"
-                    class="brand-image img-circle elevation-3"
+                    class="brand-image img-rounded elevation-3"
                 >
             </div>
             <div class="card">

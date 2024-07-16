@@ -287,7 +287,7 @@
 }
 
 .login-page, .register-page {
-    background-color: #d1e7dd;
+    background-color: #B99470;
     height: 90vh;
 }
 
@@ -297,50 +297,50 @@
 
 .btn-lila {
     color: #fff;
-    background-color: #F2A89D;
-    border-color: #F2A89D;
+    background-color: #153448;
+    border-color: #153448;
     box-shadow: none;
 }
 
 .btn-lila:focus, .btn-lila.focus {
     color: #fff;
-    background-color: #F2A89D;
-    border-color: #F2A89D;
+    background-color: #153448;
+    border-color: #153448;
     box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
 }
 
 .form-control:focus {
     box-shadow: 0 0 0 .25rem rgba(232, 62, 140, .25) !important;
-    border: 1px solid #F2A89D !important;
+    border: 1px solid #153448 !important;
 }
 
-.main-header {
-    background-color: #d1e7dd;
+.main-header, .header {
+    background-color: #B99470;
 }
 
 .brand-link {
-    background-color: #F2A89D !important;
+    background-color: #153448 !important;
 }
 
 .main-sidebar {
-    background-color: #F2A89D;
+    background-color: #153448;
     opacity: 0.9;
 }
 
-.main-footer {
-    /* background-color: #F2A89D; */
-    background-color: #d1e7dd;
-    color: #198754;
+.main-footer, .footer {
+    /* background-color: #153448; */
+    background-color: #B99470;
+    color: #32698e;
     font-size: 14px;
     font-weight: bold;
 }
 
 .brand-link {
-    border-bottom: 1px solid #d1e7dd !important;
+    border-bottom: 1px solid #B99470 !important;
 }
 
 .user-panel {
-    border-bottom: 1px solid #d1e7dd !important;
+    border-bottom: 1px solid #B99470 !important;
 }
 
 .nav-sidebar > .nav-item > .nav-link:focus {
@@ -355,14 +355,14 @@
 }
 
 .card-header {
-    background-color: #F2A89D;
+    background-color: #153448;
     color: #ffffff;
     border: none;
     opacity: 0.8;
 }
 
 .modal-header {
-    background-color: #d1e7dd;
+    background-color: #B99470;
     color: #009074;
 }
 
@@ -377,6 +377,6 @@
 .page-item.active .page-link {
     z-index: 3;
     color: rgb(255, 255, 255);
-    background-color: #F2A89D;
-    border-color: #F2A89D;
+    background-color: #153448;
+    border-color: #153448;
 }
