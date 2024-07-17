@@ -5,6 +5,7 @@ namespace App\Repositories;
 use Exception;
 
 use App\Models\Paciente;
+use Illuminate\Support\Facades\DB;
 
 class PacienteRepository extends BaseRepository
 {
@@ -40,6 +41,37 @@ class PacienteRepository extends BaseRepository
             ];
         }
     }
+
+    public function store($data)
+    {
+        try {
+            $paciente = new $this->model($data);
+            $paciente->save();
+
+            return true;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function update(Paciente $paciente, $data)
+    {
+        try {
+            DB::beginTransaction();
+
+            $paciente->fill($data);
+            $paciente->save();
+
+            DB::commit();
+
+            return true;
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return $e->getMessage();
+        }
+    }
+
 
 }
 

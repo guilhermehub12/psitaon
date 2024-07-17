@@ -2,20 +2,20 @@
     <x-slot name="breadcrumb">
         <x-admin.breadcrumb
             icon="fas fa-box"
-            title="Produtos"
+            title="Pacientes"
             :links="[
-                'Produtos',
-                'Produto Novo'
+                'Pacientes',
+                'Paciente Novo'
             ]"
         />
     </x-slot>
 
-    @includeIf('admin.produtos.partials.form', [
-        "title" => "Produto",
+    @includeIf('admin.pacientes.partials.form', [
+        "title" => "Paciente",
         "subtitle" => "Novo",
-        "action" => route('admin.produtos.store'),
+        "action" => route('admin.pacientes.store'),
         "method" => "POST",
-        "routeBack" => route('admin.produtos.index'),
+        "routeBack" => route('admin.pacientes.index'),
         "buttonText" => "Salvar",
         "produto" => null
     ])

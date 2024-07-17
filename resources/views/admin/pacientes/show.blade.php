@@ -2,16 +2,16 @@
     <x-slot name="breadcrumb">
         <x-admin.breadcrumb
             icon="fas fa-box"
-            title="Produtos"
+            title="Pacientes"
             :links="[
-                'Produtos',
+                'Pacientes',
                 'Produto Detalhe'
             ]"
         />
     </x-slot>
 
-    @includeIf('admin.produtos.partials.produto', [
-        "produto" => $produto
+    @includeIf('admin.pacientes.partials.paciente', [
+        "paciente" => $paciente
     ])
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
@@ -20,13 +20,10 @@
                 <img src="{{ Vite::asset('resources/images/ingredient.png') }}" class="card-img-top img-fluid mx-auto d-block mt-2" style="width: 25%;">
                 <div class="card-body text-uppercase">
                     <p class="card-text text-center font-weight-bold">
-                        Adicionais
+                        Responsáveis
                     </p>
                     <p class="card-text text-center">
-                        Extras
-                    </p>
-                    <p class="card-text text-center">
-                        <a href="{{  route('admin.produtos.adicionais.create', $produto) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.adicionais.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -38,13 +35,10 @@
                 <img src="{{ Vite::asset('resources/images/baking.png') }}" class="card-img-top img-fluid mx-auto d-block mt-2" style="width: 25%;">
                 <div class="card-body text-uppercase">
                     <p class="card-text text-center font-weight-bold">
-                        Modelos
+                        Prontuários
                     </p>
                     <p class="card-text text-center">
-                        Adicione os modelos
-                    </p>
-                    <p class="card-text text-center">
-                        <a href="{{  route('admin.produtos.modelos.create', $produto) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.modelos.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -56,13 +50,10 @@
                 <img src="{{ Vite::asset('resources/images/candy.png') }}" class="card-img-top img-fluid mx-auto d-block mt-2" style="width: 25%;">
                 <div class="card-body text-uppercase">
                     <p class="card-text text-center font-weight-bold">
-                        Sabores
+                        Agenda
                     </p>
                     <p class="card-text text-center">
-                        Adicione os sabores
-                    </p>
-                    <p class="card-text text-center">
-                        <a href="{{  route('admin.produtos.sabores.create', $produto) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.sabores.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -74,13 +65,10 @@
                 <img src="{{ Vite::asset('resources/images/measure.png') }}" class="card-img-top img-fluid mx-auto d-block mt-2" style="width: 25%;">
                 <div class="card-body text-uppercase">
                     <p class="card-text text-center font-weight-bold">
-                        Tamanhos
+                        Financeiro
                     </p>
                     <p class="card-text text-center">
-                        Adicione os tamanhos
-                    </p>
-                    <p class="card-text text-center">
-                        <a href="{{  route('admin.produtos.tamanhos.create', $produto) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.tamanhos.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
