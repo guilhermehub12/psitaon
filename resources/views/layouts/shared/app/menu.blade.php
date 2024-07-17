@@ -29,7 +29,7 @@
                         class="nav-link {{ request()->is('administracao') ? 'active' : '' }}"
                     >
                         <i class="nav-icon fas fa-tachometer-alt text-white"></i>
-                        <p class="text-white font-weight-bold">Dashboard</p>
+                        <p class="text-white font-weight-bold">Painel</p>
                     </a>
                 </li>
 

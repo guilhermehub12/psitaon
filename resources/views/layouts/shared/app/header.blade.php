@@ -17,7 +17,7 @@
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('admin.home.index') }}"
                     class="dropdown-item nav-link {{ request()->is('administracao') ? 'active' : '' }}">
-                    <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
+                    <i class="fas fa-tachometer-alt mr-2"></i>Painel
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('admin.usuarios.index') }}"
