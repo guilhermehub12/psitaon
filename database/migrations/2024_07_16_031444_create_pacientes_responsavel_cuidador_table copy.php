@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacientes_agenda', function (Blueprint $table) {
+        Schema::create('pacientes_responsavel_cuidador', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
             $table->string('nome');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pacientes_agenda');
+        Schema::dropIfExists('pacientes_responsavel');
     }
 };

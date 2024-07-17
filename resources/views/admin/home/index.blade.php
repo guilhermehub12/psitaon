@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-lg-3 col-6">
-            <a href="{{ route('admin.home.index') }}">
+            <a href="{{ route('admin.pacientes.index') }}">
                 <div class="small-box bg-info">
                     <div class="icon">
                         <i class="fas fa-user-plus"></i>
@@ -17,7 +17,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-lg-3 col-6">
+        {{-- <div class="col-lg-3 col-6">
             <a href="{{ route('admin.home.index') }}">
                 <div class="small-box bg-info">
                     <div class="icon">
@@ -55,6 +55,6 @@
                     </div>
                 </div>
             </a>
-        </div>
+        </div> --}}
     </div>
 </x-app-layout>

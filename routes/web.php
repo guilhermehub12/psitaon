@@ -36,7 +36,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         Route::resource('psicologas', 'PsicologaController')->parameters(['psicologas' => 'psicologa']);
 
         // PACIENTES
-        Route::resource('pacientes', 'ProdutoController')->parameters(['pacientes' => 'psicologa']);
+        Route::resource('pacientes', 'PacienteController')->parameters(['pacientes' => 'paciente']);
 
         // PACIENTES RESPONSAVEIS
         Route::resource('pacientes.responsaveis', 'PsicologaResponsavelController')->parameters([

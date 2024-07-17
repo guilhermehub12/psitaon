@@ -12,8 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pacientes_prontuario', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
+            $table->string('nome');
+            $table->boolean('ativo')->default(true);
+            $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('deleted_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
