@@ -98,52 +98,53 @@
         <div class="col justify-content-center text-center">
             <a href="{{ route('admin.pacientes.index') }}">
                 <div class="card card-module border border-success">
-                    <div class="icon-module mt-2">
-                        <i class="fas fa-user-plus fa-2x"></i>
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div class="icon-module mb-2">
+                            <i class="fas fa-user-plus fa-2x"></i>
+                        </div>
+                        <h5 class="card-title mb-0">Pacientes</h5>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Pacientes</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col justify-content-center text-center disabled">
+            <a href="#">
+                <div class="card card-module border border-success">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div class="icon-module mb-2">
+                            <i class="fas fa-money-bill fa-2x"></i>
+                        </div>
+                        <h5 class="card-title mb-0">Financeiro</h5>
                     </div>
                 </div>
             </a>
         </div>
         <div class="col justify-content-center text-center">
-            <a href="{{ route('admin.pacientes.index') }}">
+            <a href="#">
                 <div class="card card-module border border-success">
-                    <div class="icon-module mt-2">
-                        <i class="fas fa-user-plus fa-2x"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Financeiro</h5>
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div class="icon-module mb-2">
+                            <i class="fas fa-calendar fa-2x"></i>
+                        </div>
+                        <h5 class="card-title mb-0">Agenda</h5>
                     </div>
                 </div>
             </a>
         </div>
         <div class="col justify-content-center text-center">
-            <a href="{{ route('admin.pacientes.index') }}">
+            <a href="#">
                 <div class="card card-module border border-success">
-                    <div class="icon-module mt-2">
-                        <i class="fas fa-user-plus fa-2x"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Agenda</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col justify-content-center text-center">
-            <a href="{{ route('admin.pacientes.index') }}">
-                <div class="card card-module border border-success">
-                    <div class="icon-module mt-2">
-                        <i class="fas fa-user-plus fa-2x"></i>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Comunidade</h5>
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div class="icon-module mb-2">
+                            <i class="fas fa-comments fa-2x"></i>
+                        </div>
+                        <h5 class="card-title mb-0">Comunidade</h5>
                     </div>
                 </div>
             </a>
         </div>
     </div>
+
 
     {{-- <footer class="footer" style="left: 0; background-color: #00b5e2 !important;">
         <div class="container-fluid">

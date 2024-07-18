@@ -72,6 +72,16 @@ class PacienteRepository extends BaseRepository
         }
     }
 
+    public function destroy(Paciente $paciente)
+    {
+        try {
+            $paciente->delete();
+
+            return true;
+        } catch (Exception $e){
+            return $e->getMessage();
+        }
+    }
 
 }
 

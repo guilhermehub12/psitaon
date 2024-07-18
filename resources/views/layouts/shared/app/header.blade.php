@@ -5,6 +5,13 @@
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
+        @if (!Route::is('admin.home.index'))
+            <li class="nav-item">
+                <a href="{{ route('admin.home.index') }}" class="btn btn-lila btn-block text-uppercase font-weight-bold">
+                    <i class="fas fa-home"></i> Página Inicial
+                </a>
+            </li>
+        @endif
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">

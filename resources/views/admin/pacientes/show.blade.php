@@ -23,7 +23,7 @@
                         Responsáveis
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.adicionais.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.responsaveis.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -38,7 +38,7 @@
                         Prontuários
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.modelos.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.prontuarios.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -53,7 +53,7 @@
                         Agenda
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.sabores.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.agendas.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -68,7 +68,7 @@
                         Financeiro
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.tamanhos.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.financeiros.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>

@@ -14,7 +14,13 @@ return new class extends Migration
         Schema::create('pacientes_prontuario', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
-            $table->string('nome');
+            $table->text('queixa_inicial');
+            // Anamnese
+            $table->string('');
+            $table->string('');
+            $table->string('');
+            $table->string('');
+            $table->string('');
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');

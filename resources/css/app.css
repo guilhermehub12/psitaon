@@ -286,12 +286,14 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.login-page, .register-page {
+.login-page,
+.register-page {
     background-color: #B99470;
     height: 90vh;
 }
 
-.login-box, .register-box {
+.login-box,
+.register-box {
     width: 450px;
 }
 
@@ -302,7 +304,8 @@
     box-shadow: none;
 }
 
-.btn-lila:focus, .btn-lila.focus {
+.btn-lila:focus,
+.btn-lila.focus {
     color: #fff;
     background-color: #153448;
     border-color: #153448;
@@ -314,7 +317,8 @@
     border: 1px solid #153448 !important;
 }
 
-.main-header, .header {
+.main-header,
+.header {
     background-color: #B99470;
 }
 
@@ -327,7 +331,8 @@
     opacity: 0.9;
 }
 
-.main-footer, .footer {
+.main-footer,
+.footer {
     /* background-color: #153448; */
     background-color: #B99470;
     color: #32698e;
@@ -343,15 +348,15 @@
     border-bottom: 1px solid #B99470 !important;
 }
 
-.nav-sidebar > .nav-item > .nav-link:focus {
+.nav-sidebar>.nav-item>.nav-link:focus {
     background-color: rgba(255, 255, 255, .1);
     color: #fff;
 }
 
-.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
-.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
-  background-color: #009074;
-  color: #1f2d3d;
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #009074;
+    color: #1f2d3d;
 }
 
 .card-header {
@@ -379,4 +384,9 @@
     color: rgb(255, 255, 255);
     background-color: #153448;
     border-color: #153448;
+}
+
+.content-wrapper {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
 }

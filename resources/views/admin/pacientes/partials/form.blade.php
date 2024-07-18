@@ -118,7 +118,7 @@
                     type="text"
                     name="telefone"
                     id="telefone"
-                    class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}"
+                    class="form-control mask_phone_with_ddd {{ $errors->has('telefone') ? 'is-invalid' : '' }}"
                     placeholder="Digite o telefone do paciente"
                     value="{{ old('telefone', $paciente->telefone ?? null) }}"
                 />
@@ -133,7 +133,7 @@
                     type="text"
                     name="email"
                     id="email"
-                    class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                    class="form-control mask_email {{ $errors->has('email') ? 'is-invalid' : '' }}"
                     placeholder="Digite o endereço do paciente"
                     value="{{ old('email', $paciente->email ?? null) }}"
                 />
@@ -149,7 +149,7 @@
                     name="nome_pai"
                     id="nome_pai"
                     class="form-control {{ $errors->has('nome_pai') ? 'is-invalid' : '' }}"
-                    placeholder="Digite o nome_pai do paciente"
+                    placeholder="Digite o Nome do pai do paciente"
                     value="{{ old('nome_pai', $paciente->nome_pai ?? null) }}"
                 />
                 <span class="text-danger">{{ $errors->first("nome_pai") }}</span>
@@ -163,7 +163,7 @@
                     name="nome_mae"
                     id="nome_mae"
                     class="form-control {{ $errors->has('nome_mae') ? 'is-invalid' : '' }}"
-                    placeholder="Digite o nome_mae do paciente"
+                    placeholder="Digite o Nome da mãe do paciente"
                     value="{{ old('nome_mae', $paciente->nome_mae ?? null) }}"
                 />
                 <span class="text-danger">{{ $errors->first("nome_mae") }}</span>

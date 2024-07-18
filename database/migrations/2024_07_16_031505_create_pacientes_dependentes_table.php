@@ -15,6 +15,9 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
             $table->string('nome');
+            $table->string('contato')->nullable();
+            $table->string('email')->nullable();
+            $table->string('grau_parentesco');
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');

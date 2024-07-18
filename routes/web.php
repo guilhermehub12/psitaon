@@ -23,28 +23,59 @@ require __DIR__.'/auth.php';
 
 Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], function() {
 
-    Route::get('/', 'Admin\HomeController@index')->name('home.index');
+    Route::get('/', 'Admin\HomeController@index')
+    ->name('home.index');
 
-    Route::prefix('administracao')->name('admin.')->namespace('Admin')->group(function () {
+    Route::prefix('administracao')
+    ->name('admin.')
+    ->namespace('Admin')
+    ->group(function () {
         // HOME
-        Route::get('/', 'HomeController@index')->name('home.index');
+        Route::get('/', 'HomeController@index')
+        ->name('home.index');
 
         // ESTADOS
-        Route::resource('estados', 'EstadoController')->parameters(['estados' => 'estado']);
+        Route::resource('estados', 'EstadoController')
+        ->parameters(['estados' => 'estado']);
 
         // PSICOLOGAS
-        Route::resource('psicologas', 'PsicologaController')->parameters(['psicologas' => 'psicologa']);
+        Route::resource('psicologas', 'PsicologaController')
+        ->parameters(['psicologas' => 'psicologa']);
 
         // PACIENTES
-        Route::resource('pacientes', 'PacienteController')->parameters(['pacientes' => 'paciente']);
+        Route::resource('pacientes', 'PacienteController')
+        ->parameters(['pacientes' => 'paciente']);
 
         // PACIENTES RESPONSAVEIS
-        Route::resource('pacientes.responsaveis', 'PsicologaResponsavelController')->parameters([
-            'pacientes' => 'psicologa',
-            'responsaveis' => 'psicologaResponsavel'
+        Route::resource('pacientes.responsaveis', 'PacienteResponsavelController')
+        ->parameters([
+            'pacientes' => 'paciente',
+            'responsaveis' => 'pacienteResponsavel'
+        ]);
+
+        // PACIENTES PRONTUARIOS
+        Route::resource('pacientes.prontuarios', 'PacienteProntuarioController')
+        ->parameters([
+            'pacientes' => 'paciente',
+            'prontuarios' => 'pacienteProntuario'
+        ]);
+
+        // PACIENTES AGENDA
+        Route::resource('pacientes.agendas', 'PacienteAgendaController')
+        ->parameters([
+            'pacientes' => 'paciente',
+            'agendas' => 'pacienteAgenda'
+        ]);
+
+        // PACIENTES FINANCEIRO
+        Route::resource('pacientes.financeiros', 'PacienteFinanceiroController')
+        ->parameters([
+            'pacientes' => 'paciente',
+            'financeiros' => 'pacienteFinanceiro'
         ]);
 
         // USUARIOS
-        Route::resource('usuarios', 'UsuarioController')->parameters(['usuarios' => 'usuario']);
+        Route::resource('usuarios', 'UsuarioController')
+        ->parameters(['usuarios' => 'usuario']);
     });
 });
