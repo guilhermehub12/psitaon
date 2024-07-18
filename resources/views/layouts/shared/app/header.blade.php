@@ -5,6 +5,7 @@
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
+        @if (!Route::is('home.index'))
         @if (!Route::is('admin.home.index'))
             <li class="nav-item">
                 <a href="{{ route('admin.home.index') }}" class="btn btn-lila btn-block text-uppercase font-weight-bold">
@@ -12,12 +13,13 @@
                 </a>
             </li>
         @endif
+        @endif
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <img src="{{ Vite::asset('resources/images/user.png') }}" class="img-circle elevation-2"
-                    style="width: 40px; heigth: 40px" alt="User Image">
+                    style="width: 30px; heigth: 30px" alt="User Image">
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <span class="dropdown-item dropdown-header">{{ explode(' ', trim(Auth::user()->nome))[0] }} | {{ Auth::user()->perfis->first()->nome }}</span>

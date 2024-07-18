@@ -2,55 +2,53 @@
     <x-slot name="breadcrumb">
         <x-admin.breadcrumb
             icon="fas fa-box"
-            title="Produtos"
+            title="Responsáveis"
             :links="[
-                'Produtos',
-                'Novo Adicional'
+                'Responsáveis',
+                'Novo Responsável'
             ]"
         />
     </x-slot>
 
-    @includeIf('admin.produtos_adicionais.partials.produto', [
-        "produto" => $produto,
-        "route" => route('admin.produtos.show', $produto)
+    @includeIf('admin.pacientes_responsaveis.partials.paciente', [
+        "paciente" => $responsavel,
+        "route" => route('admin.pacientes.show', $responsavel)
     ])
 
-    @includeIf('admin.produtos_adicionais.partials.form', [
-        "title" => "Adicional",
+    @includeIf('admin.pacientes_responsaveis.partials.form', [
+        "title" => "Responsável",
         "subtitle" => "Novo",
-        "action" => route('admin.produtos.adicionais.store', $produto),
+        "action" => route('admin.pacientes_responsaveis.store', $responsavel),
         "method" => "POST",
-        "routeBack" => route('admin.produtos.index'),
+        "routeBack" => route('admin.pacientes.index'),
         "buttonText" => "Salvar",
-        "produtoAdicional" => null
+        "produtoResponsavel" => null
     ])
-    
+
     <x-admin.table
         title="Produto"
         subtitle="Adicionais"
         :headers="['Nome', 'Descrição Resumida', 'Preço', 'Observação', 'Ações']"
-        :records="$produto->adicionais"
+        :records="$responsavel->adicionais"
     >
-        @forelse ($produto->adicionais as $produtoAdicional)
+        @forelse ($responsavel->adicionais as $pacienteResponsavel)
             <tr class="text-center">
-                <td class="align-middle">{{ $produtoAdicional->nome }}</td>
-                <td class="align-middle">{{ $produtoAdicional->descricao_resumida }}</td>
-                <td class="align-middle">R$ {{ $produtoAdicional->preco }}</td>
-                <td class="align-middle">{{ $produtoAdicional->observacao }}</td>
+                <td class="align-middle">{{ $pacienteResponsavel->nome }}</td>
+                <td class="align-middle">{{ $pacienteResponsavel->descricao }}</td>
                 <td class="align-middle text-uppercase">
                     <button
                         type="button"
                         class="btn btn-danger text-uppercase font-weight-bold"
                         data-toggle="modal"
-                        data-target="#produto-adicional-modal-{{ $produtoAdicional->id }}-destroy"
+                        data-target="#paciente-responsavel-modal-{{ $pacienteResponsavel->id }}-destroy"
                     >
                         <i class="fas fa-trash"></i> Deletar
                     </button>
 
                     @push('modals')
-                        @includeIf('admin.produtos_adicionais.partials.produto-adicional-modal-destroy', [
-                            $produto,
-                            $produtoAdicional
+                        @includeIf('admin.pacientes_responsaveis.partials.paciente-responsavel-modal-destroy', [
+                            $responsavel,
+                            $pacienteResponsavel
                         ])
                     @endpush
                 </td>

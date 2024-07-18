@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacientes_apoio', function (Blueprint $table) {
+        Schema::create('pacientes_responsavel', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('nome')->nullable();
+            $table->string('contato')->nullable();
+            $table->string('email')->nullable();
+            $table->string('grau_parentesco')->nullable();
             $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
-            $table->string('nome');
-            $table->string('contato');
-            $table->string('email');
-            $table->string('grau_parentesco');
+            $table->foreignUuid('tipo_responsavel_id')->references('id')->on('tipo_responsavel')->onUpdate('cascade');
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pacientes_apoio');
+        Schema::dropIfExists('pacientes_responsavel');
     }
 };

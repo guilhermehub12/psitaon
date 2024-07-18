@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 require __DIR__.'/auth.php';
 
@@ -47,7 +47,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         ->parameters(['pacientes' => 'paciente']);
 
         // PACIENTES RESPONSAVEIS
-        Route::resource('pacientes.responsaveis', 'PacienteResponsavelController')
+        Route::resource('pacientes_responsaveis', 'PacienteResponsavelController')
         ->parameters([
             'pacientes' => 'paciente',
             'responsaveis' => 'pacienteResponsavel'
@@ -72,6 +72,13 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         ->parameters([
             'pacientes' => 'paciente',
             'financeiros' => 'pacienteFinanceiro'
+        ]);
+
+        // PACIENTES ENDEREÇO
+        Route::resource('pacientes.enderecos', 'PacienteEnderecoController')
+        ->parameters([
+            'pacientes' => 'paciente',
+            'enderecos' => 'pacienteEndereco'
         ]);
 
         // USUARIOS

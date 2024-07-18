@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="breadcrumb">
-        <x-admin.breadcrumb icon="fas fa-box" title="Pacientes" />
+        <x-admin.breadcrumb icon="fas fa-user-plus" title="Pacientes" />
     </x-slot>
 
     <div class="row mb-3">

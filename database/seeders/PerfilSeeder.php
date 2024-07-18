@@ -15,6 +15,7 @@ class PerfilSeeder extends Seeder
     public function run(): void
     {
         $admin = DB::table('usuarios')->where('email', 'guilhermedelmiro11@gmail.com')->get()->first();
+        $admin1 = DB::table('usuarios')->where('email', 'leandroalvesmachado@gmail.com')->get()->first();
 
         $perfis = [
             [
@@ -39,6 +40,11 @@ class PerfilSeeder extends Seeder
             $perfilSeeder->created_by = $admin->id;
             $perfilSeeder->updated_by = $admin->id;
             $perfilSeeder->save();
+
+            $perfilSeeder1 = new Perfil($perfil);
+            $perfilSeeder1->created_by = $admin1->id;
+            $perfilSeeder1->updated_by = $admin1->id;
+            $perfilSeeder1->save();
         }
 
     }

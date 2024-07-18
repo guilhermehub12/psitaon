@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="breadcrumb">
         <x-admin.breadcrumb
-            icon="fas fa-box"
+            icon="fas fa-user-plus"
             title="Pacientes"
             :links="[
                 'Pacientes',
