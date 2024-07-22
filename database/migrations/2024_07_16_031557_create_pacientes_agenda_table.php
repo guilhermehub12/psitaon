@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('pacientes_agenda', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
-            $table->string('nome');
+            $table->string('frequencia');
+            $table->time('horario');
+            $table->date('dia');
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');

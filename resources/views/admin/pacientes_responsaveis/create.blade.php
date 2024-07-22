@@ -10,10 +10,10 @@
         />
     </x-slot>
 
-    @includeIf('admin.pacientes_responsaveis.partials.paciente', [
+    {{-- @includeIf('admin.pacientes_responsaveis.partials.paciente', [
         "paciente" => $responsavel,
         "route" => route('admin.pacientes.show', $responsavel)
-    ])
+    ]) --}}
 
     @includeIf('admin.pacientes_responsaveis.partials.form', [
         "title" => "Responsável",
@@ -27,11 +27,11 @@
 
     <x-admin.table
         title="Produto"
-        subtitle="Adicionais"
+        subtitle="Responsáveis"
         :headers="['Nome', 'Descrição Resumida', 'Preço', 'Observação', 'Ações']"
-        :records="$responsavel->adicionais"
+        :records="$responsavel"
     >
-        @forelse ($responsavel->adicionais as $pacienteResponsavel)
+        @forelse ($responsavel as $pacienteResponsavel)
             <tr class="text-center">
                 <td class="align-middle">{{ $pacienteResponsavel->nome }}</td>
                 <td class="align-middle">{{ $pacienteResponsavel->descricao }}</td>

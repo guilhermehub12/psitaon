@@ -22,7 +22,7 @@
                     style="width: 30px; heigth: 30px" alt="User Image">
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">{{ explode(' ', trim(Auth::user()->nome))[0] }} | {{ Auth::user()->perfis->first()->nome }}</span>
+                <strong class="dropdown-item fw-bold">{{ explode(' ', trim(Auth::user()->nome))[0] }} | {{ Auth::user()->perfis->first()->nome }}</strong>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('admin.home.index') }}"
                     class="dropdown-item nav-link {{ request()->is('administracao') ? 'active' : '' }}">

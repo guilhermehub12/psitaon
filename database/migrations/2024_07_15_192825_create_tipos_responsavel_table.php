@@ -26,7 +26,7 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        DB::table('tipo_responsavel')->insert(
+        DB::table('tipos_responsavel')->insert(
             [
             'id' => Str::orderedUuid(),
             'nome' => 'Financeiro',
@@ -49,8 +49,38 @@ return new class extends Migration
             ],
             [
             'id' => Str::orderedUuid(),
-            'nome' => 'Rede de Apoio',
-            'descricao' => 'Rede de Apoio',
+            'nome' => 'Família',
+            'descricao' => 'Família',
+            'created_by' => null,
+            'updated_by' => null,
+            'deleted_by' => null,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+            'id' => Str::orderedUuid(),
+            'nome' => 'Amigos',
+            'descricao' => 'Amigos',
+            'created_by' => null,
+            'updated_by' => null,
+            'deleted_by' => null,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+            'id' => Str::orderedUuid(),
+            'nome' => 'Grupos',
+            'descricao' => 'Grupos',
+            'created_by' => null,
+            'updated_by' => null,
+            'deleted_by' => null,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+            'id' => Str::orderedUuid(),
+            'nome' => 'Mora com',
+            'descricao' => 'Mora com',
             'created_by' => null,
             'updated_by' => null,
             'deleted_by' => null,

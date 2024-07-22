@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('grau_parentesco')->nullable();
             $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
-            $table->foreignUuid('tipo_responsavel_id')->references('id')->on('tipo_responsavel')->onUpdate('cascade');
+            $table->foreignUuid('tipo_responsavel_id')->references('id')->on('tipos_responsavel')->onUpdate('cascade');
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
