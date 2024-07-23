@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacientes_prontuario', function (Blueprint $table) {
+        Schema::create('pacientes_prontuario_doencas', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
-            $table->text('queixa_inicial');
+            $table->foreignUuid('paciente_prontuario_id')->references('id')->on('pacientes_prontuario')->onUpdate('cascade');
+            $table->text('doencas');
+            $table->text('medicamentos');
+            $table->text('sintomas_fisicos');
+            $table->text('sintomas_emocionais');
 
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pacientes_prontuario');
+        Schema::dropIfExists('pacientes_prontuario_doencas');
     }
 };
