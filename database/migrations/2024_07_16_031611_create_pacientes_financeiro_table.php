@@ -32,14 +32,14 @@ return new class extends Migration
             ]);
         });
 
-        Schema::create('frequencia_pagamento', function (Blueprint $table) {
+        Schema::create('frequencias_pagamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
             $table->timestamps();
         });
 
         DB::transaction(function () {
-            DB::table('frequencia_pagamento')->insert([
+            DB::table('frequencias_pagamentos')->insert([
                 [
                     'id' => Str::orderedUuid(),
                     'nome' => 'Semanal'
@@ -59,14 +59,14 @@ return new class extends Migration
             ]);
         });
 
-        Schema::create('forma_pagamento', function (Blueprint $table) {
+        Schema::create('formas_pagamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
             $table->timestamps();
         });
 
         DB::transaction(function () {
-            DB::table('forma_pagamento')->insert([
+            DB::table('formas_pagamentos')->insert([
                 [
                     'id' => Str::orderedUuid(),
                     'nome' => 'Cartão de Crédito'
@@ -98,14 +98,14 @@ return new class extends Migration
             ]);
         });
 
-        Schema::create('status_pagamento', function (Blueprint $table) {
+        Schema::create('status_pagamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
             $table->timestamps();
         });
 
         DB::transaction(function () {
-            DB::table('status_pagamento')->insert([
+            DB::table('status_pagamentos')->insert([
                 [
                     'id' => Str::orderedUuid(),
                     'nome' => 'Não pago'
@@ -125,14 +125,14 @@ return new class extends Migration
             ]);
         });
 
-        Schema::create('status_presenca', function (Blueprint $table) {
+        Schema::create('status_presencas', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
             $table->timestamps();
         });
 
         DB::transaction(function () {
-            DB::table('status_presenca')->insert([
+            DB::table('status_presencas')->insert([
                 [
                     'id' => Str::orderedUuid(),
                     'nome' => 'Não presente'
@@ -154,10 +154,10 @@ return new class extends Migration
 
             $table->foreignUuid('modalidade_pagamento_id')->references('id')->on('modalidades_pagamentos')->onUpdate('cascade');
 
-            $table->foreignUuid('frequencia_pagamento_id')->nullable()->references('id')->on('frequencia_pagamento')->onUpdate('cascade');
-            $table->foreignUuid('forma_pagamento_id')->nullable()->references('id')->on('forma_pagamento')->onUpdate('cascade');
-            $table->foreignUuid('status_pagamento_id')->nullable()->references('id')->on('status_pagamento')->onUpdate('cascade');
-            $table->foreignUuid('status_presenca_id')->nullable()->references('id')->on('status_presenca')->onUpdate('cascade');
+            $table->foreignUuid('frequencia_pagamento_id')->nullable()->references('id')->on('frequencias_pagamentos')->onUpdate('cascade');
+            $table->foreignUuid('forma_pagamento_id')->nullable()->references('id')->on('formas_pagamentos')->onUpdate('cascade');
+            $table->foreignUuid('status_pagamento_id')->nullable()->references('id')->on('status_pagamentos')->onUpdate('cascade');
+            $table->foreignUuid('status_presenca_id')->nullable()->references('id')->on('status_presencas')->onUpdate('cascade');
             $table->string('valor_sessao')->nullable();
 
             $table->boolean('ativo')->default(true);
@@ -175,10 +175,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('pacientes_financeiro');
-        Schema::dropIfExists('status_presenca');
-        Schema::dropIfExists('status_pagamento');
-        Schema::dropIfExists('forma_pagamento');
-        Schema::dropIfExists('frequencia_pagamento');
+        Schema::dropIfExists('status_presencas');
+        Schema::dropIfExists('status_pagamentos');
+        Schema::dropIfExists('formas_pagamentos');
+        Schema::dropIfExists('frequencias_pagamentos');
         Schema::dropIfExists('modalidades_pagamentos');
     }
 };
