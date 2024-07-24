@@ -1,20 +1,29 @@
 <div class="card h-100">
     <div class="card-header">
       <h3 class="card-title font-weight-bold text-uppercase">
-        Produto <span class="badge badge-secondary">Detalhes</span>
+        Paciente <span class="badge badge-secondary">Detalhes</span>
       </h3>
     </div>
     <div class="card-body">
         <div class="row mb-3">
             <div class="col-md-6">
                 <p class="font-weight-bold">Nome</p>
-                {{ $produto->nome }}
+                {{ $paciente->nome }}
+            </div>
+            <div class="col-md-6">
+                <p class="font-weight-bold">Endereço</p>
+                {{ $paciente->endereco }}
             </div>
         </div>
         <div class="row mb-3">
+
             <div class="col-md-6">
-                <p class="font-weight-bold">Descrição</p>
-                {{ $produto->descricao }}
+                <p class="font-weight-bold">Contato</p>
+                {{ $paciente->telefone }}
+            </div>
+            <div class="col-md-6">
+                <p class="font-weight-bold">E-mail</p>
+                {{ $paciente->email }}
             </div>
         </div>
     </div>

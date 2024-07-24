@@ -69,7 +69,7 @@
                         Responsáveis
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes_responsaveis.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.responsaveis.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>

@@ -4,6 +4,11 @@
     </x-slot>
 
     <div class="container">
+        {{-- <div class="row justify-content-center mb-2">
+            <div style="background-color: #B99470; border-radius: 15px;">
+                <img src="{{ Vite::asset('resources/images/logo_grande.png') }}" alt="">
+            </div>
+        </div> --}}
         <div class="row justify-content-center text-uppercase row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2">
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
                 <a href="{{ route('admin.pacientes.index') }}">

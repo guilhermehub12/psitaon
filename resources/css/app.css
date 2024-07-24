@@ -286,6 +286,15 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* hundrake */
+@font-face {
+    font-family: 'Hundrake';
+    font-style: normal;
+    font-weight: 700;
+    font-display: fallback;
+    src: url('../fonts/Hundrake.ttf') format('ttf');
+}
+
 .login-page,
 .register-page {
     background-color: #B99470;
@@ -305,11 +314,12 @@
 }
 
 .btn-lila:focus,
+.btn-lila:hover,
 .btn-lila.focus {
     color: #fff;
-    background-color: #153448;
+    background-color: #20445c;
     border-color: #153448;
-    box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+    box-shadow: 0 0 0 0 rgba(61, 106, 155, 0.5);
 }
 
 .form-control:focus {
@@ -386,3 +396,11 @@
     border-color: #153448;
 }
 
+.breadcrumb-item a {
+    color: #153448 !important;
+}
+
+.modal-title {
+    color: #153448 !important;
+    font-weight: 600;
+}

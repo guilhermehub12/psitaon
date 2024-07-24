@@ -29,7 +29,7 @@
           </div>
           <div class="col-6 col-sm-6 col-md-2">
             <button type="submit" class="btn btn-lila btn-block text-uppercase font-weight-bold">
-                <i class="{{ $icon }}"></i> {{ $buttonText }}
+                <i class=""></i> {{ $buttonText }}
             </button>
           </div>
         </div>
