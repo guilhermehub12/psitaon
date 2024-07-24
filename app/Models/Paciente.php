@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Paciente extends Model
 {
@@ -83,4 +87,37 @@ class Paciente extends Model
 
         parent::delete();
     }
+
+    // protected function dataNascimento(): Attribute
+    // {
+    //     return Attribute::make(
+    //         get: fn ($value) => $value ? Carbon::createFromFormat("Y-m-d H:i:s", $value)->format("d/m/Y") : null,
+    //         set: fn ($value) => $value ? Carbon::createFromFormat("d/m/Y", $value)->format("Y-m-d") : null
+    //     );
+    // }
+
+    protected function telefone(): Attribute
+    {
+        return Attribute::make(
+            set: fn ($value) => $value ? preg_replace("/\D/", "", $value) : null
+        );
+    }
+
+    // protected function celular(): Attribute
+    // {
+    //     return Attribute::make(
+    //         set: fn ($value) => $value ? preg_replace("/\D/", "", $value) : null
+    //     );
+    // }
+
+    public function responsaveis(): HasMany
+    {
+        return $this->hasMany(PacienteResponsavel::class, "paciente_id", "id");
+    }
+
+    public function tipos_responsaveis(): BelongsToMany
+    {
+        return $this->belongsToMany(TipoResponsavel::class, 'usuarios_perfis', 'paciente_id', 'tipo_responsavel_id');
+    }
+
 }

@@ -5,6 +5,7 @@ namespace App\Repositories;
 use Exception;
 
 use App\Models\Paciente;
+use App\Models\PacienteResponsavel;
 use Illuminate\Support\Facades\DB;
 
 class PacienteResponsavelRepository extends BaseRepository
@@ -72,10 +73,10 @@ class PacienteResponsavelRepository extends BaseRepository
         }
     }
 
-    public function destroy(Paciente $paciente)
+    public function destroy(PacienteResponsavel $pacienteResponsavel)
     {
         try {
-            $paciente->delete();
+            $pacienteResponsavel->delete();
 
             return true;
         } catch (Exception $e){

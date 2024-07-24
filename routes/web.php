@@ -47,7 +47,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         ->parameters(['pacientes' => 'paciente']);
 
         // PACIENTES RESPONSAVEIS
-        Route::resource('pacientes_responsaveis', 'PacienteResponsavelController')
+        Route::resource('pacientes.responsaveis', 'PacienteResponsavelController')
         ->parameters([
             'pacientes' => 'paciente',
             'responsaveis' => 'pacienteResponsavel'

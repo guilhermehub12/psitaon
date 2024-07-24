@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Paciente\StorePacienteResponsavelRequest;
-use App\Http\Requests\Admin\Paciente\UpdatePacienteResponsavelRequest;
+use App\Http\Requests\Admin\Paciente\Responsavel\StoreResponsavelRequest;
+use App\Http\Requests\Admin\Paciente\Responsavel\UpdateResponsavelRequest;
+use App\Models\Paciente;
 use App\Models\PacienteResponsavel;
 use App\Repositories\PacienteResponsavelRepository;
 use Illuminate\Http\Request;
@@ -20,21 +21,21 @@ class PacienteResponsavelController extends Controller
      */
     public function index(Request $request)
     {
-        $responsaveis = $this->pacienteResponsavelRepository->paginate(10, 'created_at', 'ASC', $request->except(['_token', 'page']));
+        $pacientes = $this->pacienteResponsavelRepository->paginate(10, 'created_at', 'ASC', $request->except(['_token', 'page']));
 
         return view('admin.pacientes_responsaveis.index', [
-            'responsaveis' => $responsaveis
+            'pacientes' => $pacientes
         ]);
     }
 
-    public function create(PacienteResponsavel $pacienteResponsavel)
+    public function create(Paciente $paciente)
     {
         return view('admin.pacientes_responsaveis.create', [
-            'responsavel' => $pacienteResponsavel
+            'paciente' => $paciente
         ]);
     }
 
-    public function store(StorePacienteResponsavelRequest $request)
+    public function store(StoreResponsavelRequest $request)
     {
         $result = $this->pacienteResponsavelRepository->store($request->except(['_token']));
 
@@ -44,26 +45,26 @@ class PacienteResponsavelController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar o responsavel. '.$result);
         }
 
-        return redirect()->route('admin.pacientes_responsaveis.index');
+        return redirect()->route('admin.pacientes.responsaveis.index');
     }
 
-    public function show(PacienteResponsavel $pacienteResponsavel)
+    public function show(PacienteResponsavel $paciente)
     {
         return view('admin.pacientes_responsaveis.show', [
-            'responsavel' => $pacienteResponsavel
+            'paciente' => $paciente
         ]);
     }
 
-    public function edit(PacienteResponsavel $pacienteResponsavel)
+    public function edit(PacienteResponsavel $paciente)
     {
         return view('admin.pacientes_responsaveis.edit', [
-            'responsavel' => $pacienteResponsavel
+            'paciente' => $paciente
         ]);
     }
 
-    public function update(UpdatePacienteResponsavelRequest $request, PacienteResponsavel $pacienteResponsavel)
+    public function update(UpdateResponsavelRequest $request, Paciente $paciente)
     {
-        $result = $this->pacienteResponsavelRepository->update($pacienteResponsavel, $request->except(['_token']));
+        $result = $this->pacienteResponsavelRepository->update($paciente, $request->except(['_token']));
 
         if ($result === true) {
             $request->session()->flash('success', 'Paciente atualizado com sucesso!');
@@ -71,10 +72,10 @@ class PacienteResponsavelController extends Controller
             $request->session()->flash('danger', 'Erro ao atualizar o responsavel! '.$result);
         }
 
-        return redirect()->route('admin.pacientes_responsaveis.index');
+        return redirect()->route('admin.pacientes.responsaveis.index');
     }
 
-    public function delete(PacienteResponsavel $pacienteResponsavel)
+    public function delete(Request $request, Paciente $paciente, PacienteResponsavel $pacienteResponsavel)
     {
         $result = $this->pacienteResponsavelRepository->destroy($pacienteResponsavel);
 
@@ -84,6 +85,6 @@ class PacienteResponsavelController extends Controller
             flash('danger', 'Erro ao deletar o responsavel! '.$result);
         }
 
-        return redirect()->route('admin.pacientes_responsaveis.index');
+        return redirect()->route('admin.pacientes.responsaveis.index');
     }
 }
