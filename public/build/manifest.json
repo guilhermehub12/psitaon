@@ -1,0 +1,189 @@
+{
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.eot": {
+    "file": "assets/fa-brands-400-DnkPfk3o.eot",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.eot"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.svg": {
+    "file": "assets/fa-brands-400-cH1MgKbP.svg",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.svg"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-CSYNqBb_.ttf",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.ttf"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.woff": {
+    "file": "assets/fa-brands-400-CEJbCg16.woff",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.woff"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-UxlILjvJ.woff2",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-brands-400.woff2"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.eot": {
+    "file": "assets/fa-regular-400-BhTwtT8w.eot",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.eot"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.svg": {
+    "file": "assets/fa-regular-400-gwj8Pxq-.svg",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.svg"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-D1vz6WBx.ttf",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.ttf"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.woff": {
+    "file": "assets/fa-regular-400-DFnMcJPd.woff",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.woff"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-DGzu1beS.woff2",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-regular-400.woff2"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.eot": {
+    "file": "assets/fa-solid-900-B6Axprfb.eot",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.eot"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.svg": {
+    "file": "assets/fa-solid-900-B4ZZ7kfP.svg",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.svg"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-mxuxnBEa.ttf",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.ttf"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.woff": {
+    "file": "assets/fa-solid-900-DOXgCApm.woff",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.woff"
+  },
+  "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-BUswJgRo.woff2",
+    "src": "public/adminlte-3.2.0/plugins/fontawesome-free/webfonts/fa-solid-900.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-Br3dIJJM.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7jsDJT9g.woff2": {
+    "file": "assets/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7jsDJT9g-BqXinalU.woff2",
+    "src": "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7jsDJT9g.woff2"
+  },
+  "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7ksDJT9g.woff2": {
+    "file": "assets/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7ksDJT9g-BX34TeKm.woff2",
+    "src": "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7ksDJT9g.woff2"
+  },
+  "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7osDJT9g.woff2": {
+    "file": "assets/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7osDJT9g-Dme_UzYR.woff2",
+    "src": "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7osDJT9g.woff2"
+  },
+  "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7psDJT9g.woff2": {
+    "file": "assets/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7psDJT9g-DUb1ykxz.woff2",
+    "src": "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7psDJT9g.woff2"
+  },
+  "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7qsDJT9g.woff2": {
+    "file": "assets/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7qsDJT9g-CwFVuUfy.woff2",
+    "src": "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7qsDJT9g.woff2"
+  },
+  "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7rsDJT9g.woff2": {
+    "file": "assets/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7rsDJT9g-BBJ6RTpv.woff2",
+    "src": "resources/fonts/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7rsDJT9g.woff2"
+  },
+  "resources/fonts/Hundrake.ttf": {
+    "file": "assets/Hundrake-C0ugdyT1.ttf",
+    "src": "resources/fonts/Hundrake.ttf"
+  },
+  "resources/images/--preloader.png": {
+    "file": "assets/--preloader-vGTxG9BE.png",
+    "src": "resources/images/--preloader.png"
+  },
+  "resources/images/accounting.png": {
+    "file": "assets/accounting-C1Lr9kM1.png",
+    "src": "resources/images/accounting.png"
+  },
+  "resources/images/add.png": {
+    "file": "assets/add-DAB-VEfd.png",
+    "src": "resources/images/add.png"
+  },
+  "resources/images/baking.png": {
+    "file": "assets/baking-CuVb9BVd.png",
+    "src": "resources/images/baking.png"
+  },
+  "resources/images/candy.png": {
+    "file": "assets/candy-BD1WEgJD.png",
+    "src": "resources/images/candy.png"
+  },
+  "resources/images/comunidade.png": {
+    "file": "assets/comunidade-DBSqUn9B.png",
+    "src": "resources/images/comunidade.png"
+  },
+  "resources/images/contrato.png": {
+    "file": "assets/contrato-BqU61MEt.png",
+    "src": "resources/images/contrato.png"
+  },
+  "resources/images/favicon.ico": {
+    "file": "assets/favicon-MvtvKCMu.ico",
+    "src": "resources/images/favicon.ico"
+  },
+  "resources/images/financa.png": {
+    "file": "assets/financa-BuyHwU7i.png",
+    "src": "resources/images/financa.png"
+  },
+  "resources/images/ingredient.png": {
+    "file": "assets/ingredient-BuWX5ixI.png",
+    "src": "resources/images/ingredient.png"
+  },
+  "resources/images/lila-black.png": {
+    "file": "assets/lila-black-BSs6lY7Y.png",
+    "src": "resources/images/lila-black.png"
+  },
+  "resources/images/lila.png": {
+    "file": "assets/lila-uRqMxVHO.png",
+    "src": "resources/images/lila.png"
+  },
+  "resources/images/logo_grande.png": {
+    "file": "assets/logo_grande-CabJI7gi.png",
+    "src": "resources/images/logo_grande.png"
+  },
+  "resources/images/logo_sem_tronco.png": {
+    "file": "assets/logo_sem_tronco-kQCcPwl0.png",
+    "src": "resources/images/logo_sem_tronco.png"
+  },
+  "resources/images/map.png": {
+    "file": "assets/map-CJjLfrfu.png",
+    "src": "resources/images/map.png"
+  },
+  "resources/images/measure.png": {
+    "file": "assets/measure-DoI6L4z4.png",
+    "src": "resources/images/measure.png"
+  },
+  "resources/images/paciente.png": {
+    "file": "assets/paciente-DkcbPSoR.png",
+    "src": "resources/images/paciente.png"
+  },
+  "resources/images/patient.png": {
+    "file": "assets/patient-DqitH3g3.png",
+    "src": "resources/images/patient.png"
+  },
+  "resources/images/preloader.png": {
+    "file": "assets/preloader-ZSVkoQl6.png",
+    "src": "resources/images/preloader.png"
+  },
+  "resources/images/responsibility.png": {
+    "file": "assets/responsibility-IrWBEL76.png",
+    "src": "resources/images/responsibility.png"
+  },
+  "resources/images/schedule.png": {
+    "file": "assets/schedule-BQ7OQ84X.png",
+    "src": "resources/images/schedule.png"
+  },
+  "resources/images/user.png": {
+    "file": "assets/user-Cznq6d2N.png",
+    "src": "resources/images/user.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-D7kywnVZ.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
