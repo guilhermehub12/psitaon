@@ -27,6 +27,12 @@ class UsuarioSeeder extends Seeder
                 'senha' => 'P@ssword',
                 'email_verified_at' => Carbon::now()
             ],
+            [
+                'nome' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'senha' => 'P@ssword',
+                'email_verified_at' => Carbon::now()
+            ],
         ];
 
         foreach ($usuarios as $usuario) {
