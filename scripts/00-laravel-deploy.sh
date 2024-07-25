@@ -7,10 +7,10 @@ echo "generating application key..."
 # php artisan key:generate --show
 
 echo "Caching config..."
-# php artisan config:cache
+php artisan config:cache
 
 echo "Caching routes..."
-# php artisan route:cache
+php artisan route:cache
 
 # Instalar NVM (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
