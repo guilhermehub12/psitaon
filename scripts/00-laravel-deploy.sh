@@ -29,7 +29,7 @@ npm -v
 
 # Instalar dependências do Node.js e construir assets
 npm install
-npm run build
+# npm run build
 
 # echo "Running migrations..."
 # php artisan migrate:fresh --seed --force
