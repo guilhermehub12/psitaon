@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
                 UsuarioPerfilSeeder::class,
                 EstadoSeeder::class,
                 MunicipioSeeder::class,
-                PacienteSeeder::class,
+                // PacienteSeeder::class,
                 TipoResponsavelSeeder::class,
             ]);
 
