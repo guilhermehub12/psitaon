@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 echo "Running composer"
-composer self-update --2
+# composer self-update --2
 composer install --no-dev --working-dir=/var/www/html
 
 echo "generating application key..."
-php artisan key:generate --show
+# php artisan key:generate --show
 
 echo "Caching config..."
-php artisan config:cache
+# php artisan config:cache
 
 echo "Caching routes..."
-php artisan route:cache
+# php artisan route:cache
 
 # Instalar NVM (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
@@ -32,7 +32,7 @@ npm install
 npm run build
 
 # echo "Running migrations..."
-php artisan migrate:fresh --seed --force
+# php artisan migrate:fresh --seed --force
 
 echo "done deploying"
 php artisan serve --host 0.0.0.0 --port $PORT
