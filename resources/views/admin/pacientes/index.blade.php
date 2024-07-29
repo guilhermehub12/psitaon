@@ -3,163 +3,144 @@
         <x-admin.breadcrumb icon="fas fa-user-plus" title="Pacientes" />
     </x-slot>
 
+    {{-- Gráfico --}}
     <div class="row">
         <div class="col-lg-6">
-          <div class="card">
-            <div class="card-header border-0">
-              <div class="d-flex justify-content-between">
-                <h3 class="card-title">Online Store Visitors</h3>
-                <a href="javascript:void(0);">View Report</a>
-              </div>
+            <div class="card zoom-card">
+                <div class="card-header border-0">
+                    <div class="d-flex justify-content-between">
+                        <h3 class="card-title">Atendimento</h3>
+                        <a href="javascript:void(0);">Ver Relatório</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <p class="d-flex flex-column">
+                            <span class="text-bold text-lg">150</span>
+                            <span>Atendimentos este mês</span>
+                        </p>
+                        <p class="ml-auto d-flex flex-column text-right">
+                            <span class="text-success">
+                                <i class="fas fa-arrow-up"></i> 10%
+                            </span>
+                            <span class="text-muted">Comparado ao mês passado</span>
+                        </p>
+                    </div>
+
+                    <div class="position-relative mb-4">
+                        <canvas id="atendimentos-chart" height="200"></canvas>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-end">
+                        <span class="mr-2">
+                            <i class="fas fa-square text-primary"></i> Este Mês
+                        </span>
+                        <span>
+                            <i class="fas fa-square text-gray"></i> Mês Passado
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-              <div class="d-flex">
-                <p class="d-flex flex-column">
-                  <span class="text-bold text-lg">820</span>
-                  <span>Visitors Over Time</span>
-                </p>
-                <p class="ml-auto d-flex flex-column text-right">
-                  <span class="text-success">
-                    <i class="fas fa-arrow-up"></i> 12.5%
-                  </span>
-                  <span class="text-muted">Since last week</span>
-                </p>
-              </div>
-              <!-- /.d-flex -->
-
-              <div class="position-relative mb-4">
-                <canvas id="visitors-chart" height="200"></canvas>
-              </div>
-
-              <div class="d-flex flex-row justify-content-end">
-                <span class="mr-2">
-                  <i class="fas fa-square text-primary"></i> This Week
-                </span>
-
-                <span>
-                  <i class="fas fa-square text-gray"></i> Last Week
-                </span>
-              </div>
-            </div>
-          </div>
-          <!-- /.card -->
-
-
-          <!-- /.card -->
         </div>
         <!-- /.col-md-6 -->
         <div class="col-lg-6">
-            <div class="card">
+            <div class="card zoom-card">
                 <div class="card-header border-0">
-                  <h3 class="card-title">Pacientes</h3>
-                  <div class="card-tools">
-                    <a href="#" class="btn btn-tool btn-sm">
-                      <i class="fas fa-download"></i>
-                    </a>
-                    <a href="#" class="btn btn-tool btn-sm">
-                      <i class="fas fa-bars"></i>
-                    </a>
-                  </div>
+                    <h3 class="card-title">Consultas</h3>
+                    <div class="card-tools">
+                        <a href="#" class="btn btn-tool btn-sm">
+                            <i class="fas fa-download"></i>
+                        </a>
+                        <a href="#" class="btn btn-tool btn-sm">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="card-body table-responsive p-0">
-                  <table class="table table-striped table-valign-middle">
-                    <thead>
-                    <tr>
-                      <th>Product</th>
-                      <th>Price</th>
-                      <th>Sales</th>
-                      <th>More</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td>
-                        <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Some Product
-                      </td>
-                      <td>$13 USD</td>
-                      <td>
-                        <small class="text-success mr-1">
-                          <i class="fas fa-arrow-up"></i>
-                          12%
-                        </small>
-                        12,000 Sold
-                      </td>
-                      <td>
-                        <a href="#" class="text-muted">
-                          <i class="fas fa-search"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Another Product
-                      </td>
-                      <td>$29 USD</td>
-                      <td>
-                        <small class="text-warning mr-1">
-                          <i class="fas fa-arrow-down"></i>
-                          0.5%
-                        </small>
-                        123,234 Sold
-                      </td>
-                      <td>
-                        <a href="#" class="text-muted">
-                          <i class="fas fa-search"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Amazing Product
-                      </td>
-                      <td>$1,230 USD</td>
-                      <td>
-                        <small class="text-danger mr-1">
-                          <i class="fas fa-arrow-down"></i>
-                          3%
-                        </small>
-                        198 Sold
-                      </td>
-                      <td>
-                        <a href="#" class="text-muted">
-                          <i class="fas fa-search"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                        Perfect Item
-                        <span class="badge bg-danger">NEW</span>
-                      </td>
-                      <td>$199 USD</td>
-                      <td>
-                        <small class="text-success mr-1">
-                          <i class="fas fa-arrow-up"></i>
-                          63%
-                        </small>
-                        87 Sold
-                      </td>
-                      <td>
-                        <a href="#" class="text-muted">
-                          <i class="fas fa-search"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
+                    <table class="table table-striped table-valign-middle">
+                        <thead>
+                            <tr>
+                                <th>Paciente</th>
+                                <th>Última Visita</th>
+                                <th>Próxima Consulta</th>
+                                <th>Detalhes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>João Silva</td>
+                                <td>10/07/2024</td>
+                                <td>20/07/2024</td>
+                                <td>
+                                    <a href="#" class="text-muted">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Maria Oliveira</td>
+                                <td>05/07/2024</td>
+                                <td>25/07/2024</td>
+                                <td>
+                                    <a href="#" class="text-muted">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pedro Santos</td>
+                                <td>01/07/2024</td>
+                                <td>30/07/2024</td>
+                                <td>
+                                    <a href="#" class="text-muted">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ana Costa</td>
+                                <td>15/07/2024</td>
+                                <td>20/07/2024</td>
+                                <td>
+                                    <a href="#" class="text-muted">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ana Costa</td>
+                                <td>15/07/2024</td>
+                                <td>20/07/2024</td>
+                                <td>
+                                    <a href="#" class="text-muted">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ana Costa</td>
+                                <td>15/07/2024</td>
+                                <td>20/07/2024</td>
+                                <td>
+                                    <a href="#" class="text-muted">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
+            </div>
         </div>
         <!-- /.col-md-6 -->
-      </div>
+    </div>
+    {{-- Fim do Gráfico --}}
+
 
     <div class="row mb-3">
         <div class="col-md-2 offset-md-10">
-            <a href="{{  route('admin.pacientes.create') }}" class="btn btn-lila btn-block text-uppercase font-weight-bold">
+            <a href="{{ route('admin.pacientes.create') }}"
+                class="btn btn-lila btn-block text-uppercase font-weight-bold">
                 <i class="fas fa-plus-circle"></i> Novo Paciente
             </a>
         </div>
@@ -213,4 +194,37 @@
             </x-admin.table>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('atendimentos-chart').getContext('2d');
+        var atendimentosChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+                datasets: [{
+                    label: 'Atendimentos',
+                    data: [50, 60, 70, 80, 90, 100, 150],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                },
+                {
+                    label: 'Atendimentos',
+                    data: [36, 23, 53, 75, 33, 120, 155],
+                    borderColor: '#6C757D',
+                    borderWidth: 1,
+                    fill: false
+                }
+            ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </x-app-layout>

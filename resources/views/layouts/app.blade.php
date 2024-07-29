@@ -30,7 +30,6 @@
             @includeIf("layouts.shared.app.footer")
         </div>
         <script src="{{ asset('adminlte-3.2.0/plugins/jquery/jquery.min.js') }}"></script>
-        <script src="{{ asset('adminlte-3.2.0/plugins/chart.js/Chart.min.js') }}"></script>
         @stack('modals')
         @stack('scripts')
     </body>
