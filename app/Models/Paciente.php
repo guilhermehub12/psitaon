@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Paciente extends Model
 {
@@ -52,15 +51,17 @@ class Paciente extends Model
     protected $fillable = [
         'nome',
         'data_nascimento',
-        'genero',
-        'escolaridade',
         'profissao',
-        'estado_civil',
         'endereco',
         'telefone',
         'email',
         'nome_pai',
         'nome_mae',
+
+        'genero_id',
+        'escolaridade_id',
+        'estado_civil_id',
+
         'ativo',
         'created_by',
         'updated_by',
@@ -118,6 +119,21 @@ class Paciente extends Model
     public function tipos_responsaveis(): HasMany
     {
         return $this->hasMany(TipoResponsavel::class, 'paciente_id', 'id');
+    }
+
+    public function generos(): BelongsTo
+    {
+        return $this->belongsTo(Genero::class);
+    }
+
+    public function escolaridades(): BelongsTo
+    {
+        return $this->belongsTo(Escolaridade::class);
+    }
+
+    public function estados_civis(): BelongsTo
+    {
+        return $this->belongsTo(EstadoCivil::class);
     }
 
 }

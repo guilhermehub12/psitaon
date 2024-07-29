@@ -18,21 +18,26 @@ class PacienteSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        foreach (range(1, 50) as $index) {
+        // Obtendo os IDs das tabelas relacionadas
+        $generoIds = DB::table('generos')->pluck('id', 'nome')->toArray();
+        $escolaridadeIds = DB::table('escolaridades')->pluck('id', 'nome')->toArray();
+        $estadoCivilIds = DB::table('estados_civis')->pluck('id', 'nome')->toArray();
+
+        foreach (range(1, 10) as $index) {
             DB::table('pacientes')->insert([
                 'id' => Str::uuid(),
                 'nome' => $faker->name,
                 'data_nascimento' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'genero' => $faker->randomElement(['Masculino', 'Feminino', 'Outro']),
-                'escolaridade' => $faker->randomElement(['Ensino Fundamental', 'Ensino Médio', 'Ensino Superior']),
                 'profissao' => $faker->jobTitle,
-                'estado_civil' => $faker->randomElement(['Solteiro', 'Casado', 'Divorciado', 'Viúvo']),
                 'endereco' => $faker->address,
                 'telefone' => $faker->phoneNumber,
                 'email' => $faker->unique()->safeEmail,
                 'nome_pai' => $faker->name('male'),
                 'nome_mae' => $faker->name('female'),
-                'ativo' => $faker->boolean
+                'ativo' => $faker->boolean,
+                'genero_id' => $faker->randomElement(array_values($generoIds)),
+                'escolaridade_id' => $faker->randomElement(array_values($escolaridadeIds)),
+                'estado_civil_id' => $faker->randomElement(array_values($estadoCivilIds))
             ]);
         }
     }

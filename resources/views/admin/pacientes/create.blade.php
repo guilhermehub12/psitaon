@@ -17,6 +17,6 @@
         "method" => "POST",
         "routeBack" => route('admin.pacientes.index'),
         "buttonText" => "Salvar",
-        "produto" => null
+        "paciente" => null
     ])
 </x-app-layout>

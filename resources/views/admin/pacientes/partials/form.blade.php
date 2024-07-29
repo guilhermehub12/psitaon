@@ -30,7 +30,7 @@
                     name="data_nascimento"
                     id="data_nascimento"
                     class="form-control mask_date {{ $errors->has('data_nascimento') ? 'is-invalid' : '' }}"
-                    placeholder="Digite o data de nascimento do paciente"
+                    placeholder="Digite a data de nascimento do paciente"
                     value="{{ old('data_nascimento', $paciente->data_nascimento ?? null) }}"
                 />
                 <span class="text-danger">{{ $errors->first("data_nascimento") }}</span>
@@ -40,29 +40,27 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label>* Gênero</label>
-                <x-admin.form-input
-                    type="text"
-                    name="genero"
-                    id="genero"
-                    class="form-control {{ $errors->has('genero') ? 'is-invalid' : '' }}"
-                    placeholder="Digite o genero do paciente"
-                    value="{{ old('genero', $paciente->genero ?? null) }}"
+                <x-admin.form-select
+                    name="genero_id"
+                    id="genero_id"
+                    class="form-control {{ $errors->has('genero_id') ? 'is-invalid' : '' }}"
+                    :options="$generos"
+                    selected="{{ old('genero_id', $paciente->genero_id ?? null) }}"
                 />
-                <span class="text-danger">{{ $errors->first("genero") }}</span>
+                <span class="text-danger">{{ $errors->first("genero_id") }}</span>
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <label>* Escolaridade</label>
-                <x-admin.form-input
-                    type="text"
-                    name="escolaridade"
-                    id="escolaridade"
-                    class="form-control {{ $errors->has('escolaridade') ? 'is-invalid' : '' }}"
-                    placeholder="Digite a escolaridade do paciente"
-                    value="{{ old('escolaridade', $paciente->escolaridade ?? null) }}"
+                <x-admin.form-select
+                    name="escolaridade_id"
+                    id="escolaridade_id"
+                    class="form-control {{ $errors->has('escolaridade_id') ? 'is-invalid' : '' }}"
+                    :options="$escolaridades"
+                    selected="{{ old('escolaridade_id', $paciente->escolaridade_id ?? null) }}"
                 />
-                <span class="text-danger">{{ $errors->first("escolaridade") }}</span>
+                <span class="text-danger">{{ $errors->first("escolaridade_id") }}</span>
             </div>
         </div>
 
@@ -84,15 +82,14 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label>* Estado Civil</label>
-                <x-admin.form-input
-                    type="text"
-                    name="estado_civil"
-                    id="estado_civil"
-                    class="form-control {{ $errors->has('estado_civil') ? 'is-invalid' : '' }}"
-                    placeholder="Digite a estado_civil do paciente"
-                    value="{{ old('estado_civil', $paciente->estado_civil ?? null) }}"
+                <x-admin.form-select
+                    name="estado_civil_id"
+                    id="estado_civil_id"
+                    class="form-control {{ $errors->has('estado_civil_id') ? 'is-invalid' : '' }}"
+                    :options="$estados_civis"
+                    selected="{{ old('estado_civil_id', $paciente->estado_civil_id ?? null) }}"
                 />
-                <span class="text-danger">{{ $errors->first("estado_civil") }}</span>
+                <span class="text-danger">{{ $errors->first("estado_civil_id") }}</span>
             </div>
         </div>
 
