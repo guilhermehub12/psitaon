@@ -28,25 +28,26 @@
     <x-admin.table
         title="Paciente"
         subtitle="Responsáveis"
-        :headers="['Nome', 'Descrição', 'Ações']"
+        :headers="['Nome', 'Tipo de Responsável', 'Grau de Parentesco', 'Ações']"
         :records="$paciente"
     >
         @forelse ($paciente->responsaveis as $pacienteResponsavel)
             <tr class="text-center">
                 <td class="align-middle">{{ $pacienteResponsavel->nome }}</td>
-                <td class="align-middle">{{ $pacienteResponsavel->descricao }}</td>
+                <td class="align-middle">{{ $pacienteResponsavel->tipoResponsavel->nome }}</td>
+                <td class="align-middle">{{ $pacienteResponsavel->grau_parentesco }}</td>
                 <td class="align-middle text-uppercase">
                     <button
                         type="button"
                         class="btn btn-danger text-uppercase font-weight-bold"
                         data-toggle="modal"
-                        data-target="#paciente-paciente-modal-{{ $pacienteResponsavel->id }}-destroy"
+                        data-target="#paciente-responsavel-modal-{{ $pacienteResponsavel->id }}-destroy"
                     >
                         <i class="fas fa-trash"></i> Deletar
                     </button>
 
                     @push('modals')
-                        @includeIf('admin.pacientes_responsaveis.partials.paciente-paciente-modal-destroy', [
+                        @includeIf('admin.pacientes_responsaveis.partials.paciente-responsavel-modal-destroy', [
                             $paciente,
                             $pacienteResponsavel
                         ])
