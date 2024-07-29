@@ -115,9 +115,9 @@ class Paciente extends Model
         return $this->hasMany(PacienteResponsavel::class, "paciente_id", "id");
     }
 
-    public function tipos_responsaveis(): BelongsToMany
+    public function tipos_responsaveis(): HasMany
     {
-        return $this->belongsToMany(TipoResponsavel::class, 'usuarios_perfis', 'paciente_id', 'tipo_responsavel_id');
+        return $this->hasMany(TipoResponsavel::class, 'paciente_id', 'id');
     }
 
 }

@@ -10,44 +10,18 @@ use Illuminate\Support\Facades\DB;
 
 class PacienteResponsavelRepository extends BaseRepository
 {
-    protected $model = Paciente::class;
+    protected $model = PacienteResponsavel::class;
 
-    public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
+    public function store(Paciente $paciente, $data)
     {
         try {
-            $query = $this->model->query();
+            $pacienteResponsavel = new $this->model($data);
+            $pacienteResponsavel->paciente_id = $paciente->id;
+            $pacienteResponsavel->save();
 
-            if (count($filters) > 0) {
-            }
-
-            $query->orderBy($orderBy, $sort);
-
-            return $query->paginate($paginate);
-        } catch (Exception $e) {
-            return [];
-        }
-    }
-
-    public function selectOption()
-    {
-        try {
-            return $this->model
-                ->all()
-                ->sortBy('nome')
-                ->pluck('nome', 'id')
-                ->prepend('Escolha a opção', '');
-        } catch (Exception $e) {
-            return [
-                '' => $e->getMessage()
-            ];
-        }
-    }
-
-    public function store($data)
-    {
-        try {
-            $paciente = new $this->model($data);
-            $paciente->save();
+            // $paciente->tipos_responsaveis()->saveMany([
+            //     new $this->model($data)
+            // ]);
 
             return true;
         } catch (Exception $e) {
