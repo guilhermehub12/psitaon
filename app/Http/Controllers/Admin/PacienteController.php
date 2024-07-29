@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Paciente\StorePacienteRequest;
 use App\Http\Requests\Admin\Paciente\UpdatePacienteRequest;
 use App\Models\Paciente;
+use App\Models\TipoResponsavel;
 use App\Repositories\PacienteRepository;
+use App\Repositories\TipoResponsavelRepository;
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
 {
     public function __construct(
-        private PacienteRepository $pacienteRepository
+        private PacienteRepository $pacienteRepository,
+        private TipoResponsavelRepository $tipoResponsavelRepository
     ) {}
 
     /**
@@ -29,14 +32,16 @@ class PacienteController extends Controller
 
     public function create(Paciente $paciente)
     {
+        $tipos_responsaveis = $this->tipoResponsavelRepository->selectOption();
         return view('admin.pacientes.create', [
-            'paciente' => $paciente
+            'paciente' => $paciente,
+            'tipos_responsaveis' => $tipos_responsaveis
         ]);
     }
 
-    public function store(StorePacienteRequest $request)
+    public function store(StorePacienteRequest $request, Paciente $paciente)
     {
-        $result = $this->pacienteRepository->store($request->except(['_token']));
+        $result = $this->pacienteRepository->store($paciente, $request->except(['_token']));
 
         if ($result === true) {
             $request->session()->flash('success', 'Paciente cadastrado com sucesso!');
@@ -44,7 +49,7 @@ class PacienteController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar o paciente. '.$result);
         }
 
-        return redirect()->route('admin.pacientes.index');
+        return redirect()->route('admin.pacientes.index', $paciente);
     }
 
     public function show(Paciente $paciente)
