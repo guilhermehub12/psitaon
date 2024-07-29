@@ -19,7 +19,7 @@
             </div>
             <div class="card">
                 <div class="card-header text-center font-weight-bold text-white" style="font-size: 28px;">
-                    PsiTáOn Guest
+                    PsiTáOn
                 </div>
                 <div class="card-body login-card-body">
                     {{ $slot }}
