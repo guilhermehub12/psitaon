@@ -23,11 +23,7 @@ class PacienteResponsavelController extends Controller
      */
     public function index(Request $request)
     {
-        $pacientes = $this->pacienteResponsavelRepository->paginate(10, 'created_at', 'ASC', $request->except(['_token', 'page']));
-
-        return view('admin.pacientes_responsaveis.create', [
-            'pacientes' => $pacientes
-        ]);
+        //
     }
 
     public function create(Paciente $paciente)

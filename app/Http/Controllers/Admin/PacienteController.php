@@ -52,17 +52,16 @@ class PacienteController extends Controller
         ]);
     }
 
-    public function store(StorePacienteRequest $request, Paciente $paciente)
+    public function store(StorePacienteRequest $request)
     {
-        $result = $this->pacienteRepository->store($paciente, $request->except(['_token']));
-
+        $result = $this->pacienteRepository->store($request->except(['_token']));
         if ($result === true) {
             $request->session()->flash('success', 'Paciente cadastrado com sucesso!');
         } else {
             $request->session()->flash('danger', 'Erro ao cadastrar o paciente. '.$result);
         }
 
-        return redirect()->route('admin.pacientes.index', $paciente);
+        return redirect()->route('admin.pacientes.index');
     }
 
     public function show(Paciente $paciente)

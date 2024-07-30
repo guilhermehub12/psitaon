@@ -4,24 +4,30 @@ namespace App\Repositories;
 
 use Exception;
 
-use App\Models\EstadoCivil;
+use App\Models\StatusPresenca;
 
-class EstadoCivilRepository extends BaseRepository
+class StatusPresencaRepository extends BaseRepository
 {
-    protected $model = EstadoCivil::class;
+    protected $model = StatusPresenca::class;
 
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
         try {
-            $query = $this->model->query();
+            // Instantiate the model to call query() method
+            $query = (new $this->model)->newQuery();
 
             if (count($filters) > 0) {
+                // Apply filters to the query if any
+                foreach ($filters as $key => $value) {
+                    $query->where($key, $value);
+                }
             }
 
             $query->orderBy($orderBy, $sort);
 
             return $query->paginate($paginate);
         } catch (Exception $e) {
+            // Return an empty collection or handle the exception as needed
             return [];
         }
     }
@@ -29,12 +35,14 @@ class EstadoCivilRepository extends BaseRepository
     public function selectOption()
     {
         try {
-            return $this->model
+            // Instantiate the model to call all() method
+            return (new $this->model)
                 ->all()
-                ->sortBy('codigo')
+                ->sortBy('nome')
                 ->pluck('nome', 'id')
                 ->prepend('Escolha a opção', '');
         } catch (Exception $e) {
+            // Return an array with the error message
             return [
                 '' => $e->getMessage()
             ];

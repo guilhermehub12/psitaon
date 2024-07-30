@@ -121,6 +121,11 @@ class Paciente extends Model
         return $this->hasMany(TipoResponsavel::class, 'paciente_id', 'id');
     }
 
+    public function financeiros(): HasMany
+    {
+        return $this->hasMany(PacienteFinanceiro::class, 'paciente_id', 'id');
+    }
+
     public function generos(): BelongsTo
     {
         return $this->belongsTo(Genero::class);

@@ -6,7 +6,13 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Paciente;
 use App\Models\PacienteFinanceiro;
+
 use App\Repositories\PacienteFinanceiroRepository;
+use App\Repositories\ModalidadePagamentoRepository;
+use App\Repositories\FrequenciaPagamentoRepository;
+use App\Repositories\FormaPagamentoRepository;
+use App\Repositories\StatusPagamentoRepository;
+use App\Repositories\StatusPresencaRepository;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Paciente\Financeiro\StoreFinanceiroRequest;
@@ -16,7 +22,11 @@ class PacienteFinanceiroController extends Controller
 {
     public function __construct(
         private PacienteFinanceiroRepository $pacienteFinanceiroRepository,
-        private TipoFinanceiroRepository $tipoFinanceiroRepository
+        private ModalidadePagamentoRepository $modalidadePagamentoRepository,
+        private FrequenciaPagamentoRepository $frequenciaPagamentoRepository,
+        private FormaPagamentoRepository $formaPagamentoRepository,
+        private StatusPagamentoRepository $statusPagamentoRepository,
+        private StatusPresencaRepository $statusPresencaRepository,
     ) {}
 
     /**
@@ -33,11 +43,19 @@ class PacienteFinanceiroController extends Controller
 
     public function create(Paciente $paciente)
     {
-        $tipos_financeiros = $this->tipoFinanceiroRepository->selectOption();
+        $modalidades_pagamentos = $this->modalidadePagamentoRepository->selectOption();
+        $frequencias_pagamentos = $this->frequenciaPagamentoRepository->selectOption();
+        $formas_pagamentos = $this->formaPagamentoRepository->selectOption();
+        $status_pagamentos = $this->statusPagamentoRepository->selectOption();
+        $status_presencas = $this->statusPresencaRepository->selectOption();
 
         return view('admin.pacientes_financeiros.create', [
             'paciente' => $paciente,
-            'tipos_financeiros' => $tipos_financeiros
+            'modalidades_pagamentos' => $modalidades_pagamentos,
+            'frequencias_pagamentos' => $frequencias_pagamentos,
+            'formas_pagamentos' => $formas_pagamentos,
+            'status_pagamentos' => $status_pagamentos,
+            'status_presencas' => $status_presencas,
         ]);
     }
 

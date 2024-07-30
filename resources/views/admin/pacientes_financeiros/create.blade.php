@@ -54,7 +54,7 @@
             </tr>
         @empty
         <tr class="text-center">
-            <td class="align-middle">Nenhum financeiro cadastrado</td>
+            <td class="align-middle" colspan="4">Nenhum financeiro cadastrado</td>
         </tr>
         @endforelse
     </x-admin.table>
