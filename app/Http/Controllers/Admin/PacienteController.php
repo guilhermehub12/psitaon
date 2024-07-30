@@ -21,7 +21,7 @@ class PacienteController extends Controller
         private TipoResponsavelRepository $tipoResponsavelRepository,
         private GeneroRepository $generoRepository,
         private EscolaridadeRepository $escolaridadeRepository,
-        private EstadoCivilRepository $estadoCivilRepository,
+        private EstadoCivilRepository $estadoCivilRepository
     ) {}
 
     /**
@@ -52,7 +52,7 @@ class PacienteController extends Controller
         ]);
     }
 
-    public function store(StorePacienteRequest $request)
+    public function store(StorePacienteRequest $request, Paciente $paciente)
     {
         $result = $this->pacienteRepository->store($request->except(['_token']));
         if ($result === true) {
@@ -61,7 +61,7 @@ class PacienteController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar o paciente. '.$result);
         }
 
-        return redirect()->route('admin.pacientes.index');
+        return redirect()->route('admin.pacientes.index', $paciente);
     }
 
     public function show(Paciente $paciente)

@@ -26,7 +26,7 @@ class PacienteFinanceiroController extends Controller
         private FrequenciaPagamentoRepository $frequenciaPagamentoRepository,
         private FormaPagamentoRepository $formaPagamentoRepository,
         private StatusPagamentoRepository $statusPagamentoRepository,
-        private StatusPresencaRepository $statusPresencaRepository,
+        private StatusPresencaRepository $statusPresencaRepository
     ) {}
 
     /**
@@ -55,7 +55,7 @@ class PacienteFinanceiroController extends Controller
             'frequencias_pagamentos' => $frequencias_pagamentos,
             'formas_pagamentos' => $formas_pagamentos,
             'status_pagamentos' => $status_pagamentos,
-            'status_presencas' => $status_presencas,
+            'status_presencas' => $status_presencas
         ]);
     }
 
