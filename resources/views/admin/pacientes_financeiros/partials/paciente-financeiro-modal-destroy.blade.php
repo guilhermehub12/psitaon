@@ -5,8 +5,8 @@
     ])" size="lg">
     <div class="row mb-3">
         <div class="col-md-4">
-            <p class="font-weight-bold">Nome</p>
-            {{ $pacienteFinanceiro->nome }}
+            <p class="font-weight-bold">Modalidade de Pagamento</p>
+            {{ $pacienteFinanceiro->modalidadePagamento->nome }}
         </div>
     </div>
 </x-admin.modal-destroy>

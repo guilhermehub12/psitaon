@@ -20,4 +20,11 @@ class StoreFinanceiroRequest extends BaseFinanceiroRequest
             'valor_sessao' => 'nullable|max:255'
         ];
     }
+
+    public function withValidator($validator)
+    {
+        $validator->sometimes(['frequencia_pagamento_id', 'forma_pagamento_id', 'status_pagamento_id', 'status_presenca_id', 'valor_sessao'], 'required', function ($input) {
+            return $input->modalidade_pagamento_id == 'Convênio';
+        });
+    }
 }

@@ -62,7 +62,7 @@ class PacienteFinanceiroController extends Controller
     public function store(StoreFinanceiroRequest $request, Paciente $paciente)
     {
         $result = $this->pacienteFinanceiroRepository->store($paciente, $request->except(['_token']));
-
+        // dd($result);
         if ($result === true) {
             $request->session()->flash('success', 'Paciente cadastrado com sucesso!');
         } else {
