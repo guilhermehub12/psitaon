@@ -49,7 +49,6 @@ class PacienteFinanceiro extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'paciente_id',
         'modalidade_pagamento_id',
         'frequencia_pagamento_id',
         'forma_pagamento_id',
@@ -90,6 +89,11 @@ class PacienteFinanceiro extends Model
     }
 
     public function modalidadePagamento(): BelongsTo
+    {
+        return $this->belongsTo(ModalidadePagamento::class);
+    }
+
+    public function modalidadePagamentoId(): BelongsTo
     {
         return $this->belongsTo(ModalidadePagamento::class);
     }

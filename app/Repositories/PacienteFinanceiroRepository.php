@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class PacienteFinanceiroRepository extends BaseRepository
 {
-    protected $model = Paciente::class;
+    protected $model = PacienteFinanceiro::class;
 
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
@@ -55,7 +55,11 @@ class PacienteFinanceiroRepository extends BaseRepository
     {
         try {
             $data['paciente_id'] = $paciente->id;
+            // dd($data);
             $pacienteFinanceiro = new $this->model($data);
+            // dd($pacienteFinanceiro);
+
+            // Salva a instância de PacienteFinanceiro associada ao Paciente
             $paciente->financeiros()->save($pacienteFinanceiro);
 
             return true;

@@ -20,25 +20,27 @@ use App\Http\Requests\Admin\Paciente\Financeiro\UpdateFinanceiroRequest;
 
 class PacienteFinanceiroController extends Controller
 {
+    private $pacienteFinanceiroRepository;
+    private $modalidadePagamentoRepository;
+    private $frequenciaPagamentoRepository;
+    private $formaPagamentoRepository;
+    private $statusPagamentoRepository;
+    private $statusPresencaRepository;
+
     public function __construct(
-        private PacienteFinanceiroRepository $pacienteFinanceiroRepository,
-        private ModalidadePagamentoRepository $modalidadePagamentoRepository,
-        private FrequenciaPagamentoRepository $frequenciaPagamentoRepository,
-        private FormaPagamentoRepository $formaPagamentoRepository,
-        private StatusPagamentoRepository $statusPagamentoRepository,
-        private StatusPresencaRepository $statusPresencaRepository
-    ) {}
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(Request $request)
-    {
-        $pacientes = $this->pacienteFinanceiroRepository->paginate(10, 'created_at', 'ASC', $request->except(['_token', 'page']));
-
-        return view('admin.pacientes_financeiros.create', [
-            'pacientes' => $pacientes
-        ]);
+        PacienteFinanceiroRepository $pacienteFinanceiroRepository,
+        ModalidadePagamentoRepository $modalidadePagamentoRepository,
+        FrequenciaPagamentoRepository $frequenciaPagamentoRepository,
+        FormaPagamentoRepository $formaPagamentoRepository,
+        StatusPagamentoRepository $statusPagamentoRepository,
+        StatusPresencaRepository $statusPresencaRepository
+    ) {
+        $this->pacienteFinanceiroRepository = $pacienteFinanceiroRepository;
+        $this->modalidadePagamentoRepository = $modalidadePagamentoRepository;
+        $this->frequenciaPagamentoRepository = $frequenciaPagamentoRepository;
+        $this->formaPagamentoRepository = $formaPagamentoRepository;
+        $this->statusPagamentoRepository = $statusPagamentoRepository;
+        $this->statusPresencaRepository = $statusPresencaRepository;
     }
 
     public function create(Paciente $paciente)
@@ -61,6 +63,7 @@ class PacienteFinanceiroController extends Controller
 
     public function store(StoreFinanceiroRequest $request, Paciente $paciente)
     {
+        // dd($paciente);
         $result = $this->pacienteFinanceiroRepository->store($paciente, $request->except(['_token']));
         // dd($result);
         if ($result === true) {

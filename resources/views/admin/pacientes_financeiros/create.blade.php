@@ -22,11 +22,11 @@
         @forelse ($paciente->financeiros as $pacienteFinanceiro)
             <tr class="text-center">
                 @if (Str::lower($pacienteFinanceiro->modalidadePagamento->nome) == 'convênio')
-                    <td class="align-middle">{{ $pacienteFinanceiro->modalidadePagamento->nome }}</td>
+                    <td class="align-middle">{{ $pacienteFinanceiro->modalidadePagamento->nome  ?? '' }}</td>
                 @else
-                    <td class="align-middle">{{ $pacienteFinanceiro->modalidadePagamento->nome }}</td>
-                    <td class="align-middle">{{ $pacienteFinanceiro->frequenciaPagamento->nome }}</td>
-                    <td class="align-middle">{{ $pacienteFinanceiro->formaPagamento->nome }}</td>
+                    <td class="align-middle">{{ $pacienteFinanceiro->modalidadePagamento->nome ?? '' }}</td>
+                    <td class="align-middle">{{ $pacienteFinanceiro->frequenciaPagamento->nome ?? '' }}</td>
+                    <td class="align-middle">{{ $pacienteFinanceiro->formaPagamento->nome ?? '' }}</td>
                 @endif
                 <td class="align-middle text-uppercase">
                     <button type="button" class="btn btn-danger text-uppercase font-weight-bold" data-toggle="modal"
