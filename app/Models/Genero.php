@@ -48,6 +48,10 @@ class Genero extends Model
      */
     protected $fillable = [
         'nome',
+        'ativo',
+        'created_by',
+        'updated_by',
+        'deleted_by'
     ];
 
     public function __construct($attributes = [])

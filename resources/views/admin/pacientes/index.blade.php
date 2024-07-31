@@ -17,13 +17,13 @@
                     <div class="d-flex">
                         <p class="d-flex flex-column">
                             <span class="text-bold text-lg">150</span>
-                            <span>Atendimentos este mês</span>
+                            <span>Atendimentos este ano</span>
                         </p>
                         <p class="ml-auto d-flex flex-column text-right">
                             <span class="text-success">
                                 <i class="fas fa-arrow-up"></i> 10%
                             </span>
-                            <span class="text-muted">Comparado ao mês passado</span>
+                            <span class="text-muted">Comparado ao ano passado</span>
                         </p>
                     </div>
 
@@ -33,10 +33,10 @@
 
                     <div class="d-flex flex-row justify-content-end">
                         <span class="mr-2">
-                            <i class="fas fa-square text-primary"></i> Este Mês
+                            <i class="fas fa-square text-primary"></i> 2024
                         </span>
                         <span>
-                            <i class="fas fa-square text-gray"></i> Mês Passado
+                            <i class="fas fa-square text-gray"></i> 2023
                         </span>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
         <div class="col-lg-6">
             <div class="card zoom-card">
                 <div class="card-header border-0">
-                    <h3 class="card-title">Consultas</h3>
+                    <h3 class="card-title">Sessões</h3>
                     <div class="card-tools">
                         <a href="#" class="btn btn-tool btn-sm">
                             <i class="fas fa-download"></i>
@@ -61,8 +61,8 @@
                         <thead>
                             <tr>
                                 <th>Paciente</th>
-                                <th>Última Visita</th>
-                                <th>Próxima Consulta</th>
+                                <th>Última Sessão</th>
+                                <th>Próxima Sessão</th>
                                 <th>Detalhes</th>
                             </tr>
                         </thead>
@@ -138,7 +138,7 @@
 
 
     <div class="row mb-3">
-        <div class="col-md-2 offset-md-10">
+        <div class="col-md-3 offset-md-9">
             <a href="{{ route('admin.pacientes.create') }}"
                 class="btn btn-lila btn-block text-uppercase font-weight-bold">
                 <i class="fas fa-plus-circle"></i> Novo Paciente
@@ -203,15 +203,15 @@
             data: {
                 labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
                 datasets: [{
-                    label: 'Atendimentos',
+                    label: 'Atendimentos 2024',
                     data: [50, 60, 70, 80, 90, 100, 150],
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1,
                     fill: false
                 },
                 {
-                    label: 'Atendimentos',
-                    data: [36, 23, 53, 75, 33, 120, 155],
+                    label: 'Atendimentos 2023',
+                    data: [36, 23, 53, 75, 33, 96, 141],
                     borderColor: '#6C757D',
                     borderWidth: 1,
                     fill: false

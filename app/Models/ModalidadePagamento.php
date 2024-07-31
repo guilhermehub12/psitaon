@@ -53,8 +53,8 @@ class ModalidadePagamento extends Model
     public function __construct($attributes = [])
     {
         parent::__construct($attributes);
-        // $this->created_by = Auth::id();
-        // $this->updated_by = Auth::id();
+        $this->created_by = Auth::id();
+        $this->updated_by = Auth::id();
     }
 
     public function fill(array $attributes)

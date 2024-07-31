@@ -16,7 +16,12 @@ return new class extends Migration
         Schema::create('modalidades_pagamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
+            $table->boolean('ativo')->default(true);
+            $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('deleted_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         DB::transaction(function () {
@@ -35,7 +40,12 @@ return new class extends Migration
         Schema::create('frequencias_pagamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
+            $table->boolean('ativo')->default(true);
+            $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('deleted_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         DB::transaction(function () {
@@ -62,7 +72,12 @@ return new class extends Migration
         Schema::create('formas_pagamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
+            $table->boolean('ativo')->default(true);
+            $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('deleted_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         DB::transaction(function () {
@@ -101,7 +116,12 @@ return new class extends Migration
         Schema::create('status_pagamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
+            $table->boolean('ativo')->default(true);
+            $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('deleted_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         DB::transaction(function () {
@@ -128,7 +148,12 @@ return new class extends Migration
         Schema::create('status_presencas', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('nome');
+            $table->boolean('ativo')->default(true);
+            $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('deleted_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         DB::transaction(function () {

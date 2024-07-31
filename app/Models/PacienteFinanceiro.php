@@ -20,7 +20,7 @@ class PacienteFinanceiro extends Model
      *
      * @var string
      */
-    protected $table = 'pacientes_responsavel';
+    protected $table = 'pacientes_financeiro';
 
     /**
      * The primary key associated with the table.
@@ -49,6 +49,7 @@ class PacienteFinanceiro extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'paciente_id',
         'modalidade_pagamento_id',
         'frequencia_pagamento_id',
         'forma_pagamento_id',

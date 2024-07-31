@@ -24,10 +24,10 @@ class BasePacienteRequest extends FormRequest
         return [
             'nome' => 'required|max:255',
             'data_nascimento' => 'nullable|date_format:d/m/Y|max:255',
-            'genero' => 'required|max:255',
-            'escolaridade' => 'required|max:255',
+            'genero_id' => 'required',
+            'escolaridade_id' => 'required',
+            'estado_civil_id' => 'required',
             'profissao' => 'required|max:255',
-            'estado_civil' => 'required|max:255',
             'endereco' => 'required|max:255',
             'telefone' => 'nullable|max:255',
             'email' => 'required|email|max:255',
