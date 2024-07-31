@@ -55,7 +55,8 @@ class PacienteFinanceiroRepository extends BaseRepository
     {
         try {
             $data['paciente_id'] = $paciente->id;
-            $paciente->financeiros()->save(new $this->model($data));
+            $pacienteFinanceiro = new $this->model($data);
+            $paciente->financeiros()->save($pacienteFinanceiro);
 
             return true;
         } catch (Exception $e) {
