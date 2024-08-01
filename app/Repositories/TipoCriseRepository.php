@@ -4,11 +4,11 @@ namespace App\Repositories;
 
 use Exception;
 
-use App\Models\TipoResponsavel;
+use App\Models\TipoCrise;
 
-class TipoResponsavelRepository extends BaseRepository
+class TipoCriseRepository extends BaseRepository
 {
-    protected $model = TipoResponsavel::class;
+    protected $model = TipoCrise::class;
 
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
@@ -38,7 +38,7 @@ class TipoResponsavelRepository extends BaseRepository
             // Instantiate the model to call all() method
             return (new $this->model)
                 ->all()
-                ->sortBy('nome')
+                ->sortBy('codigo')
                 ->pluck('nome', 'id')
                 ->prepend('Escolha a opção', '');
         } catch (Exception $e) {
