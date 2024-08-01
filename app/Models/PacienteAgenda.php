@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use OwenIt\Auditing\Contracts\Auditable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PacienteFinanceiro extends Model
+class PacienteAgenda extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
@@ -20,7 +20,7 @@ class PacienteFinanceiro extends Model
      *
      * @var string
      */
-    protected $table = 'pacientes_financeiro';
+    protected $table = 'pacientes_agenda';
 
     /**
      * The primary key associated with the table.
@@ -49,13 +49,9 @@ class PacienteFinanceiro extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'paciente_agenda_id',
-        'modalidade_pagamento_id',
-        'frequencia_pagamento_id',
-        'forma_pagamento_id',
-        'status_pagamento_id',
-        'status_presenca_id',
-        'valor_sessao',
+        'frequencia_id',
+        'horario',
+        'dia',
 
         'ativo',
         'created_by',
@@ -84,40 +80,14 @@ class PacienteFinanceiro extends Model
         parent::delete();
     }
 
-    public function pacienteAgenda(): BelongsTo
+    public function paciente(): BelongsTo
     {
-        return $this->belongsTo(PacienteAgenda::class);
+        return $this->belongsTo(Paciente::class);
     }
 
-    public function modalidadePagamento(): BelongsTo
-    {
-        return $this->belongsTo(ModalidadePagamento::class);
-    }
-
-    public function modalidadePagamentoId(): BelongsTo
-    {
-        return $this->belongsTo(ModalidadePagamento::class);
-    }
-
-    public function frequenciaPagamento(): BelongsTo
+    public function frequencia(): BelongsTo
     {
         return $this->belongsTo(FrequenciaPagamento::class);
     }
-
-    public function formaPagamento(): BelongsTo
-    {
-        return $this->belongsTo(FormaPagamento::class);
-    }
-
-    public function statusPagamento(): BelongsTo
-    {
-        return $this->belongsTo(StatusPagamento::class);
-    }
-
-    public function statusPresenca(): BelongsTo
-    {
-        return $this->belongsTo(StatusPresenca::class);
-    }
-
 
 }
