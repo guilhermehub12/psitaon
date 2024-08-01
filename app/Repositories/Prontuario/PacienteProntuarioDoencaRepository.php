@@ -4,12 +4,12 @@ namespace App\Repositories;
 
 use Exception;
 
-use App\Models\Paciente;
+use App\Models\Prontuario\PacienteProntuarioDoenca;
 use Illuminate\Support\Facades\DB;
 
-class PacienteRepository extends BaseRepository
+class PacienteProntuarioDoencaRepository extends BaseRepository
 {
-    protected $model = Paciente::class;
+    protected $model = PacienteProntuarioDoenca::class;
 
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
@@ -62,7 +62,7 @@ class PacienteRepository extends BaseRepository
         }
     }
 
-    public function update(Paciente $paciente, $data)
+    public function update(PacienteProntuarioDoenca $paciente, $data)
     {
         try {
             DB::beginTransaction();
@@ -80,7 +80,7 @@ class PacienteRepository extends BaseRepository
         }
     }
 
-    public function destroy(Paciente $paciente)
+    public function destroy(PacienteProntuarioDoenca $paciente)
     {
         try {
             $paciente->delete();
