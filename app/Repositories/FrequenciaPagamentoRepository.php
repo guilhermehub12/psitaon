@@ -38,7 +38,7 @@ class FrequenciaPagamentoRepository extends BaseRepository
             // Instantiate the model to call all() method
             return (new $this->model)
                 ->all()
-                ->sortBy('nome')
+                ->sortBy('codigo')
                 ->pluck('nome', 'id')
                 ->prepend('Escolha a opção', '');
         } catch (Exception $e) {

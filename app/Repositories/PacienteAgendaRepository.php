@@ -5,12 +5,12 @@ namespace App\Repositories;
 use Exception;
 
 use App\Models\Paciente;
-use App\Models\PacienteFinanceiro;
+use App\Models\PacienteAgenda;
 use Illuminate\Support\Facades\DB;
 
-class PacienteFinanceiroRepository extends BaseRepository
+class PacienteAgendaRepository extends BaseRepository
 {
-    protected $model = PacienteFinanceiro::class;
+    protected $model = PacienteAgenda::class;
 
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
@@ -56,11 +56,11 @@ class PacienteFinanceiroRepository extends BaseRepository
         try {
             $data['paciente_id'] = $paciente->id;
             // dd($data);
-            $pacienteFinanceiro = new $this->model($data);
-            // dd($pacienteFinanceiro);
+            $pacienteAgenda = new $this->model($data);
+            // dd($pacienteAgenda);
 
-            // Salva a instância de PacienteFinanceiro associada ao Paciente
-            $paciente->financeiros()->save($pacienteFinanceiro);
+            // Salva a instância de PacienteAgenda associada ao Paciente
+            $paciente->agendas()->save($pacienteAgenda);
 
             return true;
         } catch (Exception $e) {
@@ -86,10 +86,10 @@ class PacienteFinanceiroRepository extends BaseRepository
         }
     }
 
-    public function destroy(PacienteFinanceiro $PacienteFinanceiro)
+    public function destroy(PacienteAgenda $PacienteAgenda)
     {
         try {
-            $PacienteFinanceiro->delete();
+            $PacienteAgenda->delete();
 
             return true;
         } catch (Exception $e) {

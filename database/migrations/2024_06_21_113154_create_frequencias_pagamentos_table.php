@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -11,18 +13,37 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacientes_agenda', function (Blueprint $table) {
+        Schema::create('frequencias_pagamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
-            $table->foreignUuid('frequencia_id')->references('id')->on('frequencias_pagamentos')->onUpdate('cascade');
-            $table->time('horario');
-            $table->date('dia');
+            $table->string('nome');
             $table->boolean('ativo')->default(true);
             $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('deleted_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->timestamps();
             $table->softDeletes();
+
+        });
+
+        DB::transaction(function () {
+            DB::table('frequencias_pagamentos')->insert([
+                [
+                    'id' => Str::orderedUuid(),
+                    'nome' => 'Semanal'
+                ],
+                [
+                    'id' => Str::orderedUuid(),
+                    'nome' => 'Quinzenal'
+                ],
+                [
+                    'id' => Str::orderedUuid(),
+                    'nome' => 'Mensal'
+                ],
+                [
+                    'id' => Str::orderedUuid(),
+                    'nome' => 'Por Sessão'
+                ]
+            ]);
         });
     }
 
@@ -31,6 +52,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pacientes_agenda');
+        Schema::dropIfExists('frequencias_pagamentos');
     }
 };

@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Admin\Paciente\Financeiro;
 
+use App\Models\ModalidadePagamento;
+
 class StoreFinanceiroRequest extends BaseFinanceiroRequest
 {
     /**
@@ -21,10 +23,23 @@ class StoreFinanceiroRequest extends BaseFinanceiroRequest
         ];
     }
 
+    /**
+     * Configure the validator instance.
+     *
+     * @param \Illuminate\Validation\Validator $validator
+     * @return void
+     */
     public function withValidator($validator)
     {
-        $validator->sometimes(['frequencia_pagamento_id', 'forma_pagamento_id', 'status_pagamento_id', 'status_presenca_id', 'valor_sessao'], 'required', function ($input) {
-            return $input->modalidade_pagamento_id == 'Convênio';
-        });
+        // Buscar o UUID da modalidade 'Convênio'
+        $convenio = ModalidadePagamento::where('nome', 'Particular')->first();
+
+        if ($convenio) {
+            $convenioUuid = $convenio->id;
+
+            $validator->sometimes(['frequencia_pagamento_id', 'forma_pagamento_id', 'status_pagamento_id', 'status_presenca_id', 'valor_sessao'], 'required', function ($input) use ($convenioUuid) {
+                return $input->modalidade_pagamento_id == $convenioUuid;
+            });
+        }
     }
 }

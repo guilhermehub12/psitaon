@@ -111,6 +111,11 @@ class Paciente extends Model
     //     );
     // }
 
+    public function agendas(): HasMany
+    {
+        return $this->hasMany(PacienteAgenda::class, "paciente_id", "id");
+    }
+
     public function responsaveis(): HasMany
     {
         return $this->hasMany(PacienteResponsavel::class, "paciente_id", "id");

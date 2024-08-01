@@ -3,7 +3,9 @@
         <x-admin.breadcrumb icon="fas fa-box" title="Financeiros" :links="['Financeiros', 'Novo Financeiro']" />
     </x-slot>
 
-    @includeIf('admin.pacientes_financeiros.partials.paciente', [
+    @includeIf('admin.pacientes_financeiros.partials.dashboard')
+
+    {{-- @includeIf('admin.pacientes_financeiros.partials.paciente', [
         'paciente' => $paciente,
         'route' => route('admin.pacientes.show', $paciente),
     ])
@@ -22,11 +24,11 @@
         @forelse ($paciente->financeiros as $pacienteFinanceiro)
             <tr class="text-center">
                 @if (Str::lower($pacienteFinanceiro->modalidadePagamento->nome) == 'convênio')
-                    <td class="align-middle">{{ $pacienteFinanceiro->modalidadePagamento->nome }}</td>
+                    <td class="align-middle">{{ $pacienteFinanceiro->modalidadePagamento->nome  ?? '' }}</td>
                 @else
-                    <td class="align-middle">{{ $pacienteFinanceiro->modalidadePagamento->nome }}</td>
-                    <td class="align-middle">{{ $pacienteFinanceiro->frequenciaPagamento->nome }}</td>
-                    <td class="align-middle">{{ $pacienteFinanceiro->formaPagamento->nome }}</td>
+                    <td class="align-middle">{{ $pacienteFinanceiro->modalidadePagamento->nome ?? '' }}</td>
+                    <td class="align-middle">{{ $pacienteFinanceiro->frequenciaPagamento->nome ?? '' }}</td>
+                    <td class="align-middle">{{ $pacienteFinanceiro->formaPagamento->nome ?? '' }}</td>
                 @endif
                 <td class="align-middle text-uppercase">
                     <button type="button" class="btn btn-danger text-uppercase font-weight-bold" data-toggle="modal"
@@ -47,5 +49,5 @@
                 <td class="align-middle" colspan="4">Nenhum financeiro cadastrado</td>
             </tr>
         @endforelse
-    </x-admin.table>
+    </x-admin.table> --}}
 </x-app-layout>
