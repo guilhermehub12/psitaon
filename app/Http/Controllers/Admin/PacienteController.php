@@ -94,7 +94,7 @@ class PacienteController extends Controller
     public function delete(Paciente $paciente)
     {
         $result = $this->pacienteRepository->destroy($paciente);
-
+        
         if ($result === true) {
             flash('success','Paciente deletado com sucesso!');
         } else {
