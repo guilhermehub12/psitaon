@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Prontuario;
 
 use Exception;
 
 use App\Models\Prontuario\PacienteProntuarioAlimentacao;
+use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 
 class PacienteProntuarioAlimentacaoRepository extends BaseRepository

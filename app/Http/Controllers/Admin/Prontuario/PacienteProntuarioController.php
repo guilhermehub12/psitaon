@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Paciente\StorePacienteProntuarioRequest;
 use App\Http\Requests\Admin\Paciente\UpdatePacienteProntuarioRequest;
 use App\Models\Paciente;
-use App\Models\PacienteProntuario;
+use App\Models\Prontuario\PacienteProntuario;
 use App\Repositories\Prontuario\PacienteProntuarioRepository;
 use App\Repositories\Prontuario\PacienteProntuarioAlimentacaoRepository;
 use App\Repositories\Prontuario\PacienteProntuarioAvaliacaoRepository;
