@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Prontuario;
 
 use Exception;
 
-use App\Models\Paciente;
+use App\Models\Prontuario\PacienteProntuarioPlanejamento;
+use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 
-class PacienteRepository extends BaseRepository
+class PacienteProntuarioPlanejamentoRepository extends BaseRepository
 {
-    protected $model = Paciente::class;
+    protected $model = PacienteProntuarioPlanejamento::class;
 
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
@@ -62,7 +63,7 @@ class PacienteRepository extends BaseRepository
         }
     }
 
-    public function update(Paciente $paciente, $data)
+    public function update(PacienteProntuarioPlanejamento $paciente, $data)
     {
         try {
             DB::beginTransaction();
@@ -80,7 +81,7 @@ class PacienteRepository extends BaseRepository
         }
     }
 
-    public function destroy(Paciente $paciente)
+    public function destroy(PacienteProntuarioPlanejamento $paciente)
     {
         try {
             $paciente->delete();

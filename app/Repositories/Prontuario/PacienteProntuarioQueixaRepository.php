@@ -1,14 +1,16 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Prontuario;
 
 use Exception;
 
-use App\Models\TipoResponsavel;
+use App\Models\Prontuario\PacienteProntuarioQueixa;
+use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\DB;
 
-class TipoResponsavelRepository extends BaseRepository
+class PacienteProntuarioQueixaRepository extends BaseRepository
 {
-    protected $model = TipoResponsavel::class;
+    protected $model = PacienteProntuarioQueixa::class;
 
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
@@ -38,7 +40,7 @@ class TipoResponsavelRepository extends BaseRepository
             // Instantiate the model to call all() method
             return (new $this->model)
                 ->all()
-                ->sortBy('nome')
+                ->sortBy('codigo')
                 ->pluck('nome', 'id')
                 ->prepend('Escolha a opção', '');
         } catch (Exception $e) {
@@ -46,6 +48,47 @@ class TipoResponsavelRepository extends BaseRepository
             return [
                 '' => $e->getMessage()
             ];
+        }
+    }
+
+    public function store($data)
+    {
+        try {
+            $paciente = new $this->model($data);
+            $paciente->save();
+
+            return true;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function update(PacienteProntuarioQueixa $paciente, $data)
+    {
+        try {
+            DB::beginTransaction();
+
+            $paciente->fill($data);
+            $paciente->save();
+
+            DB::commit();
+
+            return true;
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return $e->getMessage();
+        }
+    }
+
+    public function destroy(PacienteProntuarioQueixa $paciente)
+    {
+        try {
+            $paciente->delete();
+
+            return true;
+        } catch (Exception $e){
+            return $e->getMessage();
         }
     }
 

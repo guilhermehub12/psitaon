@@ -35,6 +35,7 @@ return new class extends Migration
         Schema::create('pacientes_prontuario_planejamentos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('paciente_prontuario_id')->references('id')->on('pacientes_prontuarios')->onUpdate('cascade');
+            
             $table->foreignUuid('enquadramento_id')->references('id')->on('enquadramentos')->onUpdate('cascade');
 
             $table->longText('justificativa');
