@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Prontuario;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Paciente\StorePacienteProntuarioRequest;
-use App\Http\Requests\Admin\Paciente\UpdatePacienteProntuarioRequest;
+use App\Http\Requests\Admin\Paciente\Prontuario\StoreProntuarioRequest;
+use App\Http\Requests\Admin\Paciente\Prontuario\UpdateProntuarioRequest;
 use App\Models\Paciente;
 use App\Models\Prontuario\PacienteProntuario;
 use App\Repositories\Prontuario\PacienteProntuarioRepository;
@@ -56,7 +56,7 @@ class PacienteProntuarioController extends Controller
         ]);
     }
 
-    public function store(StorePacienteProntuarioRequest $request, PacienteProntuario $paciente)
+    public function store(StoreProntuarioRequest $request, PacienteProntuario $paciente)
     {
         $result = $this->pacienteProntuarioRepository->store($request->except(['_token']));
         if ($result === true) {
@@ -82,7 +82,7 @@ class PacienteProntuarioController extends Controller
         ]);
     }
 
-    public function update(UpdatePacienteProntuarioRequest $request, PacienteProntuario $paciente)
+    public function update(UpdateProntuarioRequest $request, PacienteProntuario $paciente)
     {
         $result = $this->pacienteProntuarioRepository->update($paciente, $request->except(['_token']));
 
