@@ -38,7 +38,7 @@ class PacienteProntuarioController extends Controller
         ]);
     }
 
-    public function create(PacienteProntuario $paciente)
+    public function create(Paciente $paciente)
     {
         $prontuarios_alimentacoes = $this->pacienteProntuarioAlimentacaoRepository->selectOption();
         $prontuarios_avaliacoes = $this->pacienteProntuarioAvaliacaoRepository->selectOption();
