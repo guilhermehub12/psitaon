@@ -10,6 +10,11 @@
         />
     </x-slot>
 
+    @includeIf('admin.pacientes_financeiros.partials.paciente', [
+        'paciente' => $paciente,
+        'route' => route('admin.pacientes.show', $paciente),
+    ])
+
     {{-- @includeIf('admin.pacientes_prontuarios.partials.form', [
         "title" => "Prontuário",
         "subtitle" => "Novo",

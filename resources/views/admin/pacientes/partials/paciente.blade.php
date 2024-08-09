@@ -16,7 +16,8 @@
             </div>
             <div class="col-md-4">
                 <p class="font-weight-bold">Gênero</p>
-                {{ $paciente->genero }}
+                {{ dd($paciente->genero) }}
+                {{ $paciente->generos->nome }}
             </div>
         </div>
         <div class="row mb-3">

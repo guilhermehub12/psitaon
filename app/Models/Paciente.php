@@ -68,6 +68,21 @@ class Paciente extends Model
         'deleted_by'
     ];
 
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = [
+        'agenda',
+        'responsavel',
+        'tipo_responsavel',
+        'financeiro',
+        'genero',
+        'escolaridade',
+        'estado_civil'
+    ];
+
     public function __construct($attributes = [])
     {
         parent::__construct($attributes);
@@ -111,37 +126,37 @@ class Paciente extends Model
     //     );
     // }
 
-    public function agendas(): HasMany
+    public function agenda(): HasMany
     {
         return $this->hasMany(PacienteAgenda::class, "paciente_id", "id");
     }
 
-    public function responsaveis(): HasMany
+    public function responsavel(): HasMany
     {
         return $this->hasMany(PacienteResponsavel::class, "paciente_id", "id");
     }
 
-    public function tipos_responsaveis(): HasMany
+    public function tipo_responsavel(): HasMany
     {
         return $this->hasMany(TipoResponsavel::class, 'paciente_id', 'id');
     }
 
-    public function financeiros(): HasMany
+    public function financeiro(): HasMany
     {
         return $this->hasMany(PacienteFinanceiro::class, 'paciente_id', 'id');
     }
 
-    public function generos(): BelongsTo
+    public function genero(): BelongsTo
     {
         return $this->belongsTo(Genero::class);
     }
 
-    public function escolaridades(): BelongsTo
+    public function escolaridade(): BelongsTo
     {
         return $this->belongsTo(Escolaridade::class);
     }
 
-    public function estados_civis(): BelongsTo
+    public function estado_civil(): BelongsTo
     {
         return $this->belongsTo(EstadoCivil::class);
     }
