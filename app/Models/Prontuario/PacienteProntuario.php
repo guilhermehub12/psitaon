@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Prontuario;
 
-use App\Models\Prontuario\PacienteProntuarioAlimentacao;
-use App\Models\Prontuario\PacienteProntuarioAvaliacao;
-use App\Models\Prontuario\PacienteProntuarioDoenca;
-use App\Models\Prontuario\PacienteProntuarioPlanejamento;
-use App\Models\Prontuario\PacienteProntuarioQueixa;
+use App\Models\Escolaridade;
+use App\Models\EstadoCivil;
+use App\Models\Genero;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
