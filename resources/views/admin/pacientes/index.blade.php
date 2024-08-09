@@ -190,6 +190,9 @@
                         </td>
                     </tr>
                 @empty
+                    <tr>
+                        <td>Vazio</td>
+                    </tr>
                 @endforelse
             </x-admin.table>
         </div>
@@ -203,20 +206,20 @@
             data: {
                 labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
                 datasets: [{
-                    label: 'Atendimentos 2024',
-                    data: [50, 60, 70, 80, 90, 100, 150],
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                    fill: false
-                },
-                {
-                    label: 'Atendimentos 2023',
-                    data: [36, 23, 53, 75, 33, 96, 141],
-                    borderColor: '#6C757D',
-                    borderWidth: 1,
-                    fill: false
-                }
-            ]
+                        label: 'Atendimentos 2024',
+                        data: [50, 60, 70, 80, 90, 100, 150],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        fill: false
+                    },
+                    {
+                        label: 'Atendimentos 2023',
+                        data: [36, 23, 53, 75, 33, 96, 141],
+                        borderColor: '#6C757D',
+                        borderWidth: 1,
+                        fill: false
+                    }
+                ]
             },
             options: {
                 scales: {

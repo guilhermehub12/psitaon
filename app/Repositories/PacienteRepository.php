@@ -14,12 +14,10 @@ class PacienteRepository extends BaseRepository
     public function paginate($paginate = 10, $orderBy = 'created_at', $sort = 'ASC', $filters = [])
     {
         try {
-            // Instantiate the model to call query() method
             $query = (new $this->model)->newQuery();
 
             if (count($filters) > 0) {
-                // Apply filters to the query if any
-                foreach ($filters as $key => $value) {
+                    foreach ($filters as $key => $value) {
                     $query->where($key, $value);
                 }
             }
@@ -28,7 +26,7 @@ class PacienteRepository extends BaseRepository
 
             return $query->paginate($paginate);
         } catch (Exception $e) {
-            // Return an empty collection or handle the exception as needed
+            // dd($e->getMessage());
             return [];
         }
     }
@@ -92,4 +90,3 @@ class PacienteRepository extends BaseRepository
     }
 
 }
-

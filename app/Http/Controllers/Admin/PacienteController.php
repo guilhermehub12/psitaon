@@ -38,14 +38,14 @@ class PacienteController extends Controller
 
     public function create(Paciente $paciente)
     {
-        $tipos_responsaveis = $this->tipoResponsavelRepository->selectOption();
+        // $tipos_responsaveis = $this->tipoResponsavelRepository->selectOption();
         $generos = $this->generoRepository->selectOption();
         $escolaridades = $this->escolaridadeRepository->selectOption();
         $estados_civis = $this->estadoCivilRepository->selectOption();
 
         return view('admin.pacientes.create', [
             'paciente' => $paciente,
-            'tipos_responsaveis' => $tipos_responsaveis,
+            // 'tipos_responsaveis' => $tipos_responsaveis,
             'generos' => $generos,
             'escolaridades' => $escolaridades,
             'estados_civis' => $estados_civis
@@ -94,7 +94,7 @@ class PacienteController extends Controller
     public function delete(Paciente $paciente)
     {
         $result = $this->pacienteRepository->destroy($paciente);
-        
+
         if ($result === true) {
             flash('success','Paciente deletado com sucesso!');
         } else {

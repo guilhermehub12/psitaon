@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Prontuario;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Paciente\Prontuario\StoreProntuarioRequest;
@@ -38,7 +38,7 @@ class PacienteProntuarioController extends Controller
         ]);
     }
 
-    public function create(PacienteProntuario $paciente)
+    public function create(Paciente $paciente)
     {
         $prontuarios_alimentacoes = $this->pacienteProntuarioAlimentacaoRepository->selectOption();
         $prontuarios_avaliacoes = $this->pacienteProntuarioAvaliacaoRepository->selectOption();
