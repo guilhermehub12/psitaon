@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Prontuario\PacienteProntuario;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
@@ -76,8 +77,8 @@ class Paciente extends Model
     protected $with = [
         'agenda',
         'responsavel',
-        'tipo_responsavel',
-        'financeiro',
+        // 'tipo_responsavel',
+        // 'financeiro',
         'genero',
         'escolaridade',
         'estado_civil'
@@ -136,15 +137,15 @@ class Paciente extends Model
         return $this->hasMany(PacienteResponsavel::class, "paciente_id", "id");
     }
 
-    public function tipo_responsavel(): HasMany
-    {
-        return $this->hasMany(TipoResponsavel::class, 'paciente_id', 'id');
-    }
+    // public function tipo_responsavel(): HasMany
+    // {
+    //     return $this->hasMany(TipoResponsavel::class, 'paciente_id', 'id');
+    // }
 
-    public function financeiro(): HasMany
-    {
-        return $this->hasMany(PacienteFinanceiro::class, 'paciente_id', 'id');
-    }
+    // public function financeiro(): HasMany
+    // {
+    //     return $this->hasMany(PacienteFinanceiro::class, 'paciente_id', 'id');
+    // }
 
     public function genero(): BelongsTo
     {
@@ -160,5 +161,11 @@ class Paciente extends Model
     {
         return $this->belongsTo(EstadoCivil::class);
     }
+
+    public function pacienteProntuario()
+    {
+        return $this->hasOne(PacienteProntuario::class, 'paciente_id', 'id');
+    }
+
 
 }
