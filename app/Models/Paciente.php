@@ -167,5 +167,14 @@ class Paciente extends Model
         return $this->hasOne(PacienteProntuario::class, 'paciente_id', 'id');
     }
 
+    public function responsaveis()
+    {
+        return $this->hasMany(PacienteResponsavel::class);
+    }
+    
+    public function financeiros()
+    {
+        return $this->hasMany(PacienteFinanceiro::class);
+    }
 
 }

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('pacientes_financeiro', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->foreignUuid('paciente_id')->references('id')->on('pacientes')->onUpdate('cascade');
             $table->foreignUuid('paciente_agenda_id')->references('id')->on('pacientes_agenda')->onUpdate('cascade');
 
             $table->foreignUuid('modalidade_pagamento_id')->references('id')->on('modalidades_pagamentos')->onUpdate('cascade');
@@ -40,10 +41,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('pacientes_financeiro');
-        Schema::dropIfExists('status_presencas');
-        Schema::dropIfExists('status_pagamentos');
-        Schema::dropIfExists('formas_pagamentos');
-        Schema::dropIfExists('frequencias_pagamentos');
-        Schema::dropIfExists('modalidades_pagamentos');
     }
 };

@@ -14,7 +14,7 @@
                 <div class="card-header border-bottom">
                     <h4 class="card-title font-weight-bold text-uppercase">
                         Prontuário
-                        <span class="badge badge-secondary fw-bold">Processos</span>
+                        <span class="badge badge-secondary fw-bold">Anamnese</span>
                     </h4>
                 </div>
                 <div class="card-body">

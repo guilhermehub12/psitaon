@@ -92,11 +92,11 @@
             const financialData = {
                 currentYear: {
                     label: "2024",
-                    data: [1000, 1200, 900, 1400, 1500, 1300, 1100, 1600, 1700, 1800, 1900, 2000]
+                    data: [100, 120, 90, 140, 150, 130, 110, 160, 170, 180, 190, 200]
                 },
                 previousYear: {
                     label: "2023",
-                    data: [900, 1100, 800, 1300, 1400, 1200, 1000, 1500, 1600, 1700, 1800, 1900]
+                    data: [90, 110, 80, 130, 140, 120, 100, 150, 160, 170, 180, 190]
                 }
             };
 
@@ -253,7 +253,7 @@
                     'Dez'
                 ][highestMonthIndex];
                 // const totalPatients = details.length;
-                const totalPatients = 128;
+                const totalPatients = 68;
 
                 $('#totalRevenue').text(`R$${totalRevenue}`);
                 $('#highestValue').text(`R$${highestValue}`);
