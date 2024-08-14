@@ -5,7 +5,7 @@
 
     @includeIf('admin.pacientes_financeiros.partials.dashboard')
 
-    {{-- @includeIf('admin.pacientes_financeiros.partials.paciente', [
+    @includeIf('admin.pacientes_financeiros.partials.paciente', [
         'paciente' => $paciente,
         'route' => route('admin.pacientes.show', $paciente),
     ])
@@ -49,5 +49,5 @@
                 <td class="align-middle" colspan="4">Nenhum financeiro cadastrado</td>
             </tr>
         @endforelse
-    </x-admin.table> --}}
+    </x-admin.table>
 </x-app-layout>

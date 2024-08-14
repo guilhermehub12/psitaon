@@ -20,7 +20,7 @@
         "subtitle" => "Novo",
         "action" => route('admin.pacientes.responsaveis.store', $paciente),
         "method" => "POST",
-        "routeBack" => route('admin.pacientes.index'),
+        "routeBack" => route('admin.pacientes.show', $paciente),
         "buttonText" => "Salvar",
         "pacienteResponsavel" => null
     ])
