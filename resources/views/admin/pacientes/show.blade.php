@@ -24,7 +24,7 @@
                         Prontuários
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.prontuarios.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('admin.pacientes.prontuarios.index', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
