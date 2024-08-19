@@ -1,6 +1,6 @@
 <div class="card shadow-none d-flex align-items-stretch h-100" style="background: #B99470; padding-bottom: 8px">
     <div class="card-header bg-transparent">
-        <h4 class="card-title">1 - Prontuário Inicial</h4>
+        <h4 class="card-title">1 - QUEIXA INICIAL</h4>
     </div>
     <div class="card-body">
         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1 row-cols-xxl-1">
@@ -8,8 +8,7 @@
                 <div class="col">
                     <div class="d-grid">
                         <a
-                            {{-- href="{{ route('admin.pacientes_prontuarios.create', $paciente) }}" --}}
-                            href=""
+                            href="{{ route('admin.pacientes.prontuarios.create', $paciente) }}"
                             class="btn btn-info waves-effect waves-light"
                         >
                             <i class="fas fa-pencil-alt"></i> Iniciar
@@ -27,7 +26,7 @@
                         >
                             <i class="fas fa-info-circle"></i> Visualizar
                             @push('modals')
-                                @includeIf('admin.pacientes_prontuarios.partials.paciente_prontuario_modal_show.blade', [
+                                @includeIf('admin.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_show.blade', [
                                     'paciente' => $paciente,
                                     'pacienteProntuario' => $paciente->pacienteProntuario
                                 ])
@@ -40,7 +39,7 @@
                     <div class="d-grid">
                         <a
                             href="{{
-                                route('admin.pacientes_prontuarios.edit', [
+                                route('admin.pacientes.prontuarios.edit', [
                                     $paciente,
                                     $paciente->pacienteProntuario
                                 ])

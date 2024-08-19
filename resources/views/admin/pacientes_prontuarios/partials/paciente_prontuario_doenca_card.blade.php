@@ -1,7 +1,7 @@
 @if ($paciente->pacienteProntuario)
     <div class="card shadow-none d-flex align-items-stretch h-100" style="background: #f79451;">
         <div class="card-header bg-transparent">
-            <h4 class="card-title">4 - Prontuário Doenças</h4>
+            <h4 class="card-title">4 - DOENÇAS</h4>
         </div>
         <div class="card-body">
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1 row-cols-xxl-1">
@@ -77,7 +77,7 @@
 @else
     <div class="card shadow-none d-flex align-items-stretch h-100" style="background: #808080; opacity: 0.5; cursor: not-allowed;">
         <div class="card-header bg-transparent">
-            <h4 class="card-title">4 - Prontuário Doenças</h4>
+            <h4 class="card-title">4 - DOENÇAS</h4>
         </div>
         <div class="card-body">
             <div class="row">
