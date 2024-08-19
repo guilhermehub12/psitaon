@@ -59,6 +59,13 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
             'pacientes' => 'paciente',
             'prontuarios' => 'pacienteProntuario'
         ]);
+        
+        // PACIENTES PRONTUARIOS QUEIXAS
+        Route::resource('pacientes.prontuarios_queixas', 'Prontuario\PacienteProntuarioQueixaController')
+        ->parameters([
+            'pacientes' => 'paciente',
+            'prontuariosQueixas' => 'pacienteProntuarioQueixa'
+        ]);
 
         // PACIENTES AGENDA
         Route::resource('pacientes.agendas', 'PacienteAgendaController')
