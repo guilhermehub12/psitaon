@@ -10,13 +10,13 @@
         </div>
         <div class="col-md-4">
             <p class="font-weight-bold">Gênero</p>
-            {{ $paciente->genero }}
+            {{ $paciente->genero->nome }}
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-md-4">
             <p class="font-weight-bold">Escolaridade</p>
-            {{ $paciente->escolaridade }}
+            {{ $paciente->escolaridade->nome }}
         </div>
         <div class="col-md-4">
             <p class="font-weight-bold">Profissão</p>
@@ -24,7 +24,7 @@
         </div>
         <div class="col-md-4">
             <p class="font-weight-bold">Estado Civil</p>
-            {{ $paciente->estado_civil }}
+            {{ $paciente->estado_civil->nome }}
         </div>
     </div>
     <div class="row mb-3">
