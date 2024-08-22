@@ -51,6 +51,23 @@
                     </div>
                 </div>
                 @endcan
+                @can('delete', $paciente->pacienteProntuario)
+                <div class="col mt-3">
+                    <div class="d-grid">
+                        <a
+                            href="{{
+                                route('admin.pacientes.prontuarios.destroy', [
+                                    $paciente,
+                                    $paciente->pacienteProntuario
+                                ])
+                            }}"
+                            class="btn btn-info waves-effect waves-light"
+                        >
+                            <i class="fas fa-pencil-alt"></i> Deletar
+                        </a>
+                    </div>
+                </div>
+                @endcan
             @endif
         </div>
     </div>

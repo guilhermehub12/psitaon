@@ -5,6 +5,7 @@ namespace App\Models\Prontuario;
 use App\Models\Escolaridade;
 use App\Models\EstadoCivil;
 use App\Models\Genero;
+use App\Models\Paciente;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
@@ -52,6 +53,7 @@ class PacienteProntuario extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'paciente_id',
         'queixa_inicial',
 
         'ativo',
@@ -62,6 +64,10 @@ class PacienteProntuario extends Model
 
     public function __construct($attributes = [])
     {
+        if ($attributes instanceof Paciente) {
+            $this->paciente = $attributes; // ou qualquer outro tratamento necessário
+            $attributes = []; // ou extraia atributos específicos
+        }
         parent::__construct($attributes);
         $this->created_by = Auth::id();
         $this->updated_by = Auth::id();
@@ -80,6 +86,11 @@ class PacienteProntuario extends Model
 
         parent::delete();
     }
+
+    public function paciente()
+{
+    return $this->belongsTo(Paciente::class, 'paciente_id');
+}
 
     public function queixas(): HasMany
     {

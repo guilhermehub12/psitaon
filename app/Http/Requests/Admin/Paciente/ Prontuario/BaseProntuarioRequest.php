@@ -22,7 +22,6 @@ class BaseProntuarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'paciente_id' => 'required',
             'queixa_inicial' => 'required|max:255'
         ];
     }
@@ -35,7 +34,6 @@ class BaseProntuarioRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'paciente_id' => 'Paciente',
             'queixa_inicial' => 'Queixa Inicial'
         ];
     }

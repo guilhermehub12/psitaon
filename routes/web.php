@@ -34,24 +34,24 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         Route::get('/', 'HomeController@index')
         ->name('home.index');
 
-        // ESTADOS
-        Route::resource('estados', 'EstadoController')
-        ->parameters(['estados' => 'estado']);
+        // // ESTADOS
+        // Route::resource('estados', 'EstadoController')
+        // ->parameters(['estados' => 'estado']);
 
-        // PSICOLOGAS
-        Route::resource('psicologas', 'PsicologaController')
-        ->parameters(['psicologas' => 'psicologa']);
+        // // PSICOLOGAS
+        // Route::resource('psicologas', 'PsicologaController')
+        // ->parameters(['psicologas' => 'psicologa']);
 
-        // PACIENTES
-        Route::resource('pacientes', 'PacienteController')
-        ->parameters(['pacientes' => 'paciente']);
+        // // PACIENTES
+        // Route::resource('pacientes', 'PacienteController')
+        // ->parameters(['pacientes' => 'paciente']);
 
-        // PACIENTES RESPONSAVEIS
-        Route::resource('pacientes.responsaveis', 'PacienteResponsavelController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'responsaveis' => 'pacienteResponsavel'
-        ]);
+        // // PACIENTES RESPONSAVEIS
+        // Route::resource('pacientes.responsaveis', 'PacienteResponsavelController')
+        // ->parameters([
+        //     'pacientes' => 'paciente',
+        //     'responsaveis' => 'pacienteResponsavel'
+        // ]);
 
         // PACIENTES PRONTUARIOS
         Route::resource('pacientes.prontuarios', 'Prontuario\PacienteProntuarioController')
@@ -60,36 +60,36 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
             'prontuarios' => 'pacienteProntuario'
         ]);
         
-        // PACIENTES PRONTUARIOS QUEIXAS
-        Route::resource('pacientes.prontuarios_queixas', 'Prontuario\PacienteProntuarioQueixaController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'prontuariosQueixas' => 'pacienteProntuarioQueixa'
-        ]);
+        // // PACIENTES PRONTUARIOS QUEIXAS
+        // Route::resource('pacientes.prontuarios_queixas', 'Prontuario\PacienteProntuarioQueixaController')
+        // ->parameters([
+        //     'pacientes' => 'paciente',
+        //     'prontuariosQueixas' => 'pacienteProntuarioQueixa'
+        // ]);
 
-        // PACIENTES AGENDA
-        Route::resource('pacientes.agendas', 'PacienteAgendaController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'agendas' => 'pacienteAgenda'
-        ]);
+        // // PACIENTES AGENDA
+        // Route::resource('pacientes.agendas', 'PacienteAgendaController')
+        // ->parameters([
+        //     'pacientes' => 'paciente',
+        //     'agendas' => 'pacienteAgenda'
+        // ]);
 
-        // PACIENTES FINANCEIRO
-        Route::resource('pacientes.financeiros', 'PacienteFinanceiroController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'financeiros' => 'pacienteFinanceiro'
-        ]);
+        // // PACIENTES FINANCEIRO
+        // Route::resource('pacientes.financeiros', 'PacienteFinanceiroController')
+        // ->parameters([
+        //     'pacientes' => 'paciente',
+        //     'financeiros' => 'pacienteFinanceiro'
+        // ]);
 
-        // PACIENTES ENDEREÇO
-        Route::resource('pacientes.enderecos', 'PacienteEnderecoController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'enderecos' => 'pacienteEndereco'
-        ]);
+        // // PACIENTES ENDEREÇO
+        // Route::resource('pacientes.enderecos', 'PacienteEnderecoController')
+        // ->parameters([
+        //     'pacientes' => 'paciente',
+        //     'enderecos' => 'pacienteEndereco'
+        // ]);
 
-        // USUARIOS
-        Route::resource('usuarios', 'UsuarioController')
-        ->parameters(['usuarios' => 'usuario']);
+        // // USUARIOS
+        // Route::resource('usuarios', 'UsuarioController')
+        // ->parameters(['usuarios' => 'usuario']);
     });
 });
