@@ -3,10 +3,10 @@
         <x-admin.breadcrumb icon="fas fa-user-plus" title="Prontuários" :links="['Prontuários', 'Prontuário Novo']" />
     </x-slot>
 
-    @includeIf('admin.pacientes_financeiros.partials.paciente', [
+    {{-- @includeIf('admin.pacientes_financeiros.partials.paciente', [
         'paciente' => $paciente,
         'route' => route('admin.pacientes.show', $paciente),
-    ])
+    ]) --}}
 
     <div class="row">
         <div class="col">

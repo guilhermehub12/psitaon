@@ -25,10 +25,10 @@ class PacienteProntuarioController extends Controller
      * Display a listing of the resource.
      */
     public function index(
-        Paciente $pacienteProntuario
+        Paciente $paciente
     ) {
         return view('admin.pacientes_prontuarios.index', [
-            'paciente' => $pacienteProntuario
+            'paciente' => $paciente
         ]);
     }
 
@@ -44,10 +44,10 @@ class PacienteProntuarioController extends Controller
 
     public function store(
         StoreProntuarioRequest $request,
-        Paciente $pacienteProntuario,
+        Paciente $paciente,
         // PacienteProntuario $pacienteProntuario
     ) {
-        $result = $this->pacienteProntuarioRepository->store($pacienteProntuario, $request->except(['_token']));
+        $result = $this->pacienteProntuarioRepository->store($paciente, $request->except(['_token']));
 
         if ($result === true) {
             $request->session()->flash('success', 'Queixa inicial cadastrado com sucesso!');
@@ -55,26 +55,27 @@ class PacienteProntuarioController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar a queixa inicial. ' . $result);
         }
 
-        return redirect()->route('admin.pacientes.prontuarios.index', $pacienteProntuario);
+        return redirect()->route('admin.pacientes.prontuarios.index', $paciente);
     }
 
-    public function show(PacienteProntuario $pacienteProntuario)
+    public function show(Paciente $paciente, PacienteProntuario $pacienteProntuario)
     {
         return view('admin.pacientes_prontuarios.show', [
-            'paciente' => $pacienteProntuario
+            'paciente' => $paciente,
+            'pacienteProntuario' => $pacienteProntuario
         ]);
     }
 
-    public function edit(PacienteProntuario $pacienteProntuario)
+    public function edit(PacienteProntuario $paciente)
     {
         return view('admin.pacientes_prontuarios.edit', [
-            'paciente' => $pacienteProntuario
+            'paciente' => $paciente
         ]);
     }
 
-    public function update(UpdateProntuarioRequest $request, PacienteProntuario $pacienteProntuario)
+    public function update(UpdateProntuarioRequest $request, PacienteProntuario $paciente)
     {
-        $result = $this->pacienteProntuarioRepository->update($pacienteProntuario, $request->except(['_token']));
+        $result = $this->pacienteProntuarioRepository->update($paciente, $request->except(['_token']));
 
         if ($result === true) {
             $request->session()->flash('success', 'Paciente atualizado com sucesso!');

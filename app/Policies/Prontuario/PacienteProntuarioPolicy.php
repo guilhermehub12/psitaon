@@ -4,55 +4,44 @@ namespace App\Policies\Prontuario;
 
 use App\Models\Prontuario\PacienteProntuario;
 use App\Models\Usuario;
+use Illuminate\Auth\Access\Response;
 use Exception;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PacienteProntuarioPolicy
 {
     use HandlesAuthorization;
-
     /**
      * Determine whether the user can view any models.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(Usuario $usuario)
+    public function viewAny(Usuario $usuario): bool
     {
         return true;
+        //
     }
 
     /**
      * Determine whether the user can view the model.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @param  \App\Models\PacienteProntuario  $gestaoRiscoAtividadeEscopo
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(Usuario $usuario, PacienteProntuario $pacienteProntuario)
+    public function view(Usuario $usuario, PacienteProntuario $pacienteProntuario): bool
     {
         return true;
+        //
     }
 
     /**
      * Determine whether the user can create models.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(Usuario $usuario)
+    public function create(Usuario $usuario): bool
     {
         return true;
+        //
     }
 
     /**
      * Determine whether the user can update the model.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @param  \App\Models\PacienteProntuario  $gestaoRiscoAtividadeEscopo
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(Usuario $usuario, PacienteProntuario $pacienteProntuario)
+    public function update(Usuario $usuario, PacienteProntuario $pacienteProntuario): bool
     {
         try {
             if (
@@ -69,12 +58,16 @@ class PacienteProntuarioPolicy
 
     /**
      * Determine whether the user can delete the model.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @param  \App\Models\PacienteProntuario  $gestaoRiscoAtividadeEscopo
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(Usuario $usuario, PacienteProntuario $pacienteProntuario)
+    public function delete(Usuario $usuario, PacienteProntuario $pacienteProntuario): bool
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can restore the model.
+     */
+    public function restore(Usuario $usuario, PacienteProntuario $pacienteProntuario): bool
     {
         try {
             if (
@@ -90,25 +83,9 @@ class PacienteProntuarioPolicy
     }
 
     /**
-     * Determine whether the user can restore the model.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @param  \App\Models\PacienteProntuario  $gestaoRiscoAtividadeEscopo
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
-    public function restore(Usuario $usuario, PacienteProntuario $pacienteProntuario)
-    {
-        //
-    }
-
-    /**
      * Determine whether the user can permanently delete the model.
-     *
-     * @param  \App\Models\Usuario  $usuario
-     * @param  \App\Models\PacienteProntuario  $gestaoRiscoAtividadeEscopo
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(Usuario $usuario, PacienteProntuario $pacienteProntuario)
+    public function forceDelete(Usuario $usuario, PacienteProntuario $pacienteProntuario): bool
     {
         //
     }
