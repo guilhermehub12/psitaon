@@ -23,8 +23,13 @@ require __DIR__.'/auth.php';
 
 Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], function() {
 
-    Route::get('/', 'Admin\HomeController@index')
-    ->name('home.index');
+    // HOME
+    Route::get('/', 'HomeController@index')->name('home.index');
+
+    include_once 'web_admin.php';
+    include_once 'web_paciente.php';
+
+    /*
 
     Route::prefix('administracao')
     ->name('admin.')
@@ -42,54 +47,9 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' =>['auth']], f
         Route::resource('psicologas', 'PsicologaController')
         ->parameters(['psicologas' => 'psicologa']);
 
-        // PACIENTES
-        Route::resource('pacientes', 'PacienteController')
-        ->parameters(['pacientes' => 'paciente']);
-
-        // PACIENTES RESPONSAVEIS
-        Route::resource('pacientes.responsaveis', 'PacienteResponsavelController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'responsaveis' => 'pacienteResponsavel'
-        ]);
-
-        // PACIENTES PRONTUARIOS
-        Route::resource('pacientes.prontuarios', 'Prontuario\PacienteProntuarioController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'prontuarios' => 'pacienteProntuario'
-        ]);
-        
-        // PACIENTES PRONTUARIOS QUEIXAS
-        Route::resource('pacientes.prontuarios_queixas', 'Prontuario\PacienteProntuarioQueixaController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'prontuariosQueixas' => 'pacienteProntuarioQueixa'
-        ]);
-
-        // PACIENTES AGENDA
-        Route::resource('pacientes.agendas', 'PacienteAgendaController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'agendas' => 'pacienteAgenda'
-        ]);
-
-        // PACIENTES FINANCEIRO
-        Route::resource('pacientes.financeiros', 'PacienteFinanceiroController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'financeiros' => 'pacienteFinanceiro'
-        ]);
-
-        // PACIENTES ENDEREÇO
-        Route::resource('pacientes.enderecos', 'PacienteEnderecoController')
-        ->parameters([
-            'pacientes' => 'paciente',
-            'enderecos' => 'pacienteEndereco'
-        ]);
-
         // USUARIOS
         Route::resource('usuarios', 'UsuarioController')
         ->parameters(['usuarios' => 'usuario']);
     });
+    */
 });

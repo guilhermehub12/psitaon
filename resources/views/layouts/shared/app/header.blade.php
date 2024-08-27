@@ -9,7 +9,7 @@
 
 
             <li class="nav-item mx-auto" style="height: 50px;">
-                <a class="navbar-brand" href="{{ route('admin.home.index') }}">
+                <a class="navbar-brand" href="#">
                     <h2 style="font-family: Hundrake, Arial; color: #153448;">PsiTáOn</h2>
                 </a>
             </li>
@@ -23,12 +23,12 @@
                     <strong class="dropdown-item fw-bold">{{ explode(' ', trim(Auth::user()->nome))[0] }} |
                         {{ Auth::user()->perfis->first()->nome }}</strong>
                     <div class="dropdown-divider"></div>
-                    <a href="{{ route('admin.home.index') }}"
+                    <a href="#"
                         class="dropdown-item nav-link {{ request()->is('administracao') ? 'active' : '' }}">
                         <i class="fas fa-tachometer-alt mr-2"></i>Painel
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="{{ route('admin.usuarios.index') }}"
+                    <a href="#"
                         class="dropdown-item nav-link {{ request()->is('administracao/usuarios') ? 'active' : '' }}">
                         <i class="fas fa-users mr-2"></i>Usuários
                     </a>
