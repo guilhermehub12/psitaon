@@ -25,7 +25,7 @@ class PacienteResponsavelController extends Controller
     {
         $pacientes = $this->pacienteResponsavelRepository->paginate(10, 'created_at', 'ASC', $request->except(['_token', 'page']));
 
-        return view('admin.pacientes_responsaveis.create', [
+        return view('paciente.pacientes_responsaveis.create', [
             'pacientes' => $pacientes
         ]);
     }
@@ -34,7 +34,7 @@ class PacienteResponsavelController extends Controller
     {
         $tipos_responsaveis = $this->tipoResponsavelRepository->selectOption();
 
-        return view('admin.pacientes_responsaveis.create', [
+        return view('paciente.pacientes_responsaveis.create', [
             'paciente' => $paciente,
             'tipos_responsaveis' => $tipos_responsaveis
         ]);
@@ -50,19 +50,19 @@ class PacienteResponsavelController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar o responsavel. '.$result);
         }
 
-        return redirect()->route('admin.pacientes.responsaveis.create', $paciente);
+        return redirect()->route('paciente.pacientes.responsaveis.create', $paciente);
     }
 
     public function show(PacienteResponsavel $paciente)
     {
-        return view('admin.pacientes_responsaveis.show', [
+        return view('paciente.pacientes_responsaveis.show', [
             'paciente' => $paciente
         ]);
     }
 
     public function edit(PacienteResponsavel $paciente)
     {
-        return view('admin.pacientes_responsaveis.edit', [
+        return view('paciente.pacientes_responsaveis.edit', [
             'paciente' => $paciente
         ]);
     }
@@ -77,7 +77,7 @@ class PacienteResponsavelController extends Controller
             $request->session()->flash('danger', 'Erro ao atualizar o responsavel! '.$result);
         }
 
-        return redirect()->route('admin.pacientes.responsaveis.index');
+        return redirect()->route('paciente.pacientes.responsaveis.index');
     }
 
     public function delete(Request $request, Paciente $paciente, PacienteResponsavel $pacienteResponsavel)
@@ -90,6 +90,6 @@ class PacienteResponsavelController extends Controller
             flash('danger', 'Erro ao deletar o responsavel! '.$result);
         }
 
-        return redirect()->route('admin.pacientes.responsaveis.index');
+        return redirect()->route('paciente.pacientes.responsaveis.index');
     }
 }

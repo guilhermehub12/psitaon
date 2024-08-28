@@ -28,7 +28,7 @@ class PacienteAgendaController extends Controller
     {
         $pacientes = $this->pacienteAgendaRepository->paginate(10, 'created_at', 'ASC', $request->except(['_token', 'page']));
 
-        return view('admin.pacientes_agendas.create', [
+        return view('paciente.pacientes_agendas.create', [
             'paciente' => $pacientes
         ]);
     }
@@ -36,7 +36,7 @@ class PacienteAgendaController extends Controller
     public function create(Paciente $paciente)
     {
         $frequencias = $this->frequenciaPagamentoRepository->selectOption();
-        return view('admin.pacientes_agendas.create', [
+        return view('paciente.pacientes_agendas.create', [
             'paciente' => $paciente,
             'frequencias' => $frequencias
         ]);
@@ -52,19 +52,19 @@ class PacienteAgendaController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar a sessão. ');
         }
 
-        return redirect()->route('admin.pacientes.agendas.create', $paciente);
+        return redirect()->route('paciente.pacientes.agendas.create', $paciente);
     }
 
     public function show(PacienteAgenda $paciente)
     {
-        return view('admin.pacientes_agendas.show', [
+        return view('paciente.pacientes_agendas.show', [
             'paciente' => $paciente
         ]);
     }
 
     public function edit(PacienteAgenda $paciente)
     {
-        return view('admin.pacientes_agendas.edit', [
+        return view('paciente.pacientes_agendas.edit', [
             'paciente' => $paciente
         ]);
     }
@@ -79,7 +79,7 @@ class PacienteAgendaController extends Controller
             $request->session()->flash('danger', 'Erro ao atualizar a sessão! ');
         }
 
-        return redirect()->route('admin.pacientes.agendas.index');
+        return redirect()->route('paciente.pacientes.agendas.index');
     }
 
     public function delete(Request $request, Paciente $paciente, PacienteAgenda $pacienteAgenda)
@@ -92,6 +92,6 @@ class PacienteAgendaController extends Controller
             flash('danger', 'Erro ao deletar a sessão! ');
         }
 
-        return redirect()->route('admin.pacientes.agendas.index');
+        return redirect()->route('paciente.pacientes.agendas.index');
     }
 }

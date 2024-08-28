@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Paciente;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Paciente\StorePacienteRequest;
@@ -31,7 +31,7 @@ class PacienteController extends Controller
     {
         $pacientes = $this->pacienteRepository->paginate(10, 'created_at', 'ASC', $request->except(['_token', 'page']));
 
-        return view('admin.pacientes.index', [
+        return view('paciente.pacientes.index', [
             'pacientes' => $pacientes
         ]);
     }
@@ -43,7 +43,7 @@ class PacienteController extends Controller
         $escolaridades = $this->escolaridadeRepository->selectOption();
         $estados_civis = $this->estadoCivilRepository->selectOption();
 
-        return view('admin.pacientes.create', [
+        return view('paciente.pacientes.create', [
             'paciente' => $paciente,
             // 'tipos_responsaveis' => $tipos_responsaveis,
             'generos' => $generos,
@@ -61,19 +61,19 @@ class PacienteController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar o paciente. '.$result);
         }
 
-        return redirect()->route('admin.pacientes.index', $paciente);
+        return redirect()->route('paciente.pacientes.index', $paciente);
     }
 
     public function show(Paciente $paciente)
     {
-        return view('admin.pacientes.show', [
+        return view('paciente.pacientes.show', [
             'paciente' => $paciente
         ]);
     }
 
     public function edit(Paciente $paciente)
     {
-        return view('admin.pacientes.edit', [
+        return view('paciente.pacientes.edit', [
             'paciente' => $paciente
         ]);
     }
@@ -88,7 +88,7 @@ class PacienteController extends Controller
             $request->session()->flash('danger', 'Erro ao atualizar o paciente! '.$result);
         }
 
-        return redirect()->route('admin.pacientes.index');
+        return redirect()->route('paciente.pacientes.index');
     }
 
     public function delete(Paciente $paciente)
@@ -101,6 +101,6 @@ class PacienteController extends Controller
             flash('danger', 'Erro ao deletar o paciente! '.$result);
         }
 
-        return redirect()->route('admin.pacientes.index');
+        return redirect()->route('paciente.pacientes.index');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Prontuario;
+namespace App\Http\Controllers\Paciente\Prontuario;
 
 use App\Http\Controllers\Controller;
 // use App\Http\Requests\Admin\Paciente\Prontuario\StoreProntuarioRequest;
@@ -25,7 +25,7 @@ class PacienteProntuarioQueixaController extends Controller
         Paciente $paciente,
         PacienteProntuarioQueixa $pacienteProntuarioQueixa
     ) {
-        return view('admin.pacientes_prontuarios.paciente_prontuario_queixa.create', [
+        return view('paciente.pacientes_prontuarios.paciente_prontuario_queixa.create', [
             'paciente' => $paciente,
             'pacienteProntuarioQueixa' => $pacienteProntuarioQueixa
         ]);
@@ -50,12 +50,12 @@ class PacienteProntuarioQueixaController extends Controller
         if ($result === true) {
             flash('Análise do risco cadastrada com sucesso!')->success();
 
-            return redirect()->route('admin.pacientes.prontuarios.index', $paciente);
+            return redirect()->route('paciente.pacientes.prontuarios.index', $paciente);
         }
 
         flash('Erro ao cadastrar a análise do risco!')->error();
 
-        return redirect()->route('admin.pacientes.prontuarios_queixas.create', [
+        return redirect()->route('paciente.pacientes.prontuarios_queixas.create', [
             $paciente,
             $pacienteProntuarioQueixa
         ]);

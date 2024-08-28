@@ -4,7 +4,7 @@
     target="paciente-prontuario-queixa-modal-{{ $pacienteProntuario->id }}-show"
     size="xl"
 >
-    @includeIf('admin.pacientes_prontuarios.paciente_prontuario_queixa.partials.paciente_prontuario_queixa', [
+    @includeIf('paciente.pacientes_prontuarios.paciente_prontuario_queixa.partials.paciente_prontuario_queixa', [
         'pacienteProntuarioQueixa' => $pacienteProntuarioQueixa
     ])
 </x-admin.modal>

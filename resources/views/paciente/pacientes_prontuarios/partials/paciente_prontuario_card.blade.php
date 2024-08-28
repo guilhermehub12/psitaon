@@ -8,7 +8,7 @@
                 <div class="col">
                     <div class="d-grid">
                         <a
-                            href="{{ route('admin.pacientes.prontuarios.create', $paciente) }}"
+                            href="{{ route('paciente.pacientes.prontuarios.create', $paciente) }}"
                             class="btn btn-info waves-effect waves-light"
                         >
                             <i class="fas fa-pencil-alt"></i> Iniciar
@@ -26,7 +26,7 @@
                         >
                             <i class="fas fa-info-circle"></i> Visualizar
                             @push('modals')
-                                @includeIf('admin.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_show.blade', [
+                                @includeIf('paciente.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_show.blade', [
                                     'paciente' => $paciente,
                                     'pacienteProntuario' => $paciente->pacienteProntuario
                                 ])
@@ -39,7 +39,7 @@
                     <div class="d-grid">
                         <a
                             href="{{
-                                route('admin.pacientes.prontuarios.edit', [
+                                route('paciente.pacientes.prontuarios.edit', [
                                     $paciente,
                                     $paciente->pacienteProntuario
                                 ])
@@ -62,7 +62,7 @@
                         >
                             <i class="fas fa-trash-alt"></i> Deletar
                             @push('modals')
-                                @includeIf('admin.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_destroy.blade', [
+                                @includeIf('paciente.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_destroy.blade', [
                                     'paciente' => $paciente,
                                     'pacienteProntuario' => $paciente->pacienteProntuario
                                 ])

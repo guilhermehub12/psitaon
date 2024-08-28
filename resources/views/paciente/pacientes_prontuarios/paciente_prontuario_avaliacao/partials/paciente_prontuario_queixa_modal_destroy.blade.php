@@ -9,7 +9,7 @@
     message="Deseja apagar a queixa do paciente abaixo?"
     size="xl"
 >
-    @includeIf('admin.pacientes_prontuarios.paciente_prontuario_queixa.partials.paciente_prontuario_queixa', [
+    @includeIf('paciente.pacientes_prontuarios.paciente_prontuario_queixa.partials.paciente_prontuario_queixa', [
         'pacienteProntuarioQueixa' => $pacienteProntuarioQueixa,
     ])
 </x-admin.modal-destroy>

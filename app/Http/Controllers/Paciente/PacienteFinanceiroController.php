@@ -51,7 +51,7 @@ class PacienteFinanceiroController extends Controller
         $status_pagamentos = $this->statusPagamentoRepository->selectOption();
         $status_presencas = $this->statusPresencaRepository->selectOption();
 
-        return view('admin.pacientes_financeiros.create', [
+        return view('paciente.pacientes_financeiros.create', [
             'paciente' => $paciente,
             'modalidades_pagamentos' => $modalidades_pagamentos,
             'frequencias_pagamentos' => $frequencias_pagamentos,
@@ -72,19 +72,19 @@ class PacienteFinanceiroController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar o responsavel. '.$result);
         }
 
-        return redirect()->route('admin.pacientes.financeiros.create', $paciente);
+        return redirect()->route('paciente.pacientes.financeiros.create', $paciente);
     }
 
     public function show(PacienteFinanceiro $paciente)
     {
-        return view('admin.pacientes_financeiros.show', [
+        return view('paciente.pacientes_financeiros.show', [
             'paciente' => $paciente
         ]);
     }
 
     public function edit(PacienteFinanceiro $paciente)
     {
-        return view('admin.pacientes_financeiros.edit', [
+        return view('paciente.pacientes_financeiros.edit', [
             'paciente' => $paciente
         ]);
     }
@@ -99,7 +99,7 @@ class PacienteFinanceiroController extends Controller
             $request->session()->flash('danger', 'Erro ao atualizar o responsavel! '.$result);
         }
 
-        return redirect()->route('admin.pacientes.financeiros.index');
+        return redirect()->route('paciente.pacientes.financeiros.index');
     }
 
     public function delete(Request $request, Paciente $paciente, PacienteFinanceiro $pacienteFinanceiro)
@@ -112,6 +112,6 @@ class PacienteFinanceiroController extends Controller
             flash('danger', 'Erro ao deletar o responsavel! '.$result);
         }
 
-        return redirect()->route('admin.pacientes.financeiros.index');
+        return redirect()->route('paciente.pacientes.financeiros.index');
     }
 }

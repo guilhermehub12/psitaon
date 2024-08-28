@@ -40,7 +40,7 @@
                         <div class="d-grid">
                             <a
                                 href="{{
-                                    route('admin.pacientes_prontuarios.edit', [
+                                    route('paciente.pacientes_prontuarios.edit', [
                                         $paciente,
                                         $paciente->pacienteProntuario
                                     ])

@@ -3,9 +3,9 @@
         <x-admin.breadcrumb icon="fas fa-user-plus" title="Prontuários" :links="['Prontuários', 'Prontuário Novo']" />
     </x-slot>
 
-    {{-- @includeIf('admin.pacientes_financeiros.partials.paciente', [
+    {{-- @includeIf('paciente.pacientes_financeiros.partials.paciente', [
         'paciente' => $paciente,
-        'route' => route('admin.pacientes.show', $paciente),
+        'route' => route('paciente.pacientes.show', $paciente),
     ]) --}}
 
     <div class="row">
@@ -21,32 +21,32 @@
                     <div
                         class="row g-2 text-uppercase text-dark justify-content-center text-center row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-3">
                         <div class="col">
-                            @includeIf('admin.pacientes_prontuarios.partials.paciente_prontuario_card', [
+                            @includeIf('paciente.pacientes_prontuarios.partials.paciente_prontuario_card', [
                                 'paciente' => $paciente,
                             ])
                         </div>
                         <div class="col">
-                            @includeIf('admin.pacientes_prontuarios.partials.paciente_prontuario_queixa_card', [
+                            @includeIf('paciente.pacientes_prontuarios.partials.paciente_prontuario_queixa_card', [
                                 'paciente' => $paciente,
                             ])
                         </div>
                         <div class="col">
-                            @includeIf('admin.pacientes_prontuarios.partials.paciente_prontuario_alimentacao_card', [
+                            @includeIf('paciente.pacientes_prontuarios.partials.paciente_prontuario_alimentacao_card', [
                                 'paciente' => $paciente,
                             ])
                         </div>
                         <div class="col">
-                            @includeIf('admin.pacientes_prontuarios.partials.paciente_prontuario_doenca_card', [
+                            @includeIf('paciente.pacientes_prontuarios.partials.paciente_prontuario_doenca_card', [
                                 'paciente' => $paciente,
                             ])
                         </div>
                         <div class="col">
-                            @includeIf('admin.pacientes_prontuarios.partials.paciente_prontuario_avaliacao_card', [
+                            @includeIf('paciente.pacientes_prontuarios.partials.paciente_prontuario_avaliacao_card', [
                                 'paciente' => $paciente,
                             ])
                         </div>
                         <div class="col">
-                            @includeIf('admin.pacientes_prontuarios.partials.paciente_prontuario_planejamento_card', [
+                            @includeIf('paciente.pacientes_prontuarios.partials.paciente_prontuario_planejamento_card', [
                                 'paciente' => $paciente,
                             ])
                         </div>

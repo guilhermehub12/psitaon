@@ -3,19 +3,19 @@
         <x-admin.breadcrumb icon="fas fa-box" title="Financeiros" :links="['Financeiros', 'Novo Financeiro']" />
     </x-slot>
 
-    @includeIf('admin.pacientes_financeiros.partials.dashboard')
+    @includeIf('paciente.pacientes_financeiros.partials.dashboard')
 
-    @includeIf('admin.pacientes_financeiros.partials.paciente', [
+    @includeIf('paciente.pacientes_financeiros.partials.paciente', [
         'paciente' => $paciente,
-        'route' => route('admin.pacientes.show', $paciente),
+        'route' => route('paciente.pacientes.show', $paciente),
     ])
 
-    @includeIf('admin.pacientes_financeiros.partials.form', [
+    @includeIf('paciente.pacientes_financeiros.partials.form', [
         'title' => 'Financeiro',
         'subtitle' => 'Novo',
-        'action' => route('admin.pacientes.financeiros.store', $paciente),
+        'action' => route('paciente.pacientes.financeiros.store', $paciente),
         'method' => 'POST',
-        'routeBack' => route('admin.pacientes.index'),
+        'routeBack' => route('paciente.pacientes.index'),
         'buttonText' => 'Salvar',
         'pacienteFinanceiro' => null,
     ])
@@ -37,7 +37,7 @@
                     </button>
 
                     @push('modals')
-                        @includeIf('admin.pacientes_financeiros.partials.paciente-financeiro-modal-destroy', [
+                        @includeIf('paciente.pacientes_financeiros.partials.paciente-financeiro-modal-destroy', [
                             $paciente,
                             $pacienteFinanceiro,
                         ])

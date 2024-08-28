@@ -10,7 +10,7 @@
         />
     </x-slot>
 
-    @includeIf('admin.pacientes.partials.paciente', [
+    @includeIf('paciente.pacientes.partials.paciente', [
         "paciente" => $paciente
     ])
 
@@ -24,7 +24,7 @@
                         Prontuários
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.prontuarios.index', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('paciente.pacientes.prontuarios.index', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -39,7 +39,7 @@
                         Agenda
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.agendas.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('paciente.pacientes.agendas.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -54,7 +54,7 @@
                         Financeiro
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.financeiros.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('paciente.pacientes.financeiros.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -69,7 +69,7 @@
                         Responsáveis
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.responsaveis.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('paciente.pacientes.responsaveis.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>
@@ -84,7 +84,7 @@
                         Endereço
                     </p>
                     <p class="card-text text-center">
-                        <a href="{{  route('admin.pacientes.enderecos.create', $paciente) }}" class="btn btn-lila btn-block">
+                        <a href="{{  route('paciente.pacientes.enderecos.create', $paciente) }}" class="btn btn-lila btn-block">
                             <i class="fas fa-plus-circle"></i> Adicionar
                         </a>
                     </p>

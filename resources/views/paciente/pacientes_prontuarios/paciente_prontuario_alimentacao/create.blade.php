@@ -8,12 +8,12 @@
         'route' => route('admin.paciente_prontuario.paciente_prontuario_queixa.index', $atividade),
     ]) --}}
 
-    @includeIf('admin.pacientes_prontuarios.paciente_prontuario_queixa.partials.form', [
+    @includeIf('paciente.pacientes_prontuarios.paciente_prontuario_queixa.partials.form', [
         'title' => 'Queixa',
         'subtitle' => 'Anamnese',
-        'action' => route('admin.pacientes.prontuarios_queixas.store', $paciente),
+        'action' => route('paciente.pacientes.prontuarios_queixas.store', $paciente),
         'method' => 'POST',
-        'routeBack' => route('admin.pacientes.show', $paciente),
+        'routeBack' => route('paciente.pacientes.show', $paciente),
         'buttonText' => 'Salvar',
         'pacienteProntuarioQueixa' => null,
     ])

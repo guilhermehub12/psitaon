@@ -10,17 +10,17 @@
         />
     </x-slot>
 
-    @includeIf('admin.pacientes_responsaveis.partials.paciente', [
+    @includeIf('paciente.pacientes_responsaveis.partials.paciente', [
         "paciente" => $paciente,
-        "route" => route('admin.pacientes.show', $paciente)
+        "route" => route('paciente.pacientes.show', $paciente)
     ])
 
-    @includeIf('admin.pacientes_responsaveis.partials.form', [
+    @includeIf('paciente.pacientes_responsaveis.partials.form', [
         "title" => "Responsável",
         "subtitle" => "Novo",
-        "action" => route('admin.pacientes.responsaveis.store', $paciente),
+        "action" => route('paciente.pacientes.responsaveis.store', $paciente),
         "method" => "POST",
-        "routeBack" => route('admin.pacientes.show', $paciente),
+        "routeBack" => route('paciente.pacientes.show', $paciente),
         "buttonText" => "Salvar",
         "pacienteResponsavel" => null
     ])
@@ -47,7 +47,7 @@
                     </button>
 
                     @push('modals')
-                        @includeIf('admin.pacientes_responsaveis.partials.paciente-responsavel-modal-destroy', [
+                        @includeIf('paciente.pacientes_responsaveis.partials.paciente-responsavel-modal-destroy', [
                             $paciente,
                             $pacienteResponsavel
                         ])

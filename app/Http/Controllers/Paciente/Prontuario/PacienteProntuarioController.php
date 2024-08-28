@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Prontuario;
+namespace App\Http\Controllers\Paciente\Prontuario;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Paciente\Prontuario\StoreProntuarioRequest;
@@ -27,7 +27,7 @@ class PacienteProntuarioController extends Controller
     public function index(
         Paciente $paciente
     ) {
-        return view('admin.pacientes_prontuarios.index', [
+        return view('paciente.pacientes_prontuarios.index', [
             'paciente' => $paciente
         ]);
     }
@@ -36,7 +36,7 @@ class PacienteProntuarioController extends Controller
         Paciente $paciente,
         PacienteProntuario $pacienteProntuario
     ) {
-        return view('admin.pacientes_prontuarios.paciente_prontuario.create', [
+        return view('paciente.pacientes_prontuarios.paciente_prontuario.create', [
             'paciente' => $paciente,
             'pacienteProntuario' => $pacienteProntuario
         ]);
@@ -55,12 +55,12 @@ class PacienteProntuarioController extends Controller
             $request->session()->flash('danger', 'Erro ao cadastrar a queixa inicial. ' . $result);
         }
 
-        return redirect()->route('admin.pacientes.prontuarios.index', $paciente);
+        return redirect()->route('paciente.pacientes.prontuarios.index', $paciente);
     }
 
     public function show(Paciente $paciente, PacienteProntuario $pacienteProntuario)
     {
-        return view('admin.pacientes_prontuarios.show', [
+        return view('paciente.pacientes_prontuarios.show', [
             'paciente' => $paciente,
             'pacienteProntuario' => $pacienteProntuario
         ]);
@@ -68,7 +68,7 @@ class PacienteProntuarioController extends Controller
 
     public function edit(PacienteProntuario $paciente)
     {
-        return view('admin.pacientes_prontuarios.edit', [
+        return view('paciente.pacientes_prontuarios.edit', [
             'paciente' => $paciente
         ]);
     }
@@ -83,7 +83,7 @@ class PacienteProntuarioController extends Controller
             $request->session()->flash('danger', 'Erro ao atualizar o paciente! ' . $result);
         }
 
-        return redirect()->route('admin.pacientes.prontuarios.index');
+        return redirect()->route('paciente.pacientes.prontuarios.index');
     }
 
     public function delete(PacienteProntuario $pacienteProntuario)
@@ -96,6 +96,6 @@ class PacienteProntuarioController extends Controller
             flash('danger', 'Erro ao deletar o paciente! ' . $result);
         }
 
-        return redirect()->route('admin.pacientes.prontuarios.index');
+        return redirect()->route('paciente.pacientes.prontuarios.index');
     }
 }

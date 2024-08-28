@@ -139,7 +139,7 @@
 
     <div class="row mb-3">
         <div class="col-md-3 offset-md-9">
-            <a href="{{ route('admin.pacientes.create') }}"
+            <a href="{{ route('paciente.pacientes.create') }}"
                 class="btn btn-lila btn-block text-uppercase font-weight-bold">
                 <i class="fas fa-plus-circle"></i> Novo Paciente
             </a>
@@ -169,7 +169,7 @@
                             <i class="fas fa-cog"></i>
                         </button> --}}
                                 {{-- <div class="dropdown-menu" aria-labelledby="dropdown-{{ $paciente->id }}"> --}}
-                                <a href="{{ route('admin.pacientes.show', $paciente) }}" class="dropdown-item">
+                                <a href="{{ route('paciente.pacientes.show', $paciente) }}" class="dropdown-item">
                                     <i class="fas fa-info-circle"></i> Detalhes do Paciente
                                 </a>
                                 <a href="#" class="dropdown-item" data-toggle="modal"
@@ -178,10 +178,10 @@
                                 </a>
 
                                 @push('modals')
-                                    @includeIf('admin.pacientes.partials.paciente-modal-show', $paciente)
+                                    @includeIf('paciente.pacientes.partials.paciente-modal-show', $paciente)
                                 @endpush
 
-                                <a href="{{ route('admin.pacientes.edit', $paciente) }}" class="dropdown-item">
+                                <a href="{{ route('paciente.pacientes.edit', $paciente) }}" class="dropdown-item">
                                     <i class="fas fa-edit"></i> Editar Dados Cadastrais
                                 </a>
 

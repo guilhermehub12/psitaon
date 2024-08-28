@@ -27,7 +27,7 @@
                             >
                                 <i class="fas fa-info-circle"></i> Visualizar
                                 @push('modals')
-                                    @includeIf('admin.pacientes_prontuarios.paciente_prontuario_queixa.partials.paciente_prontuario_queixa_modal_show', [
+                                    @includeIf('paciente.pacientes_prontuarios.paciente_prontuario_queixa.partials.paciente_prontuario_queixa_modal_show', [
                                         'paciente' => $paciente,
                                         'pacienteProntuario' => $paciente->pacienteProntuario
                                     ])
@@ -40,7 +40,7 @@
                         <div class="d-grid">
                             <a
                                 href="{{
-                                    route('admin.pacientes.prontuarios_queixas.edit', [
+                                    route('paciente.pacientes.prontuarios_queixas.edit', [
                                         $paciente,
                                         $paciente->pacienteProntuario
                                     ])
@@ -62,7 +62,7 @@
                             >
                                 <i class="fas fa-trash"></i> Deletar
                                 @push('modals')
-                                    @includeIf('admin.pacientes_prontuarios.paciente_prontuario_queixa.partials.paciente_prontuario_queixa_modal_destroy', [
+                                    @includeIf('paciente.pacientes_prontuarios.paciente_prontuario_queixa.partials.paciente_prontuario_queixa_modal_destroy', [
                                         'paciente' => $paciente,
                                         'pacienteProntuario' => $paciente->pacienteProntuario
                                     ])

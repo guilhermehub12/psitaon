@@ -10,12 +10,12 @@
         />
     </x-slot>
 
-    @includeIf('admin.pacientes.partials.form', [
+    @includeIf('paciente.pacientes.partials.form', [
         "title" => "Paciente",
         "subtitle" => "Novo",
-        "action" => route('admin.pacientes.store'),
+        "action" => route('paciente.pacientes.store'),
         "method" => "POST",
-        "routeBack" => route('admin.pacientes.index'),
+        "routeBack" => route('paciente.pacientes.index'),
         "buttonText" => "Salvar",
         "paciente" => null
     ])

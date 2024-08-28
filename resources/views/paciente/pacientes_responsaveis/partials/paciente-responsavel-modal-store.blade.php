@@ -2,7 +2,7 @@
     title="Data"
     subtitle="Novo"
     target="paciente-responsavel-modal-{{ $responsavel->id }}-store"
-    :action="route('admin.pacientes.responsaveis.store', $responsavel)"
+    :action="route('paciente.pacientes.responsaveis.store', $responsavel)"
     size="lg"
 >
     <div class="row">

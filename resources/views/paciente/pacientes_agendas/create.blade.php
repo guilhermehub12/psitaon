@@ -10,19 +10,19 @@
         />
     </x-slot>
 
-    @includeIf('admin.pacientes_agendas.partials.calendar')
+    @includeIf('paciente.pacientes_agendas.partials.calendar')
 
-    {{-- @includeIf('admin.pacientes_agendas.partials.paciente', [
+    {{-- @includeIf('paciente.pacientes_agendas.partials.paciente', [
         "paciente" => $paciente,
-        "route" => route('admin.pacientes.show', $paciente)
+        "route" => route('paciente.pacientes.show', $paciente)
     ]) --}}
 
-    @includeIf('admin.pacientes_agendas.partials.form', [
+    @includeIf('paciente.pacientes_agendas.partials.form', [
         "title" => "Agenda",
         "subtitle" => "Novo",
-        "action" => route('admin.pacientes.agendas.store', $paciente),
+        "action" => route('paciente.pacientes.agendas.store', $paciente),
         "method" => "POST",
-        "routeBack" => route('admin.pacientes.show', $paciente),
+        "routeBack" => route('paciente.pacientes.show', $paciente),
         "buttonText" => "Salvar",
         "pacienteAgenda" => null
     ])
@@ -57,11 +57,11 @@
                     </button>
 
                     @push('modals')
-                        @includeIf('admin.pacientes_agendas.partials.paciente-agenda-modal-destroy', [
+                        @includeIf('paciente.pacientes_agendas.partials.paciente-agenda-modal-destroy', [
                             $paciente,
                             $pacienteAgenda
                         ])
-                        @includeIf('admin.pacientes_agendas.partials.paciente-agenda-financeiro-modal-store', [
+                        @includeIf('paciente.pacientes_agendas.partials.paciente-agenda-financeiro-modal-store', [
                             $paciente,
                             $pacienteAgenda
                         ])

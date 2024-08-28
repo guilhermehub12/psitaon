@@ -1,5 +1,5 @@
 <x-admin.modal-destroy title="Financeiro" subtitle="Deletar"
-    target="paciente-financeiro-modal-{{ $pacienteFinanceiro->id }}-destroy" :action="route('admin.pacientes.financeiros.destroy', [
+    target="paciente-financeiro-modal-{{ $pacienteFinanceiro->id }}-destroy" :action="route('paciente.pacientes.financeiros.destroy', [
         'paciente' => $paciente,
         'pacienteFinanceiro' => $pacienteFinanceiro,
     ])" size="lg">
