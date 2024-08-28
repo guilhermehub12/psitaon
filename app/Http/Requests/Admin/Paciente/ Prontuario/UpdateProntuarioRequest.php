@@ -12,7 +12,6 @@ class UpdateProntuarioRequest extends BaseProntuarioRequest
     public function rules(): array
     {
         return [
-            'paciente_id' => 'required',
             'queixa_inicial' => 'required|max:255'
         ];
     }

@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests\Admin\Paciente\Prontuario;
 
-use App\Models\ModalidadePagamento;
-
 class StoreProntuarioRequest extends BaseProntuarioRequest
 {
     /**
@@ -13,9 +11,8 @@ class StoreProntuarioRequest extends BaseProntuarioRequest
      */
     public function rules(): array
     {
-        // dd($_REQUEST);
+        dd($_REQUEST);
         return [
-            'paciente_id' => 'required',
             'queixa_inicial' => 'required|max:255'
         ];
     }

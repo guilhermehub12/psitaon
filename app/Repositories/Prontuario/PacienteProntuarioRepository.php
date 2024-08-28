@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Prontuario;
 
+use App\Models\Paciente;
 use Exception;
 
 use App\Models\Prontuario\PacienteProntuario;
@@ -51,11 +52,12 @@ class PacienteProntuarioRepository extends BaseRepository
         }
     }
 
-    public function store($data)
+    public function store(Paciente $paciente ,$data)
     {
         try {
-            $paciente = new $this->model($data);
-            $paciente->save();
+            $$pacienteProntuario = new $this->model($data);
+            $$pacienteProntuario->paciente_id = $paciente->id;
+            $$pacienteProntuario->save();
 
             return true;
         } catch (Exception $e) {
@@ -63,13 +65,13 @@ class PacienteProntuarioRepository extends BaseRepository
         }
     }
 
-    public function update(PacienteProntuario $paciente, $data)
+    public function update(PacienteProntuario $pacienteProntuario, $data)
     {
         try {
             DB::beginTransaction();
 
-            $paciente->fill($data);
-            $paciente->save();
+            $pacienteProntuario->fill($data);
+            $pacienteProntuario->save();
 
             DB::commit();
 
@@ -81,10 +83,10 @@ class PacienteProntuarioRepository extends BaseRepository
         }
     }
 
-    public function destroy(PacienteProntuario $paciente)
+    public function destroy(PacienteProntuario $pacienteProntuario)
     {
         try {
-            $paciente->delete();
+            $pacienteProntuario->delete();
 
             return true;
         } catch (Exception $e){

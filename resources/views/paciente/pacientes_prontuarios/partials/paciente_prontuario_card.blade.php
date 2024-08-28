@@ -34,7 +34,7 @@
                         </a>
                     </div>
                 </div>
-                @can('update', $paciente->pacienteProntuario)
+                {{-- @can('update', $paciente) --}}
                 <div class="col mt-3">
                     <div class="d-grid">
                         <a
@@ -50,7 +50,27 @@
                         </a>
                     </div>
                 </div>
-                @endcan
+                {{-- @endcan --}}
+                {{-- @can('delete', $paciente->pacienteProntuario) --}}
+                <div class="col mt-3">
+                    <div class="d-grid">
+                        <a
+                            class="btn btn-danger waves-effect waves-light"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#paciente-prontuario-modal-{{ $paciente->id }}-destroy"
+                        >
+                            <i class="fas fa-trash-alt"></i> Deletar
+                            @push('modals')
+                                @includeIf('admin.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_destroy.blade', [
+                                    'paciente' => $paciente,
+                                    'pacienteProntuario' => $paciente->pacienteProntuario
+                                ])
+                            @endpush
+                        </a>
+                    </div>
+                </div>
+                {{-- @endcan --}}
             @endif
         </div>
     </div>

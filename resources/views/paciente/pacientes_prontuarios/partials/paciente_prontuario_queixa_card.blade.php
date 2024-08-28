@@ -35,7 +35,7 @@
                             </a>
                         </div>
                     </div>
-                    @can('update', $paciente)
+                    {{-- @can('update', $pacienteProntuario) --}}
                     <div class="col mt-3">
                         <div class="d-grid">
                             <a
@@ -51,7 +51,7 @@
                             </a>
                         </div>
                     </div>
-                    @endcan
+                    {{-- @endcan --}}
                     <div class="col mt-3">
                         <div class="d-grid">
                             <a
