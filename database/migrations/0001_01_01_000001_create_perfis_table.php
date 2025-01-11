@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('descricao');
             $table->boolean('ativo')->default(true);
-            $table->foreignUuid('created_by')->references('id')->on('usuarios')->onUpdate('cascade');
-            $table->foreignUuid('updated_by')->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('created_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
+            $table->foreignUuid('updated_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->foreignUuid('deleted_by')->nullable()->references('id')->on('usuarios')->onUpdate('cascade');
             $table->timestamps();
             $table->softDeletes();
