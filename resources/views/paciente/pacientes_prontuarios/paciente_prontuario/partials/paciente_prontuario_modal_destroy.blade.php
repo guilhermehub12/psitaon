@@ -1,8 +1,8 @@
 <x-admin.modal-destroy
     title="Anamnese"
     subtitle="Deletar Queixa Inicial"
-    target="paciente-prontuario-modal-{{ $pacienteProntuario->id }}-destroy"
-    action="{{ route('admin.paciente_prontuario.paciente_prontuario.destroy', [
+    target="paciente-prontuario-modal-{{ $paciente->id }}-destroy"
+    action="{{ route('paciente.pacientes.prontuarios.destroy', [
             $paciente, $pacienteProntuario
         ])
     }}"

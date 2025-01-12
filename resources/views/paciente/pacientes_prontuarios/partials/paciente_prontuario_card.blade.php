@@ -26,7 +26,7 @@
                         >
                             <i class="fas fa-info-circle"></i> Visualizar
                             @push('modals')
-                                @includeIf('paciente.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_show.blade', [
+                                @includeIf('paciente.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_show', [
                                     'paciente' => $paciente,
                                     'pacienteProntuario' => $paciente->pacienteProntuario
                                 ])
@@ -62,7 +62,7 @@
                         >
                             <i class="fas fa-trash-alt"></i> Deletar
                             @push('modals')
-                                @includeIf('paciente.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_destroy.blade', [
+                                @includeIf('paciente.pacientes_prontuarios.paciente_prontuario.partials.paciente_prontuario_modal_destroy', [
                                     'paciente' => $paciente,
                                     'pacienteProntuario' => $paciente->pacienteProntuario
                                 ])

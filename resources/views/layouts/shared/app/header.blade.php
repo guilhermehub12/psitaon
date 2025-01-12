@@ -9,7 +9,7 @@
 
 
             <li class="nav-item mx-auto" style="height: 50px;">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ route('home.index') }}">
                     <h2 style="font-family: Hundrake, Arial; color: #153448;">PsiTáOn</h2>
                 </a>
             </li>
