@@ -2,7 +2,7 @@
     <img
         class="animation__shake"
         src="{{ Vite::asset('resources/images/preloader.png') }}"
-        alt="Lila Baking Studio Preloader"
+        alt="PsiTáOn Preloader"
         height="60"
         width="60"
     >

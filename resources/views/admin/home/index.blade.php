@@ -1,52 +1,30 @@
 <x-app-layout>
     <x-slot name="breadcrumb">
-        <x-admin.breadcrumb icon="fas fa-tachometer-alt" title="Dashboard" />
+        <x-admin.breadcrumb icon="fas fa-tachometer-alt" title="Painel" />
     </x-slot>
 
-    <div class="row">
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-olive">
-                <div class="inner">
-                    <h3>{{ $clientes->total }}</h3>
-                    <p>Clientes</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-restroom"></i>
-                </div>
-                <a href="{{ route('admin.clientes.index') }}" class="small-box-footer">
-                    Ir para listagem&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-yellow">
-                <div class="inner">
-                    <h3>{{ $usuarios->total }}</h3>
-                    <p>Colaboradores</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                <a href="{{ route('admin.usuarios.index') }}" class="small-box-footer">
-                    Ir para listagem&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h3>{{ $produtos->total }}</h3>
-                    <p>Produtos</p>
-                </div>
-                <div class="icon">
-                    <i class="fas fa-cookie"></i>
-                </div>
-                <a href="{{ route('admin.produtos.index') }}" class="small-box-footer">
-                    Ir para listagem&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>
+    <div class="container d-flex justify-content-center align-items-center min-vh-80">
+        <div class="row row-cols-1">
+            <div class="col">
+                <a href="#">
+                    <div class="card text-center border border-success zoom-card">
+                        <div class="card-body d-flex flex-column justify-content-center">
+                            <img src="{{ Vite::asset('resources/images/paciente.png') }}" style="width: 150px; height: 150px;" class="card-img-top mx-auto" alt="Pacientes">
+                            <h5 class="card-title mt-2">Estados</h5>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
     </div>
+
+    <style>
+        .zoom-card {
+            transition: transform 0.3s ease;
+        }
+        .zoom-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+
 </x-app-layout>

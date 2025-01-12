@@ -55,7 +55,7 @@
                 <div class="card-footer clearfix border-top bg-transparent">
                     <div class="row align-items-center">
                         <div class="col-6 text-start font-weight-bold">
-                            Exibindo {{ $records->count() }} registro(s)
+                            Exibindo {{ is_array($records) ? count($records) : $records->count() }} registro(s)
                         </div>
                         <div class="col-6 d-flex justify-content-end font-weight-bold">
                         </div>

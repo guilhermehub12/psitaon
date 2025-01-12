@@ -47,9 +47,9 @@ class UsuarioController extends Controller
         $result = $this->usuarioRepository->store($request->except(['_token']));
 
         if ($result === true) {
-            $request->session()->flash('success', 'Usuário cadastrado com sucesso!');
+            session()->flash('success', 'Usuário cadastrado com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao cadastrar o usuário. '.$result);
+            session()->flash('danger', 'Erro ao cadastrar o usuário. '.$result);
         }
 
         return redirect()->route('admin.usuarios.index');
@@ -82,10 +82,10 @@ class UsuarioController extends Controller
         $result = $this->usuarioRepository->update($usuario, $request->except(['_token']));
 
         if ($result === true) {
-            $request->session()->flash('success', 'Usuário atualizado com sucesso!');
+            session()->flash('success', 'Usuário atualizado com sucesso!');
             return redirect()->route('admin.usuarios.index');
         } else {
-            $request->session()->flash('danger', 'Erro ao atualizar o usuário. '.$result);
+            session()->flash('danger', 'Erro ao atualizar o usuário. '.$result);
             return redirect()->route('admin.usuarios.edit', $usuario);
         }
     }

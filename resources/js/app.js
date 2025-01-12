@@ -62,5 +62,12 @@ $(document).ready(function() {
     placeholder: '0'
   });
 
+  $(".mask_email").inputmask({
+    alias: "email",
+    clearIncomplete: false,
+    showMaskOnHover: true,
+    showMaskOnFocus: true
+  });
+
     // $('.select2').select2();
 });

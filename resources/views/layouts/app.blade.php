@@ -7,15 +7,15 @@
         <link rel="icon" type="image/x-icon" href="{{ Vite::asset('resources/images/favicon.ico') }}">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <body class="hold-transition layout-fixed layout-navbar-fixed layout-footer-fixed" style="background-color: #f8f8fa;">
         <div class="wrapper">
             @includeIf("layouts.shared.app.preloader")
             @includeIf("layouts.shared.app.header")
-            @includeIf("layouts.shared.app.menu")
-            <div class="content-wrapper">
+            {{-- @includeIf("layouts.shared.app.menu") --}}
+            <div class="wrapper" style="padding-top: 5em; padding-bottom: 5em;">
                 {{ $breadcrumb ?? '' }}
                 <section class="content">
-                    <div class="container-fluid">
+                    <div class="container">
                         @if (session('success'))
                             <x-admin.alert type="success" :message="session('success')" icon="fas fa-check-circle" />
                         @elseif (session('danger'))

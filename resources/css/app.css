@@ -286,83 +286,98 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.login-page, .register-page {
-    background-color: #d1e7dd;
+/* hundrake */
+@font-face {
+    font-family: 'Hundrake';
+    font-style: normal;
+    font-weight: 700;
+    font-display: fallback;
+    src: url('../fonts/Hundrake.ttf') format('ttf');
+}
+
+.login-page,
+.register-page {
+    background-color: #B99470;
     height: 90vh;
 }
 
-.login-box, .register-box {
+.login-box,
+.register-box {
     width: 450px;
 }
 
 .btn-lila {
     color: #fff;
-    background-color: #F2A89D;
-    border-color: #F2A89D;
+    background-color: #153448;
+    border-color: #153448;
     box-shadow: none;
 }
 
-.btn-lila:focus, .btn-lila.focus {
+.btn-lila:focus,
+.btn-lila:hover,
+.btn-lila.focus {
     color: #fff;
-    background-color: #F2A89D;
-    border-color: #F2A89D;
-    box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+    background-color: #20445c;
+    border-color: #153448;
+    box-shadow: 0 0 0 0 rgba(61, 106, 155, 0.5);
 }
 
 .form-control:focus {
     box-shadow: 0 0 0 .25rem rgba(232, 62, 140, .25) !important;
-    border: 1px solid #F2A89D !important;
+    border: 1px solid #153448 !important;
 }
 
-.main-header {
-    background-color: #d1e7dd;
+.main-header,
+.header {
+    background-color: #B99470;
 }
 
 .brand-link {
-    background-color: #F2A89D !important;
+    background-color: #153448 !important;
 }
 
 .main-sidebar {
-    background-color: #F2A89D;
+    background-color: #153448;
     opacity: 0.9;
 }
 
-.main-footer {
-    /* background-color: #F2A89D; */
-    background-color: #d1e7dd;
-    color: #198754;
+.main-footer,
+.footer {
+    /* background-color: #153448; */
+    background-color: #B99470;
+    color: #32698e;
     font-size: 14px;
     font-weight: bold;
 }
 
 .brand-link {
-    border-bottom: 1px solid #d1e7dd !important;
+    border-bottom: 1px solid #B99470 !important;
 }
 
 .user-panel {
-    border-bottom: 1px solid #d1e7dd !important;
+    border-bottom: 1px solid #B99470 !important;
 }
 
-.nav-sidebar > .nav-item > .nav-link:focus {
+.nav-sidebar>.nav-item>.nav-link:focus {
     background-color: rgba(255, 255, 255, .1);
     color: #fff;
 }
 
-.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
-.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
-  background-color: #009074;
-  color: #1f2d3d;
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #009074;
+    color: #1f2d3d;
 }
 
 .card-header {
-    background-color: #F2A89D;
+    background-color: #153448;
     color: #ffffff;
     border: none;
     opacity: 0.8;
 }
 
 .modal-header {
-    background-color: #d1e7dd;
+    background-color: #B99470;
     color: #009074;
 }
 
@@ -377,6 +392,15 @@
 .page-item.active .page-link {
     z-index: 3;
     color: rgb(255, 255, 255);
-    background-color: #F2A89D;
-    border-color: #F2A89D;
+    background-color: #153448;
+    border-color: #153448;
+}
+
+.breadcrumb-item a {
+    color: #153448 !important;
+}
+
+.modal-title {
+    color: #153448 !important;
+    font-weight: 600;
 }

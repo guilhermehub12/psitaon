@@ -83,7 +83,6 @@ class Usuario extends Authenticatable
         ];
     }
 
-    // Renomear o campo 'password' para 'senha'
     public function getAuthPassword()
     {
         return $this->senha;
@@ -111,13 +110,13 @@ class Usuario extends Authenticatable
         return $this->perfis->contains('codigo', PerfilEnum::ADMINISTRADOR->value);
     }
 
-    public function isAtendimento(): bool
+    public function isPsicologa(): bool
     {
-        return $this->perfis->contains('codigo', PerfilEnum::ATENDIMENTO->value);
+        return $this->perfis->contains('codigo', PerfilEnum::PSICOLOGA->value);
     }
 
-    public function isCozinha(): bool
+    public function isPaciente(): bool
     {
-        return $this->perfis->contains('codigo', PerfilEnum::COZINHA->value);
+        return $this->perfis->contains('codigo', PerfilEnum::PACIENTE->value);
     }
 }

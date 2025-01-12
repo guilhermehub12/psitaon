@@ -14,7 +14,8 @@ class PerfilSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = DB::table('usuarios')->where('email', 'leandroalvesmachado@gmail.com')->get()->first();
+        $admin = DB::table('usuarios')->where('email', 'guilhermedelmiro11@gmail.com')->get()->first();
+        $admin1 = DB::table('usuarios')->where('email', 'leandroalvesmachado@gmail.com')->get()->first();
 
         $perfis = [
             [
@@ -24,13 +25,13 @@ class PerfilSeeder extends Seeder
             ],
             [
                 'codigo' => 2,
-                'nome' => 'Atendimento',
-                'descricao' => 'Cadastrar clientes, cadastrar pedidos e dar entrada no sistema de controle de estoque'
+                'nome' => 'Psicológa',
+                'descricao' => 'Cadastrar pacientes, configurar consultas...'
             ],
             [
                 'codigo' => 3,
-                'nome' => 'Cozinha',
-                'descricao' => 'Visualizar os pedidos, por dia, e dar baixa dos pedidos conforme finalização na cozinha'
+                'nome' => 'Paciente',
+                'descricao' => 'Visualizar as consultas, os custos...'
             ]
         ];
 
