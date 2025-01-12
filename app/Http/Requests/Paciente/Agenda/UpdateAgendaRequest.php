@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Admin\Paciente\Prontuario;
+namespace App\Http\Requests\Paciente\Agenda;
 
-class StoreProntuarioRequest extends BaseProntuarioRequest
+class UpdateAgendaRequest extends BaseAgendaRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -11,9 +11,10 @@ class StoreProntuarioRequest extends BaseProntuarioRequest
      */
     public function rules(): array
     {
-        dd($_REQUEST);
         return [
-            'queixa_inicial' => 'required|max:255'
+            'frequencia_id' => 'required',
+            'horario' => 'required|max:255',
+            'dia' => 'required|max:255'
         ];
     }
 }

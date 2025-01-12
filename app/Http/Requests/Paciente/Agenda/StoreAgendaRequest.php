@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Paciente\Agenda;
+namespace App\Http\Requests\Paciente\Agenda;
 
-class UpdateAgendaRequest extends BaseAgendaRequest
+use App\Models\ModalidadePagamento;
+
+class StoreAgendaRequest extends BaseAgendaRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -11,6 +13,7 @@ class UpdateAgendaRequest extends BaseAgendaRequest
      */
     public function rules(): array
     {
+        // dd($_REQUEST);
         return [
             'frequencia_id' => 'required',
             'horario' => 'required|max:255',

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Paciente\Responsavel;
+namespace App\Http\Requests\Paciente\Responsavel;
 
 use Illuminate\Foundation\Http\FormRequest;
 

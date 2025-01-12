@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Admin\Paciente\Responsavel;
+namespace App\Http\Requests\Paciente\Responsavel;
 
-class UpdateResponsavelRequest extends BaseResponsavelRequest
+class StoreResponsavelRequest extends BaseResponsavelRequest
 {
     /**
      * Get the validation rules that apply to the request.

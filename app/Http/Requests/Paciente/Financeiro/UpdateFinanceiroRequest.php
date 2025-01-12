@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Paciente\Financeiro;
+namespace App\Http\Requests\Paciente\Financeiro;
 
 class UpdateFinanceiroRequest extends BaseFinanceiroRequest
 {

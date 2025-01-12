@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Admin\Paciente;
+namespace App\Http\Requests\Paciente;
 
-class UpdatePacienteRequest extends BasePacienteRequest
+class StorePacienteRequest extends BasePacienteRequest
 {
     /**
      * Get the validation rules that apply to the request.

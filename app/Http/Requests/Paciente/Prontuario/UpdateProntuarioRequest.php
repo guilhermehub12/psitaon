@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Requests\Admin\Paciente\Prontuario;
+namespace App\Http\Requests\Paciente\Prontuario;
+
+use App\Http\Requests\Paciente\Prontuario\BaseProntuarioRequest;
 
 class UpdateProntuarioRequest extends BaseProntuarioRequest
 {

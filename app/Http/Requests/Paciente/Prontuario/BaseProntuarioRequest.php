@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Paciente\Agenda;
+namespace App\Http\Requests\Paciente\Prontuario;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BaseAgendaRequest extends FormRequest
+class BaseProntuarioRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,7 @@ class BaseAgendaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'frequencia_id' => 'required',
-            'horario' => 'required|max:255',
-            'dia' => 'required|max:255'
+            'queixa_inicial' => 'required|max:255'
         ];
     }
 
@@ -36,9 +34,7 @@ class BaseAgendaRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'frequencia_id' => 'Frequência',
-            'horario' => 'Horário',
-            'dia' => 'Dia'
+            'queixa_inicial' => 'Queixa Inicial'
         ];
     }
 }
