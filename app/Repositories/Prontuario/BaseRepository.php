@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositoriesv\Prontuario;
+namespace App\Repositories\Prontuario;
 
 abstract class BaseRepository
 {

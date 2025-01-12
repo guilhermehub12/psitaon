@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Paciente;
 
 use App\Http\Controllers\Controller;
 
@@ -15,8 +15,8 @@ use App\Repositories\StatusPagamentoRepository;
 use App\Repositories\StatusPresencaRepository;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Admin\Paciente\Financeiro\StoreFinanceiroRequest;
-use App\Http\Requests\Admin\Paciente\Financeiro\UpdateFinanceiroRequest;
+use App\Http\Requests\Paciente\Financeiro\StoreFinanceiroRequest;
+use App\Http\Requests\Paciente\Financeiro\UpdateFinanceiroRequest;
 
 class PacienteFinanceiroController extends Controller
 {
@@ -67,9 +67,9 @@ class PacienteFinanceiroController extends Controller
         $result = $this->pacienteFinanceiroRepository->store($paciente, $request->except(['_token']));
         // dd($result);
         if ($result === true) {
-            $request->session()->flash('success', 'Paciente cadastrado com sucesso!');
+            session()->flash('success', 'Paciente cadastrado com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao cadastrar o responsavel. '.$result);
+            session()->flash('danger', 'Erro ao cadastrar o responsavel. '.$result);
         }
 
         return redirect()->route('paciente.pacientes.financeiros.create', $paciente);
@@ -94,9 +94,9 @@ class PacienteFinanceiroController extends Controller
         $result = $this->pacienteFinanceiroRepository->update($paciente, $request->except(['_token']));
 
         if ($result === true) {
-            $request->session()->flash('success', 'Paciente atualizado com sucesso!');
+            session()->flash('success', 'Paciente atualizado com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao atualizar o responsavel! '.$result);
+            session()->flash('danger', 'Erro ao atualizar o responsavel! '.$result);
         }
 
         return redirect()->route('paciente.pacientes.financeiros.index');

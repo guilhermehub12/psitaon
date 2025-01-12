@@ -3,16 +3,11 @@
 namespace App\Http\Controllers\Paciente\Prontuario;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Paciente\Prontuario\StoreProntuarioRequest;
-use App\Http\Requests\Admin\Paciente\Prontuario\UpdateProntuarioRequest;
+use App\Http\Requests\Paciente\Prontuario\StoreProntuarioRequest;
+use App\Http\Requests\Paciente\Prontuario\UpdateProntuarioRequest;
 use App\Models\Paciente;
 use App\Models\Prontuario\PacienteProntuario;
 use App\Repositories\Prontuario\PacienteProntuarioRepository;
-// use App\Repositories\Prontuario\PacienteProntuarioAlimentacaoRepository;
-// use App\Repositories\Prontuario\PacienteProntuarioAvaliacaoRepository;
-// use App\Repositories\Prontuario\PacienteProntuarioDoencaRepository;
-// use App\Repositories\Prontuario\PacienteProntuarioPlanejamentoRepository;
-// use App\Repositories\Prontuario\PacienteProntuarioQueixaRepository;
 use Illuminate\Http\Request;
 
 class PacienteProntuarioController extends Controller
@@ -50,9 +45,9 @@ class PacienteProntuarioController extends Controller
         $result = $this->pacienteProntuarioRepository->store($paciente, $request->except(['_token']));
 
         if ($result === true) {
-            $request->session()->flash('success', 'Queixa inicial cadastrado com sucesso!');
+            session()->flash('success', 'Queixa inicial cadastrada com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao cadastrar a queixa inicial. ' . $result);
+            session()->flash('danger', 'Erro ao cadastrar a queixa inicial. ' . $result);
         }
 
         return redirect()->route('paciente.pacientes.prontuarios.index', $paciente);
@@ -78,9 +73,9 @@ class PacienteProntuarioController extends Controller
         $result = $this->pacienteProntuarioRepository->update($paciente, $request->except(['_token']));
 
         if ($result === true) {
-            $request->session()->flash('success', 'Paciente atualizado com sucesso!');
+            session()->flash('success', 'Paciente atualizado com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao atualizar o paciente! ' . $result);
+            session()->flash('danger', 'Erro ao atualizar o paciente! ' . $result);
         }
 
         return redirect()->route('paciente.pacientes.prontuarios.index');

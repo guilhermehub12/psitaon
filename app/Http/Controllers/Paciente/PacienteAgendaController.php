@@ -11,8 +11,8 @@ use App\Repositories\PacienteAgendaRepository;
 use App\Repositories\FrequenciaPagamentoRepository;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Admin\Paciente\Agenda\StoreAgendaRequest;
-use App\Http\Requests\Admin\Paciente\Agenda\UpdateAgendaRequest;
+use App\Http\Requests\Paciente\Agenda\StoreAgendaRequest;
+use App\Http\Requests\Paciente\Agenda\UpdateAgendaRequest;
 
 class PacienteAgendaController extends Controller
 {
@@ -47,9 +47,9 @@ class PacienteAgendaController extends Controller
         $result = $this->pacienteAgendaRepository->store($paciente, $request->except(['_token']));
 
         if ($result === true) {
-            $request->session()->flash('success', 'Sessão cadastrada com sucesso!');
+            session()->flash('success', 'Sessão cadastrada com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao cadastrar a sessão. ');
+            session()->flash('danger', 'Erro ao cadastrar a sessão. ');
         }
 
         return redirect()->route('paciente.pacientes.agendas.create', $paciente);
@@ -74,9 +74,9 @@ class PacienteAgendaController extends Controller
         $result = $this->pacienteAgendaRepository->update($paciente, $request->except(['_token']));
 
         if ($result === true) {
-            $request->session()->flash('success', 'Sessão atualizada com sucesso!');
+            session()->flash('success', 'Sessão atualizada com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao atualizar a sessão! ');
+            session()->flash('danger', 'Erro ao atualizar a sessão! ');
         }
 
         return redirect()->route('paciente.pacientes.agendas.index');

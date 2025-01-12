@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Paciente;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Paciente\StorePacienteRequest;
-use App\Http\Requests\Admin\Paciente\UpdatePacienteRequest;
+use App\Http\Requests\Paciente\StorePacienteRequest;
+use App\Http\Requests\Paciente\UpdatePacienteRequest;
 use App\Models\Paciente;
 use App\Models\TipoResponsavel;
 use App\Repositories\EscolaridadeRepository;
@@ -56,9 +56,9 @@ class PacienteController extends Controller
     {
         $result = $this->pacienteRepository->store($request->except(['_token']));
         if ($result === true) {
-            $request->session()->flash('success', 'Paciente cadastrado com sucesso!');
+            session()->flash('success', 'Paciente cadastrado com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao cadastrar o paciente. '.$result);
+            session()->flash('danger', 'Erro ao cadastrar o paciente. '.$result);
         }
 
         return redirect()->route('paciente.pacientes.index', $paciente);
@@ -83,9 +83,9 @@ class PacienteController extends Controller
         $result = $this->pacienteRepository->update($paciente, $request->except(['_token']));
 
         if ($result === true) {
-            $request->session()->flash('success', 'Paciente atualizado com sucesso!');
+            session()->flash('success', 'Paciente atualizado com sucesso!');
         } else {
-            $request->session()->flash('danger', 'Erro ao atualizar o paciente! '.$result);
+            session()->flash('danger', 'Erro ao atualizar o paciente! '.$result);
         }
 
         return redirect()->route('paciente.pacientes.index');

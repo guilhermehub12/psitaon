@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Paciente\Prontuario;
 
 use App\Http\Controllers\Controller;
-// use App\Http\Requests\Admin\Paciente\Prontuario\StoreProntuarioRequest;
-// use App\Http\Requests\Admin\Paciente\Prontuario\UpdateProntuarioRequest;
+// use App\Http\Requests\Paciente\Prontuario\StoreProntuarioRequest;
+// use App\Http\Requests\Paciente\Prontuario\UpdateProntuarioRequest;
 use App\Models\Paciente;
 use App\Models\Prontuario\PacienteProntuarioQueixa;
 use App\Repositories\Prontuario\PacienteProntuarioQueixaRepository;

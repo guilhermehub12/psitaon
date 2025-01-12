@@ -9,10 +9,10 @@ Route::prefix('paciente')->name('paciente.')->namespace('Paciente')->group(funct
 
     // PACIENTES RESPONSAVEIS
     Route::resource('pacientes.responsaveis', 'PacienteResponsavelController')
-    ->parameters([
-        'pacientes' => 'paciente',
-        'responsaveis' => 'pacienteResponsavel'
-    ]);
+        ->parameters([
+            'pacientes' => 'paciente',
+            'responsaveis' => 'pacienteResponsavel'
+        ]);
 
     // PACIENTES PRONTUARIOS
     Route::resource('pacientes.prontuarios', 'Prontuario\PacienteProntuarioController')

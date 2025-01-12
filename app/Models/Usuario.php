@@ -83,7 +83,6 @@ class Usuario extends Authenticatable
         ];
     }
 
-    // Renomear o campo 'password' para 'senha'
     public function getAuthPassword()
     {
         return $this->senha;

@@ -55,9 +55,9 @@ class PacienteProntuarioRepository extends BaseRepository
     public function store(Paciente $paciente ,$data)
     {
         try {
-            $$pacienteProntuario = new $this->model($data);
-            $$pacienteProntuario->paciente_id = $paciente->id;
-            $$pacienteProntuario->save();
+            $pacienteProntuario = new $this->model($data);
+            $pacienteProntuario->paciente_id = $paciente->id;
+            $pacienteProntuario->save();
 
             return true;
         } catch (Exception $e) {
